@@ -6,7 +6,7 @@
   <META NAME="Author" CONTENT="">
   <META NAME="Keywords" CONTENT="">
   <META NAME="Description" CONTENT="">
-  <META name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0, user-scalable=yes">
+  <META name="viewport" content="width=device-width+100, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0, user-scalable=yes">
   <style>
   html, body {
   height: 100%;
@@ -33,6 +33,20 @@ div{
   <audio id="music" autoplay="autoplay" controls="controls" loop="loop" preload="auto" src="http://music.163.com/song/media/outer/url?id=9442015.mp3">
   </audio>
   <script>
+    // music
+    window.onload = function(){
+             setInterval("toggleSound()",100);
+        }
+
+    function toggleSound() {
+                var music = document.getElementById("music");//获取ID  
+                    
+                if (music.paused) { //判读是否播放  
+                    music.paused=false;
+                    music.play(); //没有就播放 
+                }    
+        }
+
   /*
  * Settings
  */
