@@ -25,14 +25,14 @@ div{
   height: 100%;
 }
 audio{
-  display: n;
+  display: none;
 }
   </style>
  </HEAD>
 
  <BODY>
   <canvas id="pinkboard" ></canvas>
-  <div id="text" style="font-family: \534E\6587\884C\6977;">飞鸟鸟</div>
+  <div id="text" style="font-family: \534E\6587\884C\6977;">5 2 0</div>
   <audio id="music" autoplay="autoplay" controls="controls" loop="loop" preload="auto" src="http://music.163.com/song/media/outer/url?id=9442015.mp3">
   </audio>
   <script>
@@ -296,7 +296,7 @@ var ParticlePool = (function() {
     canvas.width  = canvas.clientWidth;
     canvas.height = canvas.clientHeight;
     div=document.getElementById('text');
-     div.style.left=canvas.width/2-79;
+     div.style.left=canvas.width/2-54;
      div.style.top=canvas.height/2.3;
      div.style.fontSize=50;
      div.style.color="white";
@@ -309,20 +309,6 @@ var ParticlePool = (function() {
     render();
   }, 10);
 })(document.getElementById('pinkboard'));
-
-
-// (function(div){
-//     canvas=document.getElementById('pinkboard')
-//     div=document.getElementById('text');
-//     div.style.marginLeft=canvas.width;
-//     div.style.marginTop=canvas.height;
-//     div.style.color="white";
-
-// setTimeout(function() {
-   
-//   }, 20);
-// })(document.getElementById('text'));
-
   </script>
  </BODY>
 </HTML>
