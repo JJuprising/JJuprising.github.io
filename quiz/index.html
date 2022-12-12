@@ -1,0 +1,564 @@
+---
+layout: false
+---
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>接受洗礼吧！</title>
+    <style>
+        .result {
+            width: 1000px;
+            height: 50px;
+        }
+
+        .quiz {
+            font-size: large;
+            padding: auto;
+        }
+
+        .quiz li {
+            padding: 10px;
+        }
+
+        .QuizTable {
+            border-radius: 20px;
+            width: 800px;
+            height: 350px;
+            position: absolute;
+            left: 40%;
+            top: 30%;
+            transform: translate(-50%, -50%);
+            border: 3px solid;
+            padding: 10px;
+            border-style: outset;
+
+
+        }
+
+        button {
+            font-size: 30px;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="QuizTable">
+        <h1>单选题</h1>
+        <div id="quiz" class="quiz">
+            <!-- <p>What is the capital of France?</p>
+          <ul>
+            <li>Paris</li>
+            <li>London</li>
+            <li>Madrid</li>
+            <li>Rome</li>
+          </ul> -->
+        </div>
+        <p id="result" class="result"></p>
+        <button id="quit" type="button">Quit</button>
+        <button id="next" type="button">Next</button>
+    </div>
+
+    <script type="text/javascript">
+        //设置题目布局
+        // const body=document.getElementsByName("body");
+        // const width=body.width;
+        // const height=body.height;
+        // const QuizTable=document.getElementById("QuizTable");
+        // QuizTable.style.left=width/2;
+        // QuizTable.style.top=height/2;
+
+        // 获取题库数组
+        const quizData = [
+            {
+                "question": "( )标志着毛泽东思想的初步形成.",
+                "answers": [
+                    "A.提出并阐述农村包围城市,武装夺取政权思想",
+                    "B.《井冈山的斗争》",
+                    "C.《星星之火,可以燎原》",
+                    "D.《反对本本主义》"
+                ],
+                "correctAnswer": "A.提出并阐述农村包围城市,武装夺取政权思想"
+            },
+            {
+                "question": "( )首次对毛泽东和毛泽东思想的历史地位做出了科学的.实事求是的评价.",
+                "answers": [
+                    "A.《在纪念毛泽东同志诞辰120周年座谈会上的讲话》",
+                    "B.《中国共产党中央委员会关于建国以来党的若干历史问题的讲话》",
+                    "C.《中共中央关于党的百年奋斗重大成就和历史经验的决议》",
+                    "D.《关于若干历史问题的决议》"
+                ],
+                "correctAnswer": "B.《中国共产党中央委员会关于建国以来党的若干历史问题的讲话》"
+            },
+            {
+                "question": "( )事实上确立了毛泽东在党中央和红军的领导地位.",
+                "answers": [
+                    "A.八七会议",
+                    "B.中共七大",
+                    "C.古田会议",
+                    "D.遵义会议"
+                ],
+                "correctAnswer": "D.遵义会议"
+            },
+            {
+                "question": "下列不属于毛泽东思想活的灵魂的是( )",
+                "answers": [
+                    "A.实事求是",
+                    "B.群众路线",
+                    "C.党的建设",
+                    "D.独立自主"
+                ],
+                "correctAnswer": "C.党的建设"
+            },
+            {
+                "question": "中国共产党的生命线和根本工作路线是( )",
+                "answers": [
+                    "A.实事求是",
+                    "B.群众路线",
+                    "C.独立自主",
+                    "D.党的建设"
+                ],
+                "correctAnswer": "B.群众路线"
+            },
+            {
+                "question": "在中国共产党历史上,( )第一个明确提出\"马克思主义中国化\"的科学命题和重大任务.",
+                "answers": [
+                    "A.刘少奇",
+                    "B.周恩来",
+                    "C.陈独秀",
+                    "D.毛泽东"
+                ],
+                "correctAnswer": "D.毛泽东"
+            },
+            {
+                "question": "把毛泽东思想写入党章,确立为中国共产党必须长期坚持的指导思想的会议是( ).",
+                "answers": [
+                    "A.党的六届七中全会",
+                    "B.党的七届六中全会",
+                    "C.党的六大",
+                    "D.党的七大"
+                ],
+                "correctAnswer": "D.党的七大"
+            },
+            {
+                "question": "毛泽东思想形成的实践基础是( )",
+                "answers": [
+                    "A.革命与建设实践",
+                    "B.武装斗争实践",
+                    "C.农民运动",
+                    "D.工人运动"
+                ],
+                "correctAnswer": "A.革命与建设实践"
+            },
+            {
+                "question": "毛泽东思想是( )",
+                "answers": [
+                    "A.改革开放实践经验的总结",
+                    "B.马克思主义中国化的第二大重大理论成果",
+                    "C.中国共产党集体智慧的结晶",
+                    "D.毛泽东个人的思想"
+                ],
+                "correctAnswer": "C.中国共产党集体智慧的结晶"
+            },
+            {
+                "question": "毛泽东思想继续发展的时期是( )",
+                "answers": [
+                    "A.新中国成立以后",
+                    "B.抗日战争时期",
+                    "C.解放战争时期",
+                    "D.土地革命时期"
+                ],
+                "correctAnswer": "A.新中国成立以后"
+            },
+            {
+                "question": "( )将\"构建社会主义和谐社会\"列为全面提高党的执政能力的五大能力之一.",
+                "answers": [
+                    "A.十六届六中全会",
+                    "B.十六届五中全会",
+                    "C.十六届四中全会",
+                    "D.十六届二中全会"
+                ],
+                "correctAnswer": "C.十六届四中全会"
+            },
+            {
+                "question": "( )明确确立了到2020年构建社会主义和谐社会的目标任务.",
+                "answers": [
+                    "A.十七大",
+                    "B.十六届四中全会",
+                    "C.十六大",
+                    "D.十六届六中全会"
+                ],
+                "correctAnswer": "D.十六届六中全会"
+            },
+            {
+                "question": "下列不属于构建社会主义和谐社会应该遵循的原则的是( )",
+                "answers": [
+                    "A.科学发展",
+                    "B.以人为本",
+                    "C.改革开放",
+                    "D.实事求是"
+                ],
+                "correctAnswer": "C.改革开放"
+            },
+            {
+                "question": "下列不属于构建社会主义和谐社会指导思想的是( )",
+                "answers": [
+                    "A.斯大林主义",
+                    "B.\"三个代表\"重要思想",
+                    "C.邓小平理论",
+                    "D.毛泽东思想"
+                ],
+                "correctAnswer": "A.斯大林主义"
+            },
+            {
+                "question": "下列不属于社会主义和谐社会的总要求的是( )",
+                "answers": [
+                    "A.安定有序",
+                    "B.充满活力",
+                    "C.和谐友爱",
+                    "D.民主法治"
+                ],
+                "correctAnswer": "C.和谐友爱"
+            },
+            {
+                "question": "党的( )把科学发展观确定为党必须长期坚持的指导思想.",
+                "answers": [
+                    "A.十七大",
+                    "B.十六大",
+                    "C.十八大",
+                    "D.十五大"
+                ],
+                "correctAnswer": "C.十八大"
+            },
+            {
+                "question": "党的文件中第一次提出科学发展观的是党的( )",
+                "answers": [
+                    "A.十六届三中全会",
+                    "B.十六届四中全会",
+                    "C.十六届二中全会",
+                    "D.十六届一中全会"
+                ],
+                "correctAnswer": "A.十六届三中全会"
+            },
+            {
+                "question": "科学发展观的核心立场( )",
+                "answers": [
+                    "A.统筹兼顾",
+                    "B.全面协调可持续",
+                    "C.推动经济可持续发展",
+                    "D.以人为本"
+                ],
+                "correctAnswer": "D.以人为本"
+            },
+            {
+                "question": "科学发展观的第一要义( )",
+                "answers": [
+                    "A.全面协调可持续",
+                    "B.推动经济可持续发展",
+                    "C.以人为本",
+                    "D.统筹兼顾"
+                ],
+                "correctAnswer": "B.推动经济可持续发展"
+            },
+            {
+                "question": "胡锦涛明确指出:\"( )是中国特色社会主义的本质属性.\"",
+                "answers": [
+                    "A.科学发展",
+                    "B.以人为本",
+                    "C.社会和谐",
+                    "D.共同富裕"
+                ],
+                "correctAnswer": "C.社会和谐"
+            },
+            {
+                "question": "()之后,东欧一社会主义国家弥漫着动荡不安的气氛,相继发生了波匈事件.",
+                "answers": [
+                    "A.第一个五年计划完成",
+                    "B.斯大林去世",
+                    "C.赫鲁晓夫上台",
+                    "D.苏共二十大"
+                ],
+                "correctAnswer": "D.苏共二十大"
+            },
+            {
+                "question": "( )正确分析了社会主义改造完成之后我国社会主义矛盾的变化.",
+                "answers": [
+                    "A.党的七届三中全会",
+                    "B.中央政治局扩大会议",
+                    "C.最高国务院会议",
+                    "D.党的八大"
+                ],
+                "correctAnswer": "D.党的八大"
+            },
+            {
+                "question": "1956年初,毛泽东初步总结我国社会主义建设经验的报告是( )",
+                "answers": [
+                    "A.《关于正确处理人民内部矛盾》",
+                    "B.《论十大关系》",
+                    "C.《人的正确思想是从哪里来的》",
+                    "D.《关于正确处理人民内部矛盾的问题》"
+                ],
+                "correctAnswer": "B.《论十大关系》"
+            },
+            {
+                "question": "1950年2月14日,毛泽东在莫斯科与苏联签订了( )",
+                "answers": [
+                    "A.《中苏友好同盟条约》",
+                    "B.《雅尔塔协定》",
+                    "C.《中苏互不侵犯条约》",
+                    "D.《中苏友好同盟互助条约》"
+                ],
+                "correctAnswer": "D.《中苏友好同盟互助条约》"
+            },
+            {
+                "question": "《论十大关系》的报告确定了一个基本方针,就是( )",
+                "answers": [
+                    "A.巩固社会主义",
+                    "B.学习苏联经验",
+                    "C.调动一切积极因素为社会主义建设服务",
+                    "D.正确认识和处理社会矛盾"
+                ],
+                "correctAnswer": "C.调动一切积极因素为社会主义建设服务"
+            },
+            {
+                "question": "下列不属于社会主义建设初步探索的理论成果的是( )",
+                "answers": [
+                    "A.正确认识和处理社会主义社会矛盾的思想",
+                    "B.走中国工业化道路的思想",
+                    "C.社会主义改造理论",
+                    "D.调度一切积极因素为社会主义事业服务"
+                ],
+                "correctAnswer": "C.社会主义改造理论"
+            },
+            {
+                "question": "在《关于正确处理人民内部矛盾的问题》中,毛泽东认为社会主义社会基本矛盾的特点是( )",
+                "answers": [
+                    "A.又相适应又相矛盾",
+                    "B.完全相适应",
+                    "C.完全相矛盾",
+                    "D.完全对立"
+                ],
+                "correctAnswer": "A.又相适应又相矛盾"
+            },
+            {
+                "question": "在苏共二十大召开后不久,毛主席便写成了( )一文,对重.轻.农业的发展比重进行了调整.",
+                "answers": [
+                    "A.《关于正确处理人民内部矛盾的问题》",
+                    "B.《论联合政府》",
+                    "C.《论十大关系》",
+                    "D.《矛盾论》"
+                ],
+                "correctAnswer": "C.《论十大关系》"
+            },
+            {
+                "question": "标志着党探索中国社会主义建设道路的良好开端的是( )",
+                "answers": [
+                    "A.《论人民民主专政》",
+                    "B.《人的正确思想是从哪里来的?》",
+                    "C.《关于正确处理人民内部矛盾的问题》",
+                    "D.《论十大关系》"
+                ],
+                "correctAnswer": "D.《论十大关系》"
+            },
+            {
+                "question": "解决人民内部矛盾的办法是( )",
+                "answers": [
+                    "A.专政",
+                    "B.民主",
+                    "C.制裁",
+                    "D.斗争"
+                ],
+                "correctAnswer": "B.民主"
+            },
+            {
+                "question": "( )系统论述了毛泽东的新民主主义理论,标志着毛泽东思想的成熟.",
+                "answers": [
+                    "A.《中国革命与中国共产党》",
+                    "B.《新民主主义论》",
+                    "C.《论联合政府》",
+                    "D.《<共产党人>发刊词》"
+                ],
+                "correctAnswer": "B.《新民主主义论》"
+            },
+            {
+                "question": "下列不属于新民主主义革命的三大法宝的是( )",
+                "answers": [
+                    "A.党的建设",
+                    "B.群众路线",
+                    "C.统一战线",
+                    "D.武装斗争"
+                ],
+                "correctAnswer": "B.群众路线"
+            },
+            {
+                "question": "中华人民共和国的成立,标志着中国已从半殖民地半封建社会进入到( ).",
+                "answers": [
+                    "A.资本主义社会",
+                    "B.社会主义社会",
+                    "C.新民主主义社会",
+                    "D.共产主义社会"
+                ],
+                "correctAnswer": "C.新民主主义社会"
+            },
+            {
+                "question": "中国资产阶级民主革命进入新民主主义革命的崭新阶段的标志是( ).",
+                "answers": [
+                    "A.五四运动",
+                    "B.十月革命",
+                    "C.中国共产党的成立",
+                    "D.新文化运动"
+                ],
+                "correctAnswer": "A.五四运动"
+            },
+            {
+                "question": "党在社会主义过渡时期的总路线是( ).",
+                "answers": [
+                    "A.一化三改",
+                    "B.群众路线",
+                    "C.调整.巩固.充实.提高",
+                    "D.一个中心,两个基本点"
+                ],
+                "correctAnswer": "A.一化三改"
+            },
+            {
+                "question": "新旧民主主义革命的根本区别是( )",
+                "answers": [
+                    "A.革命动力不同",
+                    "B.革命领导阶级不同",
+                    "C.革命对象不同",
+                    "D.革命背景不同"
+                ],
+                "correctAnswer": "B.革命领导阶级不同"
+            },
+            {
+                "question": "新民主主义社会中,处于领导地位的经济成分是( )",
+                "answers": [
+                    "A.集体经济",
+                    "B.国营经济",
+                    "C.国家资本主义经济",
+                    "D.个体经济"
+                ],
+                "correctAnswer": "B.国营经济"
+            },
+            {
+                "question": "新民主主义革命理论的核心问题是( )",
+                "answers": [
+                    "A.无产阶级领导权问题",
+                    "B.农民问题",
+                    "C.革命性质问题",
+                    "D.土地问题"
+                ],
+                "correctAnswer": "A.无产阶级领导权问题"
+            },
+            {
+                "question": "新民主主义革命的性质是( )",
+                "answers": [
+                    "A.无产阶级领导的无产阶级革命",
+                    "B.资产阶级领导的资产阶级革命",
+                    "C.无产阶级领导的资产阶级革命",
+                    "D.资产阶级领导的无产阶级革命"
+                ],
+                "correctAnswer": "C.无产阶级领导的资产阶级革命"
+            },
+            {
+                "question": "毛泽东第一次明确提出\"新民主主义\"这一命题的著作是( ).",
+                "answers": [
+                    "A.《中国革命战争与战略问题》",
+                    "B.《论政策》",
+                    "C.《中国革命与中国共产党》",
+                    "D.《新民主主义论》"
+                ],
+                "correctAnswer": "C.《中国革命与中国共产党》"
+            }
+        ];
+
+        // 从题库中随机抽取一道题目
+        const quizIndex = Math.floor(Math.random() * quizData.length);
+        const quiz = quizData[quizIndex];
+        console.log(quizIndex);
+        // 显示题目和选项
+        const quizElement = document.getElementById("quiz");
+        quizElement.innerHTML = `
+          <p>${quiz.question}</p>
+          <ul>
+            ${quiz.answers
+                .map(
+                    (answer) => `<li>${answer}</li>`
+                )
+                .join("")}
+          </ul>
+        `;
+
+        // 监听答案点击事件
+        const answerElements = quizElement.querySelectorAll("li");
+        for (let i = 0; i < answerElements.length; i++) {
+            const answerElement = answerElements[i];
+            answerElement.addEventListener("click", () => {
+                // 检查答案是否正确
+                const isCorrect = quiz.correctAnswer === answerElement.innerText;
+                const resultElement = document.getElementById("result");
+                if (isCorrect) {
+                    resultElement.innerText = "正确的。 答案是: " + quiz.correctAnswer;
+                    resultElement.style.color = "green";
+                } else {
+                    resultElement.innerText =
+                        "错误的！ 正确答案是: " + quiz.correctAnswer;
+                    resultElement.style.color = "red";
+                }
+            });
+        }
+
+        // 监听“下一题”按钮点击事件
+
+        const nextButton = document.getElementById("next");
+        nextButton.addEventListener("click", () => {
+            // 随机抽取下一道题目
+            const nextQuizIndex = Math.floor(Math.random() * quizData.length);
+            const nextQuiz = quizData[nextQuizIndex];
+            console.log(nextQuizIndex);
+            // 显示题目和选项
+            const quizElement = document.getElementById("quiz");
+            quizElement.innerHTML = `
+        <p>${nextQuiz.question}</p>
+        <ul>
+          ${nextQuiz.answers
+                    .map(
+                        (answer) => `<li>${answer}</li>`
+                    )
+                    .join("")}
+        </ul>
+      `;
+
+            const answerElements = quizElement.querySelectorAll("li");
+            for (let i = 0; i < answerElements.length; i++) {
+                const answerElement = answerElements[i];
+                answerElement.addEventListener("click", () => {
+                    // 检查答案是否正确
+                    const isCorrect = nextQuiz.correctAnswer === answerElement.innerText;
+                    const resultElement = document.getElementById("result");
+                    if (isCorrect) {
+                        resultElement.innerText = "正确的。 答案是: " + nextQuiz.correctAnswer;
+                        resultElement.style.color = "green";
+                    } else {
+                        resultElement.innerText =
+                            "错误的！ 正确答案是: " + nextQuiz.correctAnswer;
+                        resultElement.style.color = "red";
+                    }
+                });
+            }
+
+            // 清空答题结果
+            const resultElement = document.getElementById("result");
+            resultElement.innerText = "";
+        });
+
+        // 监听“退出”按钮点击事件
+        const quitButton = document.getElementById("quit");
+        quitButton.addEventListener("click", () => {
+            // 退出程序
+            window.close();
+        });
+    </script>
+</body>
