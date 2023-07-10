@@ -1,0 +1,1186 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>人机交互笔记 | Joel Station</title><meta name="keywords" content="笔记"><meta name="author" content="Joel"><meta name="copyright" content="Joel"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="概述什么是人机交互人机交互是指关于设计、实现和评估供人们使用的交互式计算机系统，并围绕相关的主要现象进行研究的学科。 ⭐人机交互技术的研究内容 7点 人机交互界面表示模型与设计方法  Web设计  移动界面设计 移动界面的设计方法、可用性与评估原则、移动界面导航技术以及移动界面的实现技术和开发工具。  认知与智能用户界面 上下文感知、三维输入、语音识别、手写识别、自然语言理解。  多通道交互技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="人机交互笔记">
+<meta property="og:url" content="https://jjuprising.github.io/2023/07/09/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Joel Station">
+<meta property="og:description" content="概述什么是人机交互人机交互是指关于设计、实现和评估供人们使用的交互式计算机系统，并围绕相关的主要现象进行研究的学科。 ⭐人机交互技术的研究内容 7点 人机交互界面表示模型与设计方法  Web设计  移动界面设计 移动界面的设计方法、可用性与评估原则、移动界面导航技术以及移动界面的实现技术和开发工具。  认知与智能用户界面 上下文感知、三维输入、语音识别、手写识别、自然语言理解。  多通道交互技术">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://jjuprising.github.io/images/NoCover.jpg">
+<meta property="article:published_time" content="2023-07-09T15:05:50.000Z">
+<meta property="article:modified_time" content="2023-07-09T16:09:54.658Z">
+<meta property="article:author" content="Joel">
+<meta property="article:tag" content="笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jjuprising.github.io/images/NoCover.jpg"><link rel="shortcut icon" href="/img/jc_favicon2.png"><link rel="canonical" href="https://jjuprising.github.io/2023/07/09/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E7%AC%94%E8%AE%B0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '人机交互笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-07-10 00:09:54'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/jc_avator2.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">32</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/images/NoCover.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Joel Station</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">人机交互笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-07-09T15:05:50.000Z" title="发表于 2023-07-09 23:05:50">2023-07-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-09T16:09:54.658Z" title="更新于 2023-07-10 00:09:54">2023-07-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/">本科课程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">14.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>43分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="人机交互笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="什么是人机交互"><a href="#什么是人机交互" class="headerlink" title="什么是人机交互"></a>什么是人机交互</h2><p>人机交互是指关于<u>设计</u>、<u>实现</u>和<u>评估</u>供人们使用的交互式计算机系统，并围绕<u>相关的主要现象</u>进行研究的学科。</p>
+<h2 id="⭐人机交互技术的研究内容-7点"><a href="#⭐人机交互技术的研究内容-7点" class="headerlink" title="⭐人机交互技术的研究内容 7点"></a>⭐人机交互技术的研究内容 7点</h2><ol>
+<li><p>人机交互界面表示模型与设计方法</p>
+</li>
+<li><p>Web设计</p>
+</li>
+<li><p>移动界面设计</p>
+<p>移动界面的设计方法、可用性与评估原则、移动界面导航技术以及移动界面的实现技术和开发工具。</p>
+</li>
+<li><p>认知与智能用户界面</p>
+<p>上下文感知、三维输入、语音识别、手写识别、自然语言理解。</p>
+</li>
+<li><p>多通道交互技术</p>
+<p>视觉、听觉、触觉和力觉语音、手势、眼神、表情表示模型、评估方法以及多通道信息的融合等。</p>
+</li>
+<li><p>群件</p>
+<p>群件系统的体系结构、计算机支持的交流与共享信息的方式、交流中的决策支持工具、应用程序共享以及同步实现方法等。</p>
+</li>
+<li><p>可用性分析与评估</p>
+</li>
+</ol>
+<h2 id="人机交互技术所导致的社会问题与解决方案"><a href="#人机交互技术所导致的社会问题与解决方案" class="headerlink" title="人机交互技术所导致的社会问题与解决方案"></a>人机交互技术所导致的社会问题与解决方案</h2><ul>
+<li>缺点<ul>
+<li>焦虑</li>
+<li>疏远</li>
+<li>信息匮乏的少数群体</li>
+<li>个人的无力</li>
+<li>令人困惑的复杂性和速度</li>
+<li>组织脆弱性</li>
+<li>侵犯隐私</li>
+<li>失业和裁员</li>
+<li>缺乏专业的责任制</li>
+<li>恶化的人类形象</li>
+</ul>
+</li>
+<li>解决方案<ul>
+<li>以人为本的参与式设计</li>
+<li>组织的支持</li>
+<li>工作设计</li>
+<li>教育</li>
+<li>反馈、认可和奖励</li>
+<li>提高公共意识</li>
+<li>立法</li>
+</ul>
+</li>
+</ul>
+<h2 id="⭐设计上的不同观点📑"><a href="#⭐设计上的不同观点📑" class="headerlink" title="⭐设计上的不同观点📑"></a>⭐设计上的不同观点📑</h2><ul>
+<li>软件工程师(技术视角)<ul>
+<li>软件需求分析</li>
+<li>软件设计</li>
+<li>接口软件编码</li>
+<li>交互支撑软件编码</li>
+<li>应用程序编码</li>
+<li>软件验证和确认</li>
+</ul>
+</li>
+<li>人机交互设计师(用户视角)<ul>
+<li>用户任务分析</li>
+<li>可用性规格说明</li>
+<li>交互体系结构&#x2F;设计</li>
+<li>界面设计&#x2F;规格说明</li>
+<li>软件支撑确认</li>
+<li>可用性评估</li>
+</ul>
+</li>
+</ul>
+<h2 id="⭐发展历程"><a href="#⭐发展历程" class="headerlink" title="⭐发展历程"></a>⭐发展历程</h2><p>基本交互：命令行<br>图形界面：GUI<br>语音交互：语音助手<br>体感交互：5D电影</p>
+<h2 id="⭐人机交互的三个革命性产品"><a href="#⭐人机交互的三个革命性产品" class="headerlink" title="⭐人机交互的三个革命性产品"></a>⭐人机交互的三个革命性产品</h2><p>鼠标<br>多点触控<br>体感设备</p>
+<h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><h2 id="可用性工程"><a href="#可用性工程" class="headerlink" title="可用性工程"></a>可用性工程</h2><h2 id="🟡交互系统可用性的概念📑"><a href="#🟡交互系统可用性的概念📑" class="headerlink" title="🟡交互系统可用性的概念📑"></a>🟡交互系统可用性的概念📑</h2><p>可用性是指当用户在特定的环境中使用产品完成具体任务时交互过程的有<strong>效性</strong>、<strong>交互效率</strong>和<strong>用户满意度</strong>。</p>
+<p><img src="https://s2.loli.net/2023/07/09/WATK3ecRrnbXQ6Y.png"></p>
+<h2 id="增强可用性的好处"><a href="#增强可用性的好处" class="headerlink" title="增强可用性的好处"></a>增强可用性的好处</h2><ol>
+<li>提高生产力</li>
+<li>增加销售和利润</li>
+<li>降低培训和产品支持的成本</li>
+<li>减少开发时间和开发成本</li>
+<li>减少维护成本</li>
+<li>增加用户的满意度</li>
+</ol>
+<h2 id="可用性的目标和度量📑-书p9最后"><a href="#可用性的目标和度量📑-书p9最后" class="headerlink" title="可用性的目标和度量📑 书p9最后"></a>可用性的目标和度量📑 书p9最后</h2><h3 id="🟡目标"><a href="#🟡目标" class="headerlink" title="🟡目标"></a>🟡目标</h3><p><strong>可用性目标</strong>：<strong>有效性、交互效率和用户满意度</strong>，有效性通常是软件测试需要解决的基本问题，因此度量可用性两种只关注后两个目标。</p>
+<h3 id="🟡度量"><a href="#🟡度量" class="headerlink" title="🟡度量"></a>🟡度量</h3><p>1.<strong>学习时间</strong> 典型的用户群体需要花多长时间来学习如何使用与一组任务相关的任务?  效率</p>
+<p>2.<strong>运行速度</strong> 执行基准任务需要花多长时间? 效率</p>
+<p>3.<strong>用户出错率</strong> 在基准测试任务中会犯多少错误? </p>
+<p>4.<strong>记忆保持时间</strong> 使用频率和易于学习有助于提高用户记忆  </p>
+<p>5.<strong>主观满意度</strong> 允许用户通过访谈、自由形式的评论和满意度量表进行反馈 用户满意度</p>
+<h3 id="五个核心人为因素"><a href="#五个核心人为因素" class="headerlink" title="五个核心人为因素"></a>五个核心人为因素</h3><p>–易学习 支持用户对产品的入门使用户在以后使用过程中的持续学习。</p>
+<p>–有效性 怎样准确、完整地完成工作或达到目标。</p>
+<p>–效率 怎样快速地完成工作。</p>
+<p>–吸引力 用户界面如何吸引用户进行交互并在使用中得到满意和满足。</p>
+<p>–容错 产品避免错误的方式并帮助用户修正错误的能力。</p>
+<p>可靠性<br>标准化集成一致性和可移植性</p>
+<p>可用性分析</p>
+<h2 id="支持可用性的设计原则（如何保证三个原则–多选题）-p47"><a href="#支持可用性的设计原则（如何保证三个原则–多选题）-p47" class="headerlink" title="支持可用性的设计原则（如何保证三个原则–多选题） p47"></a>支持可用性的设计原则（如何保证三个原则–多选题） p47</h2><p>三个原则</p>
+<ul>
+<li>可学习性<ul>
+<li>可预见性 <strong>用户利用对前面交互过程的了解就足以确定后面交互的结果</strong>。</li>
+<li>同步性 是指<strong>用户依据界面当前状态评估过去操作造成影响的能力</strong>，也就是说用户能不能同步地知道交互操作的结果。</li>
+<li>熟悉性 如果<strong>新系统跟过去使用过的类似系统有一 定相关性</strong>，那使用起来就比较方便。</li>
+<li>通用性 就是在交互中尽可能地提供一些<strong>通用的或能够从现有功能类推出来的功能</strong></li>
+<li>一致性 <strong>是指在相似的环境下或执行相似的任务时一般会执行相似的行为</strong>。</li>
+</ul>
+</li>
+<li>灵活性<ul>
+<li>可定制性 <strong>指用户或系统修改界面的能力</strong></li>
+<li>对话主动性</li>
+<li>多线程 <strong>同时支持多个交互任务</strong></li>
+<li>可互换性 可互换性意味着任务的执行可以在<strong>系统控制和用户控制间进行转移</strong>。</li>
+<li>可替换性 可替换性要求<strong>等量的数字可以彼此交换</strong></li>
+</ul>
+</li>
+<li>鲁棒性<ul>
+<li>可观察性</li>
+<li>可恢复性</li>
+<li>响应性</li>
+<li>任务规范性</li>
+</ul>
+</li>
+</ul>
+<p>什么是交互系统的可用性<br>可用性的度量</p>
+<h2 id="可用性动机"><a href="#可用性动机" class="headerlink" title="可用性动机"></a>可用性动机</h2><ul>
+<li>专业环境：精确</li>
+<li>工商业：易学、准确、性能的折中</li>
+<li>娱乐：主观满意度</li>
+<li>社会：隐私、安全</li>
+</ul>
+<h2 id="你是否体验过可用性差的软件系统？可否分析其原因？📑"><a href="#你是否体验过可用性差的软件系统？可否分析其原因？📑" class="headerlink" title="你是否体验过可用性差的软件系统？可否分析其原因？📑"></a>你是否体验过可用性差的软件系统？可否分析其原因？📑</h2><h1 id="第二章-通用性"><a href="#第二章-通用性" class="headerlink" title="第二章 通用性"></a>第二章 通用性</h1><h2 id="🟡通用性的目标-书p26"><a href="#🟡通用性的目标-书p26" class="headerlink" title="🟡通用性的目标 书p26"></a>🟡通用性的目标 书p26</h2><p><strong>满足所有用户的需求</strong></p>
+<p>作为专业人士，用户会因为我们<strong>满足了他们的需求</strong>而记住我们<br>移动设备的巨大国际消费市场，陡然提高了对普遍可用性设计的压力</p>
+<h2 id="⭐人的感知和知觉的特性-p10"><a href="#⭐人的感知和知觉的特性-p10" class="headerlink" title="⭐人的感知和知觉的特性 p10"></a>⭐人的感知和知觉的特性 p10</h2><p>人机交互过程主要是通过<strong>视觉、听觉和触觉</strong>感知进行的。</p>
+<ul>
+<li><p><strong>视觉</strong></p>
+<ul>
+<li>一方面，眼睛特性决定人类无法看到某些事物</li>
+<li>另一方面，视觉系统对不完全信息发挥一定想象力</li>
+<li>所以人机交互设计时需要了解人真正能够看到的信息</li>
+</ul>
+</li>
+<li><p><strong>听觉</strong></p>
+<ul>
+<li>声音三个属性：<strong>音调、响度和音色</strong></li>
+</ul>
+</li>
+<li><p><strong>触觉和力觉</strong></p>
+<ul>
+<li><p>触觉和上面两个最大不同在于<strong>非局部性</strong></p>
+<ul>
+<li>温度感受器——冷热</li>
+<li>伤害感受器——疼痛</li>
+<li>机械刺激感受器——压力</li>
+</ul>
+</li>
+<li><p>力觉指肌肉和关节等感受到的<strong>力量感和方向感</strong></p>
+</li>
+</ul>
+</li>
+<li><p><strong>内部感觉</strong></p>
+<ul>
+<li>体位感觉<ul>
+<li>快速适应感受器</li>
+<li>慢速适应感受器</li>
+<li>位置感受器</li>
+</ul>
+</li>
+<li>深度感觉</li>
+<li>内脏感觉</li>
+</ul>
+</li>
+</ul>
+<h2 id="⭐🟡知觉的特性📑-ppt"><a href="#⭐🟡知觉的特性📑-ppt" class="headerlink" title="⭐🟡知觉的特性📑 ppt"></a>⭐🟡知觉的特性📑 ppt</h2><p>参考答案：</p>
+<p>① <strong>知觉的选择性</strong>：分化对象和背景的选择性是知觉最基本的特性，背景往往衬托着、弥漫着、扩展着，对象往往轮廓分明、结构完整。</p>
+<p>② <strong>知觉的整体性</strong>(补全残缺)：当一个残缺不全的部分呈现到眼前时，人脑中的神经联系马上被激活，从而把知觉对象补充完整。格式塔心理学家认为，主要有五种完形法则：图形背景法则，接近法则，相似法则，闭合法则和连续法则。</p>
+<ul>
+<li>图形背景法则：在界面设计中的实例</li>
+<li>接近律：空间距离接近者容易被感知为一个整体</li>
+<li>相似律：相似（颜色、形状、纹理）的图形会被认为一个整体</li>
+<li>闭合律：知觉具有把不完全图形补充为一个完全图形的倾向</li>
+<li>连续律：把经历最小变化或最少阻断的直线或者圆滑曲线感知为一个整体</li>
+</ul>
+<p>③ <strong>知觉的理解性</strong>：<strong>旧经验</strong>与<strong>新刺激</strong>建立多维度、多层次的联系，以保证理解的全面和深刻。</p>
+<p>④ <strong>知觉的恒常性</strong>：当客观条件在一定范围内改变时,人的知觉映象在相当程度上却保持着它的<strong>稳定性</strong>，即知觉恒常性。(例如红旗不管在什么光照下，人都会把它知觉为红色。)</p>
+<h2 id="常见认知📑"><a href="#常见认知📑" class="headerlink" title="常见认知📑"></a>常见认知📑</h2><ul>
+<li><strong>感知与识别</strong>：人们可以使用感官从环境中获取信息，并把它转变为对物品、事件、声音和味觉的体验。</li>
+<li><strong>注意</strong>：注意通常是指选择性注意，即注意是有选择的加工某些刺激而忽视其他刺激的倾向。</li>
+<li><strong>记忆</strong>：记忆就是回忆各种知识以便采取适当的行动。</li>
+<li><strong>问题解决</strong>：问题解决是由一定的情景引起的，按照一定的目标，应用各种认知活动、技能等，经过一系列的思维操作，使问题得以解决的过程。</li>
+<li><strong>语言处理</strong>：阅读、说话和聆听这三种形式的语言处理具有一些相同和不同的属性。相似性之一是，不论用哪一种形式表示，句子或短语的意思是相同的。但是，人们对阅读、说话和聆听的难易有不同的体会。</li>
+</ul>
+<h2 id="⭐影响认知的因素📑"><a href="#⭐影响认知的因素📑" class="headerlink" title="⭐影响认知的因素📑"></a>⭐影响认知的因素📑</h2><p>情感，个体差异，动机，兴趣</p>
+<h2 id="影响感知和运动性能的因素📑"><a href="#影响感知和运动性能的因素📑" class="headerlink" title="影响感知和运动性能的因素📑"></a>影响感知和运动性能的因素📑</h2><p>‒警醒度和警惕性 </p>
+<p>‒疲劳和睡眠不足 </p>
+<p>‒感知(精神)负担 </p>
+<p>‒结果和反馈知识 </p>
+<p>‒单调和乏味 </p>
+<p>‒感官剥夺 </p>
+<p>‒营养与饮食 </p>
+<p>‒恐惧、焦虑、情绪和情感 </p>
+<p>‒吸毒、抽烟和酗酒 </p>
+<p>‒生理周期</p>
+<h3 id="⭐个体差异和不同的使用场所"><a href="#⭐个体差异和不同的使用场所" class="headerlink" title="⭐个体差异和不同的使用场所"></a>⭐个体差异和不同的使用场所</h3><p>人是被细分的，但没有针对用户个性的简单分类，不过有迈尔斯-布里格斯类型指标 (MBTI），分为</p>
+<p>外向还是内向 感觉和直觉 感知与判断 感受与思考</p>
+<ul>
+<li>没有“平均”用户，要么必须做出妥协，要么必须创建多个版本的系统</li>
+<li>音频大小调节</li>
+<li>触摸屏灵敏度调节</li>
+<li>屏幕亮度、对比度调节</li>
+</ul>
+<h2 id="不同的认知和感知能力"><a href="#不同的认知和感知能力" class="headerlink" title="不同的认知和感知能力"></a>不同的认知和感知能力</h2><ul>
+<li>长期记忆和语义记忆</li>
+<li>短期记忆和工作记忆</li>
+<li>问题求解和推理</li>
+<li>决策和风险评估</li>
+<li>语言交流与理解</li>
+<li>搜索、表象和感官记忆</li>
+<li>学习、技能开发、知识获取和概念获得</li>
+</ul>
+<h2 id="🟡残疾用户、老年用户、儿童-书p31-36理解"><a href="#🟡残疾用户、老年用户、儿童-书p31-36理解" class="headerlink" title="🟡残疾用户、老年用户、儿童 书p31-36理解"></a>🟡残疾用户、老年用户、儿童 书p31-36理解</h2><p>针对三种用户如何来设计软件</p>
+<h3 id="描述三个有特殊需求的用户群体。对于这些人群中的每一个人，建议有三种方法可以改善当前的界面，以更好地服务于他们。📑"><a href="#描述三个有特殊需求的用户群体。对于这些人群中的每一个人，建议有三种方法可以改善当前的界面，以更好地服务于他们。📑" class="headerlink" title="描述三个有特殊需求的用户群体。对于这些人群中的每一个人，建议有三种方法可以改善当前的界面，以更好地服务于他们。📑"></a>描述三个有特殊需求的用户群体。对于这些人群中的每一个人，建议有三种方法可以改善当前的界面，以更好地服务于他们。📑</h3><p>参考答案：<br>① 残疾用户： </p>
+<p>i. 视觉障碍者(<strong>文本转成语言</strong>)，听觉障碍者（<strong>语音转文本</strong>），身体障碍(<strong>语言输入设备、人眼凝视技术等</strong>)；<br>ii. 用<strong>脑机接口</strong>等高科技手段，帮助高度残疾或者其他特殊人群（比如渐冻症患者）使用计算机。</p>
+<p>② 老年用户：</p>
+<p> i. 界面使用<strong>更大的字体</strong>，更<strong>明显的图标</strong>，提高<strong>音量</strong>，方便老年用户进行操<br>作。<br>ii. <strong>减少</strong>动画的<strong>干扰</strong>，增加界面的色彩<strong>饱和度</strong>。<br>iii. 包含<strong>语音交互</strong>的模式，<strong>降低操作精度</strong>，减少老年用户的点触。</p>
+<p>③ 儿童用户：</p>
+<p> i. <strong>降低操作精度</strong>，减少精确的操作，比如<u>区域化选择对象</u>、<u>时效性拖动对象</u>等操作，从而提升儿童用户的体验乐趣。<br>ii. 更多的使用<strong>形象化的</strong>、<strong>生活化的</strong>图形界面设计，<u>减少同一化的、相似的、抽象的概念图形</u>，让界面对儿童用户更加有吸引力。<br>iii. <strong>简化应用流程</strong>，降低应用程序逻辑的复杂度。</p>
+<h2 id="⭐通用性设计原则-7条"><a href="#⭐通用性设计原则-7条" class="headerlink" title="⭐通用性设计原则 7条"></a>⭐通用性设计原则 7条</h2><ol>
+<li>公平地使用一Equitable Use：对具有不同能力的人，产品的设计应该是可以让所有人都公平使用的。</li>
+<li>可以灵活地使用一一Flexibility in Use：设计要迎合广泛的个人喜好和能力。</li>
+<li>简单而直观一Simple and Intuitive Use：设计出来的使用方法是容易明白的，而不会受使用者的经验，知识，语言能力及当前的集中程度所影响。</li>
+<li>能感觉到的信息一一Perceptible Information：无论四周的情况或使用者是否有感官上的缺陷，都应该把必要的信息传递给到对使用者。</li>
+<li>容错能力一Tolerance for Error：设计应该可以让误操作或意外动作所造成的反面结果或危险的影响减到最少。</li>
+<li>尽可能地减少体力上的付出一Low Physical Effort：设计应该尽可能地让使用者有效地和舒适地使用，而丝毫不费他们的气力</li>
+<li>提供足够的空间和尺寸，使用者能够接近使用一一Size and Space for Approach and Use</li>
+</ol>
+<p>人的感知和知觉特性  声音属性听觉现象<br>知觉的特性（4个） 晚上的红旗–恒常性<br>个体差异和不同的使用场所<br>个性差异、文化多样性、国际多样性<br>残疾用户、老年用户、儿童<br>什么是认知 常见的认知<br>影响认知的因素<br>作业2</p>
+<h1 id="第三章-指南"><a href="#第三章-指南" class="headerlink" title="第三章 指南"></a>第三章 指南</h1><h2 id="成功的用户界面开发"><a href="#成功的用户界面开发" class="headerlink" title="成功的用户界面开发"></a>成功的用户界面开发</h2><ul>
+<li>用户界面需求</li>
+<li>指南文档和过程</li>
+<li>用户界面软件工具</li>
+<li>专家评审</li>
+<li>可用性测试</li>
+</ul>
+<h2 id="⭐🟡指南、原则与理论（模型）-书p42"><a href="#⭐🟡指南、原则与理论（模型）-书p42" class="headerlink" title="⭐🟡指南、原则与理论（模型） 书p42"></a>⭐🟡指南、原则与理论（模型） 书p42</h2><p>什么是指南？基于最佳实践的具体而通用的做法</p>
+<ul>
+<li><p>指南(Guidelines)</p>
+<ul>
+<li><strong>底层，具体而实用</strong></li>
+<li><strong>规定好的做法并警告危险</strong></li>
+</ul>
+</li>
+<li><p>原则(Principles)<br><strong>中级，策略和规则，用于分析和比较设计备选方案。</strong></p>
+</li>
+<li><p>理论和模型(Theories and model)<br><strong>高层，用一致的术语描述对象和动作；可用于交流、教学、预测</strong></p>
+</li>
+</ul>
+<h2 id="常用指南"><a href="#常用指南" class="headerlink" title="常用指南"></a>常用指南</h2><p>三个常用的指南</p>
+<ul>
+<li>IOS</li>
+<li>微信</li>
+<li>WCAG</li>
+</ul>
+<h2 id="⭐四个具体导航-p12"><a href="#⭐四个具体导航-p12" class="headerlink" title="⭐四个具体导航 p12"></a>⭐四个具体导航 p12</h2><ul>
+<li><p>界面导航 4个要求+NCI指南</p>
+<ul>
+<li><p><img src="https://s2.loli.net/2023/07/09/kCGvrMoOAHhVzD5.png"></p>
+</li>
+<li><p>指南 4个要求</p>
+<ul>
+<li>替代文本。为每个非文本内容提供替代文本。</li>
+<li>基于时间的媒体。为基于时间的媒体（如电影或动画）提供备选项。</li>
+<li>可辨识。使用户更易看到和听到的内容，包括前景和背景的分离。</li>
+<li>可预测。为每一帧加上标题，以方便识别和导航</li>
+</ul>
+</li>
+<li><p>NCI指南</p>
+<ul>
+<li>将任务序列标准化 </li>
+<li>确保嵌入的链接是描述性的 </li>
+<li>使用一致的描述性标题 </li>
+<li>对互斥选择使用单选按钮 </li>
+<li>开发出适合于打印的页面 </li>
+<li>使用缩略图预览较大的图像</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>组织显示 5个目标</p>
+<ul>
+<li>五个高水平的目标<ul>
+<li>数据显示的一致性：各类术语、字体颜色、格式、大小统一标准 详细的动作序列加快学习进度</li>
+<li>用户信息的有效吸收：数据排列整齐、对齐、适当换算、添加标签 降低了错误率</li>
+<li>用户记忆负担最小化：执行步骤少，不应该被要求记住冗长的代码列表</li>
+<li>数据显示与数据输入的兼容性 数据输入信息的格式应与显示信息的格式紧密相 连，例如电话号码中的破折号</li>
+<li>用户控制数据显示的灵活性</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>引起用户注意 8个技术点 p34</p>
+<ul>
+<li>亮度</li>
+<li>标记</li>
+<li>尺寸</li>
+<li>字体选择</li>
+<li>反视频</li>
+<li>闪烁的</li>
+<li>颜色</li>
+<li>音频</li>
+</ul>
+</li>
+<li><p>数据输入 5个目标 p39</p>
+<ul>
+<li>数据输入业务的一致性：加快用户学习速度</li>
+<li>最少的用户输入动作：减少步骤</li>
+<li>用户记忆负担最小化：减少长代码列表</li>
+<li>数据输入与数据显示的兼容性：统一输入和显示的信息格式</li>
+<li>用户控制数据输入的灵活性：按用户喜好灵活调准输入顺序</li>
+</ul>
+</li>
+</ul>
+<h2 id="🟡图形用户界面的主要思想（要能够解释这三个名词）-pptp50❗"><a href="#🟡图形用户界面的主要思想（要能够解释这三个名词）-pptp50❗" class="headerlink" title="🟡图形用户界面的主要思想（要能够解释这三个名词） pptp50❗"></a>🟡图形用户界面的主要思想（要能够解释这三个名词） pptp50❗</h2><ul>
+<li><strong>桌面隐喻 指在用户界面中用人们熟悉的桌面上的图例清楚地表示计算机可以处理的能力直接隐喻、过程隐喻、工具隐喻</strong></li>
+<li><strong>所见即所得 界面中，用户交互行为与应用程序最终产生的结果一致。</strong></li>
+<li><strong>直接操纵：直接操纵是指可以把操作的对象、属性、关系显式地表示出来，用光标、鼠标、触摸屏或数据手套等指点设备直接从屏幕上获取形象化命令与数据的过程</strong><br><strong>界面设计的8条黄金法则：</strong></li>
+</ul>
+<h2 id="🟡图形用户界面设计的一般原则-（区分八条黄金法则）p54-书p51-❗非常重要-背！！"><a href="#🟡图形用户界面设计的一般原则-（区分八条黄金法则）p54-书p51-❗非常重要-背！！" class="headerlink" title="🟡图形用户界面设计的一般原则 （区分八条黄金法则）p54 书p51 ❗非常重要 背！！"></a>🟡图形用户界面设计的一般原则 （区分八条黄金法则）p54 书p51 ❗非常重要 背！！</h2><ol>
+<li><p>坚持一致性</p>
+<p>概念：在相似的环境中应要求一致的动作序列。在设计类似的情况和操作顺序时，通过利用相似的图标、颜色、菜单层次结构等争取一致性，减轻用户认知负担。</p>
+<p>例子：顶部栏结构交互文案高度统一</p>
+<p>违反的例子：①蓝桥杯官方（<a target="_blank" rel="noopener" href="https://dasai.lanqiao.cn/%EF%BC%89%EF%BC%9A%E8%B4%A6%E5%8F%B7%E4%B8%8D%E4%B8%80%E8%87%B4%E3%80%82%E7%99%BB%E5%BD%95%E5%AE%98%E7%BD%91%E6%8A%A5%E5%90%8D%E5%92%8C%E4%BD%BF%E7%94%A8%E5%AE%98%E7%BD%91%E7%BB%83%E4%B9%A0%E7%B3%BB%E7%BB%9F%E9%9C%80%E8%A6%81%E7%99%BB%E9%99%86%E4%B8%A4%E6%AC%A1%EF%BC%8C%E4%B8%8D%E4%B8%80%E8%87%B4%EF%BC%8C%E5%BE%88%E9%BA%BB%E7%83%A6">https://dasai.lanqiao.cn/）：账号不一致。登录官网报名和使用官网练习系统需要登陆两次，不一致，很麻烦</a></p>
+</li>
+<li><p>寻求通用性</p>
+<p>概念：随着使用次数的增加，用户需要有更快的完成任务的方法。 常用操作要有快捷方式。认识到不同用户和可塑性的要求，可使内容的转换更便捷。</p>
+<p>例子：搜索显示搜索热点历史，关联搜索，提前显示词条</p>
+<p>违反：华师图书馆公众号的服务门户：没有将用户常用的功能放在较为显眼的位置，也没有将功能分类，而是单纯的堆叠</p>
+</li>
+<li><p>提供信息反馈</p>
+<p>概念：用户应该始终知道他们当前位于哪里以及发生了什么。 对于每一个行动，在合理的时间内应该有适当的、人类可读的反馈。</p>
+<p>例子：无网络告知状态和操作，给予相关可操作按钮，提供解决方案</p>
+<p>违反：微信好友拉黑无消息反馈、群成员退群群主&#x2F;管理员无消息反馈</p>
+</li>
+<li><p>设计对话框产生结束信息</p>
+<p>概念：不要让你的用户猜测。 告诉他们他们的行为把他们导向了哪里。</p>
+<p>例子：支付成功提示、发布成功提示</p>
+<p>违反：Pixiv lite APP ： 违背了第4 条法则， 在图片下载完成后没有弹窗提示下载完成</p>
+</li>
+<li><p>预防错误</p>
+<p>概念：系统的设计应该尽可能地防止错误，例如不适应的菜单项变为灰色。但是当发生不可避免的错误时，应确保向用户提供简单、直观的分步说明，以尽快、尽可能没有痛苦得解决问题。 </p>
+<p>例子：没有输入不能点击、删除的二次确认，错误后撤回</p>
+<p>违反：华师选课系统：退选操作没有确认提示</p>
+</li>
+<li><p>提供回退操作</p>
+<p>概念：设计师应该为用户提供明显的方式来扭转他们的行为。因为用户知道错误能够撤销后，就能够减轻焦虑，进而尝试不熟悉的选项。</p>
+<p>例子：撤销、保存、返回</p>
+<p>违反：微信不提供灵活的撤销消息，如果超过一定时间未撤回无法再撤回</p>
+</li>
+<li><p>用户掌握控制</p>
+<p>概念：让用户作为行动的发起者，让用户感觉到他们完全控制了数字空间中发生的事件。</p>
+<p>例子：保存、不保存、取消</p>
+<p>违反：微信的语音播放：不允许自己拉动播放进度，这对于60 秒这样的长语音很麻烦</p>
+</li>
+<li><p>减少短期记忆负担</p>
+<p>概念：界面设计应当尽可能简洁，保持适当的信息层次结构，让用户去再认信息而不是去回忆。再认信息总是比回忆更容易，因为再认通过感知线索让相关信息重现。</p>
+<p>例子：观看历史</p>
+<p>微信：表情包不能分组，要发表情包的时候全部在一个组里，挑选困难，记忆负担大</p>
+</li>
+</ol>
+<h2 id="🟡五大人机交互理论-参考案例，会用模型，含义"><a href="#🟡五大人机交互理论-参考案例，会用模型，含义" class="headerlink" title="🟡五大人机交互理论 参考案例，会用模型，含义"></a>🟡五大人机交互理论 参考案例，会用模型，含义</h2><ul>
+<li>层次设计理论 pptp60 书p59，<ul>
+<li>GOMS，以填充猫咪的头为例</li>
+<li>G-<strong>Goals（目标</strong>）就是执行任务最终想要得到的结果。 目标是<u>填充猫咪的头</u></li>
+<li>O-<strong>Operations（操作）</strong>是<strong>任务分析</strong>到最底层的行为，是用户为了完成任务必须执行的基本动作。 需要通过<u>涂鸦</u>来填充区域</li>
+<li>M-<strong>Methods（方法）</strong>是描述如何完成目标的过程。 填充区域需要<u>点击涂鸦工具</u>，然后给区域上色</li>
+<li>S-<strong>Selection rules（选择规则）</strong>是用户要遵守的判定规则， 以确定在特定环境下所使用的方法。 鼠标移动到涂鸦工具20ms-点击2ms-移动到猫咪头位置20ms-点击2ms-填充4ms</li>
+</ul>
+</li>
+<li>行动阶段理论</li>
+<li>一致性理论</li>
+<li>情境理论</li>
+<li>动态理论</li>
+</ul>
+<h2 id="🟡多层级设计-书p47"><a href="#🟡多层级设计-书p47" class="headerlink" title="🟡多层级设计 书p47"></a>🟡多层级设计 书p47</h2><p><strong>多层级设计：循序渐进地教授新手不同的功能，提供个性化的帮助和相应（更多&#x2F;少提示信息）&amp;界面设计（更简单&#x2F;复杂的展示页面）</strong></p>
+<p>指南、原则和理论 明确概念<br>引起用户注意的指南</p>
+<p>13.选择交互风格</p>
+<h2 id="🟡作业-界面设计的八条黄金法则"><a href="#🟡作业-界面设计的八条黄金法则" class="headerlink" title="🟡作业 界面设计的八条黄金法则"></a>🟡作业 界面设计的八条黄金法则</h2><h1 id="第四章-设计"><a href="#第四章-设计" class="headerlink" title="第四章 设计"></a>第四章 设计</h1><h2 id="🟡设计进程-（4个阶段）p16-📑-书p76页图❗背"><a href="#🟡设计进程-（4个阶段）p16-📑-书p76页图❗背" class="headerlink" title="🟡设计进程 （4个阶段）p16 📑 书p76页图❗背"></a>🟡设计进程 （4个阶段）p16 📑 书p76页图❗背</h2><p><img src="https://s2.loli.net/2023/07/09/WQRdx2DKHIruaPf.png"></p>
+<ul>
+<li>1<strong>需求分析</strong><ul>
+<li>对象</li>
+<li>背景</li>
+<li>用户需求分析<ul>
+<li>功能性</li>
+<li>非功能性</li>
+<li>用户体验</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>2概要和详细设计</strong> p21<ul>
+<li><strong>概要设计：明确交互系统的高层次设计或架构。</strong><ul>
+<li>确定技术路线选择</li>
+<li>根据需求划分功能模块</li>
+<li>定义每个模块的职责</li>
+<li>指定各功能模块间的接口</li>
+<li>设计项目数据结构</li>
+<li>编写严谨的数据字典</li>
+<li>指定开发和测试计划</li>
+</ul>
+</li>
+<li><strong>详细设计：制定每个交互的细节。</strong><ul>
+<li>细化每个模块的输入和输出</li>
+<li>指定每个模块内部数据结构</li>
+<li>规划每个模块内部处理算法</li>
+<li>确定每个模块内部状态转换过程</li>
+</ul>
+</li>
+<li><strong>概要设计需映射出高层次的概念：用户、控件、界面、导航机制、工作流程等</strong></li>
+</ul>
+</li>
+<li><strong>3构造与实施</strong><ul>
+<li>将所有精心的设计转化为实际的、可运行的代码。</li>
+</ul>
+</li>
+<li><strong>4评估</strong><ul>
+<li>测试并验证系统的实现情况，以尽可能地确保其符合需求和设计方案。</li>
+</ul>
+</li>
+</ul>
+<h2 id="🟡为医院设计一个系统，使接待员能够更快地为病人登记。-利用四个阶段"><a href="#🟡为医院设计一个系统，使接待员能够更快地为病人登记。-利用四个阶段" class="headerlink" title="🟡为医院设计一个系统，使接待员能够更快地为病人登记。 利用四个阶段"></a>🟡为医院设计一个系统，使接待员能够更快地为病人登记。 利用四个阶段</h2><p>参考答案：<br>没有标准答案，只要以这个项目的管理计划的形式写下答案就好。对于每个阶段，指出应该分配的周数。提示:注意设计过程的四个阶段:</p>
+<ol>
+<li><p><strong>需求分析</strong></p>
+</li>
+<li><p><strong>初步(概念)和详细设计</strong></p>
+</li>
+<li><p><strong>建立和实施</strong></p>
+</li>
+<li><p><strong>评价</strong><br>（同学1）<br><strong>1 需求分析</strong><br>(1) ⽤户对象：病⼈、接待员<br>(2) 背景：医院<br>(3) 功能性需求：病⼈可以通过系统完成个⼈信息的<strong>注册</strong>，若已存在注册， 则可通过该账户进⾏登录并进⾏<strong>挂号</strong>，同时将信息传送⾄接待员。接待员在得到病⼈的个⼈信息后，可通过该系统帮助⽤户进⾏<strong>信息登记</strong>，并查看该类科室是否有空位可及时提供给病⼈进⾏<strong>问诊</strong>，若⽆，则将其按顺序放置于较少⼈在<strong>排队</strong>的序列中。<br>(4) ⾮功能性需求：⽤户可以<strong>修改</strong>⾃⼰的个⼈信息，如身体状态、电话号码、个⼈地址等；接待员在⽤户修改信息时，可以<strong>看到变更</strong>的信息，并将其记录于系统中。<br>(5) ⽤户体验需求：该界⾯将设计帮助功能，以帮助⽤户解决在登陆或注册过程中存在的问题。例如，⽤户当不知道个⼈症状属于哪类科室时，可以点击上⽅的帮助功能中的科室症状分类，并于其中查看个⼈症状所属科室。<br>(6) 阶段完成时间：三周</p>
+</li>
+</ol>
+<p>  <strong>2 概要和详细设计</strong><br>  (1) 概要设计<br>  ①<strong>技术路线</strong>：利⽤⾼保真原型技术进⾏设计，虽花费时间可能较⻓，但能得到⼀个较为完善的模型，他能有基本的计算能⼒，可使设计者可以直观的看到设计的效果。<br>  ②<strong>功能模块</strong>：查询、挂号、登录、注册、预约、分配<br>  ③<strong>⼯作流程</strong>：病⼈先进⾏注册后再登陆账号，按⾃⼰的症状查询是否存在空余的科室，可以按个⼈需求进⾏提前的预约，并进⾏挂号。接待员帮助病⼈挂号后，查询是否有空余的科室，将病⼈分配⾄指定的科室。<br>  (2) 详细设计<br>  注册：病⼈或接待员使⽤系统功能前需进⾏个⼈注册，若已有个⼈信息档案则可跳⾄⽤户<br>  登录阶段；<br>  登录：病⼈或接待员需进⾏登录才可以使⽤系统；<br>  预约：病⼈可以以指定⽇期进⾏预约， 防⽌当天指定的医⽣就诊⼈数已满；<br>  挂号：病⼈进⾏问诊前，需进⾏挂号才可以进⼊科室；<br>  查询：病⼈可以查询需要就诊的科室是否还有空位，或当天指定医⽣是否出诊。<br>  分配： 当病⼈挂号未指定医⽣时，接待员通过该系统帮助其查询是否存在科室有空闲，<br>  并将病⼈安排⾄该类科室。<br>  (3) 阶段完成时间：四周<br>  <strong>3 构造和实施</strong><br>  ⼿机：可利⽤微信⼩程序搭建⼀个相对稳定开发的环境进⾏设计，且在微信上可⽅便⽤户的使⽤；<br>  ⽹络：利⽤web 前端技术如⽹⻚搭建技术可使⽤html 进⾏⽹⻚的设计，同时利⽤java技术进⾏功能的设计，以及axure 进⾏ui 设计。后期还可以利⽤jjsdk 进⾏⽀付等功能的添加</p>
+<p>​        阶段完成时间：四周</p>
+<p><strong>4 评估</strong><br>⾸先需要对注册与登录功能的联动进⾏测试，在进⾏注册后，⽹络<strong>是否保存了⽤户的注册信息</strong>并且⽤户是否可以顺利登录该⽹站，或者未注册的账号是否错误的存在可以登陆的情况。同时验证预约和挂号的功能，⽤户预约后，在指定的⽇期中⽤户是否可以挂号，并且在挂号后，接待员是<strong>否看得⻅病⼈挂号的信息</strong>，以及能否顺利的将病⼈<strong>分配</strong>⾄指定的科室。<br>在⽤户查询到指定的科室后，还需验证是否可以顺利的完成预约或挂号。若以上功能的联动都能准确⽆误的完成，则判定该设计已经顺利地完成，若存在部分功能的缺漏， 则需返回上个阶段进⾏功能的补充。</p>
+<p>阶段完成时间：两周</p>
+<h2 id="⭐用户分析方法"><a href="#⭐用户分析方法" class="headerlink" title="⭐用户分析方法"></a>⭐用户分析方法</h2><ul>
+<li>研究方法<ul>
+<li>情景调查</li>
+<li>用户访谈</li>
+<li>问卷调查</li>
+<li>A&#x2F;B测试</li>
+<li>可用性测试</li>
+<li>用户行为分析 最有效的方法之一</li>
+</ul>
+</li>
+<li>分析方法<ul>
+<li>漏斗模型<ul>
+<li>描述各个 阶段中关键环节的用户转化和流失率情况</li>
+<li><img src="https://s2.loli.net/2023/07/09/bonaBU4hgcmpOFK.png"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>常用用户指标<ul>
+<li>访问用户数</li>
+<li>新用户数</li>
+<li>活跃用户数</li>
+<li>流失用户数</li>
+<li>回访用户数</li>
+</ul>
+</li>
+</ul>
+<h2 id="⭐⭐任务分析❗（7种任务分析的方法-前两种是重点-看课件）pptp37-🟡用例图、顺序图"><a href="#⭐⭐任务分析❗（7种任务分析的方法-前两种是重点-看课件）pptp37-🟡用例图、顺序图" class="headerlink" title="⭐⭐任务分析❗（7种任务分析的方法 前两种是重点 看课件）pptp37  🟡用例图、顺序图"></a>⭐⭐任务分析❗（7种任务分析的方法 前两种是重点 看课件）pptp37  🟡用例图、顺序图</h2><p>任务分析关心的是如何从用户那里<strong>理解和获取用户的思维模式</strong></p>
+<ul>
+<li><p>使用行为分析 p38</p>
+<ul>
+<li><p>要理解系统中<strong>每个参与者及其所需完成的任务</strong></p>
+</li>
+<li><p><strong>一般使用‘用例图’描述</strong> p40</p>
+<p><img src="https://s2.loli.net/2023/07/09/5TaH1k9YLBtbISE.png"></p>
+<p><img src="https://s2.loli.net/2023/07/09/acF6blwOfqJdhKM.png"></p>
+<p><img src="https://s2.loli.net/2023/07/09/1veuZhtdng2UKrp.png"></p>
+</li>
+</ul>
+</li>
+<li><p>顺序分析 p42</p>
+<ul>
+<li><p>使用<strong>顺序图</strong>进行描述。</p>
+</li>
+<li><p><strong>用例常常被细化为一个或更多的顺序图</strong> 返回是虚线！！</p>
+<p><img src="https://s2.loli.net/2023/07/09/8gHwIbLdBeP6lVu.png"></p>
+</li>
+</ul>
+</li>
+<li><p>协作关系分析</p>
+<ul>
+<li>某个用户行为中各个系统元素之间的关系</li>
+<li><img src="https://s2.loli.net/2023/07/09/kB4oYPupngs6iTS.png"></li>
+</ul>
+</li>
+<li><p>工序约束陈述</p>
+<ul>
+<li>工序–步骤，某些工序之间的顺序有一些逻辑关系</li>
+<li><strong>工序约束</strong>例子：eg.系统管理员必须先增加借阅者信息，读者才能登陆。</li>
+</ul>
+</li>
+<li><p>用户任务一览表</p>
+<ul>
+<li><img src="https://s2.loli.net/2023/07/09/E6y47jITAYnG9cV.png"></li>
+</ul>
+</li>
+<li><p>任务金字塔</p>
+<ul>
+<li><strong>任务金字塔描述了不同层次的任务之间的关系</strong> 任务-子任务的结构</li>
+<li><img src="https://s2.loli.net/2023/07/09/QdsvXfiV92ZbJ3z.png"></li>
+</ul>
+</li>
+<li><p>故事讲述和情节分析</p>
+<ul>
+<li>描述情景，使这些故事能够典型的反映交互任务，具有充分的代表性。</li>
+<li>对故事所反映的交互任务的理性分析，分离出故事中所描述的角色、目标、环境、步骤、策略、感情等诸方面的因素。</li>
+</ul>
+</li>
+</ul>
+<h3 id="📑"><a href="#📑" class="headerlink" title="📑"></a>📑</h3><p>考虑设计一个还不存在的系统（全新的系统）。例如，一家完全自动化的快餐店，顾客通过触摸屏交互下单，刷借记卡或信用卡付款，然后取餐——类似于一些超市的自助结账系统，但更为极端。请采用一种任务分析方法进行任务分析。</p>
+<p>顺序分析：</p>
+<p><img src="https://s2.loli.net/2023/07/09/5pKsH136TtILRi2.png"></p>
+<h2 id="🟡设计框架（名词解释3个框架）了解"><a href="#🟡设计框架（名词解释3个框架）了解" class="headerlink" title="🟡设计框架（名词解释3个框架）了解"></a>🟡设计框架（名词解释3个框架）了解</h2><ul>
+<li>🟡以<strong>用户为中心的设计(UCD)</strong> 书p79<ul>
+<li><strong>在设计过程的每个设计阶段都考虑到最终用户的需求、想法和局限性。</strong></li>
+<li><strong>难点：难以选择代表性用户</strong></li>
+<li><strong>Gould、Boies和Lewis于1991年提出了以用户为中心设计的四个重要原则：</strong><br><strong>①及早以用户为中心：设计人员应当在设计过程的早期就致力于了解用户的需要</strong><br><strong>②综合设计：设计的各方面应当齐头并进地发展，而不是顺次发展，使产品的内部设计与用户界面的需要始终保持一致</strong><br><strong>③及早并持续性地进行测试：当前对软件测试的唯一可行的方法是根据经验总结出的方法，即若实际用户认为设计是可行的，它就是可行的</strong><br><strong>④反复式设计：大问题往往会掩盖小问题的存在。设计人员和开发人员应当在整个测试过程中反复对设计进行修改</strong></li>
+</ul>
+</li>
+<li>参与式设计(PD)<ul>
+<li>人们直接参与到他们所用产品和技术的协同设计中。</li>
+</ul>
+</li>
+<li>敏捷交互设计<ul>
+<li>表示一类适用于团队开发的方法，目的是确保灵活性、适应性，并快速对不断变化的需求做出快速反应，并以渐进式开发为基础。</li>
+</ul>
+</li>
+</ul>
+<h2 id="🟡敏捷交互设计-不需要被概念，知道什么是，和一般的有什么区别"><a href="#🟡敏捷交互设计-不需要被概念，知道什么是，和一般的有什么区别" class="headerlink" title="🟡敏捷交互设计 不需要被概念，知道什么是，和一般的有什么区别"></a>🟡敏捷交互设计 不需要被概念，知道什么是，和一般的有什么区别</h2><p><strong>敏捷设计强调“make a real change”而不是”make a report’,<u>频繁的测试与修改</u>是敏捷设计的首要原则</strong><br><strong>表示一类适用于团队开发的方法，目的是确保灵活性、适应性，并快速对不断变化的需求出快速反应，并以渐进式开发为基础</strong></p>
+<ul>
+<li><p>优点</p>
+<ul>
+<li>更快的交付：快速交付软件，使团队能够更快地向客户提供有用的功能。</li>
+<li>更高的客户满意度：鼓励与客户密切合作，这意味着客户可以更频繁地提供反馈和建议，从而确保软件开发符合客户的需求和期望。</li>
+<li>更强的团队合作：强调团队合作和沟通，这有助于确保所有成员都了解项目的目标和愿景</li>
+<li>更灵活的风险管理：团队可以更快地发现和解决问题，从而降低项目风险。</li>
+</ul>
+</li>
+<li><p>缺点</p>
+<ul>
+<li>缺乏明确的计划：难以预测项目完成的时间和成本，因为每个迭代都可能会引入新的需求和挑战。</li>
+<li>需要高度的自我组织能力：要求团队成员具备高度的自我组织和自我驱动能力</li>
+<li>可能导致质量问题：快速交付软件可能导致团队在快速开发的过程中忽略质量问题</li>
+<li>需要客户积极参与：需要客户积极参与，提供反馈和建议，如果客户不积极参与，团队可能会遇到困难。</li>
+</ul>
+</li>
+</ul>
+<p>作业3</p>
+<h1 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h1><h2 id="专家评审和启发式方法"><a href="#专家评审和启发式方法" class="headerlink" title="专家评审和启发式方法"></a>专家评审和启发式方法</h2><h3 id="专家评审"><a href="#专家评审" class="headerlink" title="专家评审"></a>专家评审</h3><ul>
+<li>专家：有形象力的从业人员，或有评审专家资格的人员</li>
+<li>🟡<strong>专家评估法(看一下，总结一下)：以专家为索取未来信息的对象，组织各领域的专家运用专业方面的知识和经验，通过直观的归钠，对预测对象过去和现在的状况、发展变化过程进行综合分析与研究，找出预测对象变化、发展规律、从而对预测对象未来的发展与实际状况做出判断。</strong></li>
+<li>流程：使用某种方法，遍历界面中的所有功能，在较短时间内给出评审结果，通常是一份正式报告书。</li>
+</ul>
+<h4 id="🟡优点-总结"><a href="#🟡优点-总结" class="headerlink" title="🟡优点 总结"></a>🟡优点 总结</h4><ul>
+<li>高效地发现不同问题与进行可用性测试</li>
+<li>严格测试，短时间内迅速给出评审结果</li>
+</ul>
+<h4 id="🟡局限-总结"><a href="#🟡局限-总结" class="headerlink" title="🟡局限 总结"></a>🟡局限 总结</h4><ul>
+<li>专家可能对任务领域或用户社区没有足够了解</li>
+<li>很难了解典型用户，尤其是初次用户的真实行为</li>
+</ul>
+<p><strong>①主要依靠评标专家的知识和经验进行判断，评标的主观性有余，客观性不足；</strong></p>
+<p><strong>②评标的定性方法与定量方法结合不够即使是经验丰富的专家审查员也很难了解典型用户，尤其是初次用户的真实行为。</strong></p>
+<h4 id="常用评审方法"><a href="#常用评审方法" class="headerlink" title="常用评审方法"></a>常用评审方法</h4><ul>
+<li>🟡<strong>启发式评估</strong>：<strong>评审专家对界面进行评审，确定这些界面是否符合启发式设计的简要列表。 书</strong>p99概念 <strong>启发式是以一种快速的看起来不费力的方式做复杂的决定或进行推论时应用的一些简单规则</strong></li>
+<li>指南评审：检查界面是否符合组织文档或其他的指南文档是否相符</li>
+<li>一致性检查：检查所有同类界面的一致性，检查各种术语、标签等是否与培训材料和在线帮助中所描述的一致。</li>
+<li>认知过程走查法：专家模拟用户使用界面来执行典型的任务.</li>
+<li>正式的可用性检查：专家会举办一些与庭审类似的会议，由仲裁人或法官参加。在会议上展示界面，并讨论其优缺点。</li>
+</ul>
+<h3 id="启发性评估的两大原则"><a href="#启发性评估的两大原则" class="headerlink" title="启发性评估的两大原则"></a>启发性评估的两大原则</h3><ul>
+<li>不能是设计师本人</li>
+<li>具有可用性知识</li>
+</ul>
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul>
+<li>成本低、效率高、可以发现大多数可用性问题</li>
+</ul>
+<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul>
+<li>不能代表真实用户、比较主观</li>
+<li>有时发现问题过多；对评估者的要求较高。</li>
+</ul>
+<h2 id="可用性评估的方法（多选或选择）"><a href="#可用性评估的方法（多选或选择）" class="headerlink" title="可用性评估的方法（多选或选择）"></a>可用性评估的方法（多选或选择）</h2><h4 id="诊查式方法：没有用户参与"><a href="#诊查式方法：没有用户参与" class="headerlink" title="诊查式方法：没有用户参与"></a>诊查式方法：<strong>没有用户参与</strong></h4><ul>
+<li>用户模型法：用数学模型来模拟人机交互的过程。<ul>
+<li>GOMS模型是描述任务和用户执行该任务所需知识的方法<ul>
+<li>Goals（目标）</li>
+<li>Operations（操作）</li>
+<li>Methods（方法）</li>
+<li>Selection rules（选择规则）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>启发式评估：使用一套相对简单、通用、有启发性的可用性<strong>原则</strong>进行可用性评估。<ul>
+<li>系统状态可见性</li>
+<li>系统与用户现实世界相互匹配</li>
+<li>用户控制与自由</li>
+<li>一致性与标准</li>
+<li>错误预防</li>
+<li>识别而不是回忆</li>
+<li>使用的灵活性与效率</li>
+<li>美观而精炼的设计</li>
+<li>帮助用户认识、诊断和修正错误</li>
+<li>帮助和文档</li>
+<li>测试方法：A&#x2F;B测试(分割测试)，两个版本相互比较以确定哪个版本的性能更好的方法</li>
+</ul>
+</li>
+<li>认知性遍历：描述系统原型和用户任务，列出所有操作并确定用户身份。<ul>
+<li>进行认知性遍历活动，需要以下四个条件<ul>
+<li>1)对系统原型的详尽描述。这种描述不一定是完整的，但要相当详尽。诸如菜单的位置 描述或措辞选择等这样的细节也可能导致相当大的差异。 </li>
+<li>2)对用户在系统中要完成任务的描述，这些任务应当是大多数用户将要执行的有代表性 的任务。 </li>
+<li>3)一个完整的、书面的操作清单，列出使用给定原型完成任务所需执行的操作。 </li>
+<li>4)确定用户的身份，以及评估人员能够确定这些用户已具有哪一类别的知识和经验。</li>
+</ul>
+</li>
+<li>完成一个任务包括以下步骤<ul>
+<li>1在交互界面上<strong>寻找</strong>能帮助完成任务的行动方案</li>
+<li>2选择并采用看起来最能帮助完成任务的行动</li>
+<li>3评估系统作出的反馈，判断在任务上的进展情况</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="测试式方法：有用户参与"><a href="#测试式方法：有用户参与" class="headerlink" title="测试式方法：有用户参与"></a>测试式方法：有用户参与</h4><ul>
+<li>1用户测试：让用户使用软件系统，由试验人员观察、记录和测量。</li>
+<li>2问卷调查：需求分析——问卷设计——问卷实施——结果分析</li>
+<li>3放声思考法：用户一边执行任务一边大声地说出自己的想法</li>
+<li>4访谈法：研究人员通过与研究对象进行口头交谈</li>
+</ul>
+<h2 id="🟡A-x2F-B测试-书P108"><a href="#🟡A-x2F-B测试-书P108" class="headerlink" title="🟡A&#x2F;B测试 书P108"></a>🟡A&#x2F;B测试 书P108</h2><p>将两组用户随机分配到对照组(无变化)或实验组(有变化)</p>
+<p>例如：将参与者<strong>随机分配到两个测试组(A或B)<strong>，他们看到的界面类似，但要对特定标准进行评估，</strong>且每个测试组得到的是不同版本的界面</strong>。通过对结果进行评估，查看是否存在差异。</p>
+<h2 id="🟡尼尔森十大原则-ppt-8条法则联系记忆"><a href="#🟡尼尔森十大原则-ppt-8条法则联系记忆" class="headerlink" title="🟡尼尔森十大原则 ppt 8条法则联系记忆"></a>🟡尼尔森十大原则 ppt 8条法则联系记忆</h2><p>启发式可用性十大原则</p>
+<p>知道是什么<br>    一<br>        ①一致性与标准<br>    通<br>        ②系统与用户现实世界相互匹配<br>    反<br>        ③系统状态可见性<br>    结<br>    防<br>        ④错误预防<br>        ⑤帮助用户认识、诊断和修正错误</p>
+<p>​    退</p>
+<p>​    控<br>​        ⑥用户控制与自由<br>​    记<br>​        ⑦识别而不是回忆<br>​    ⑧使用的灵活性和效率<br>​    ⑨美观而精炼的设计<br>​    ⑩帮助和文档</p>
+<h2 id="🟡❓作业-多看看"><a href="#🟡❓作业-多看看" class="headerlink" title="🟡❓作业 多看看"></a>🟡❓作业 多看看</h2><p>1)至少描述三种不同类型的专家评审方法<br>2)给出两个专家评论有用的理由。同时给出专家评论的两个局限性<br>3)反对当前流行的文字处理程序界面设计的一个论点是，它将所有功能菜单项一起显示，<br>导致界面过于复杂。这种复杂性会给新手用户带来困惑和祖丧的体验，另一种设计是提供不<br>同层次的功能复杂性，用户可以选择适合自己的层次，当他们熟悉工具时，再进一步到更高<br>的层次，从而感到更舒适，更有效地学习<br>这种情况下应该使用哪种可用性测试？解释为什么。请列出并简要描述可用性测试的步骤</p>
+<p>1.评估的决定因素（可能多选）</p>
+<p>5.可用性评估遵循的原则</p>
+<p>8.启发式评估（十条原则）<br>【GOMS】<br>12.放声思考法<br>作业1 </p>
+<h1 id="第六章-不存在重点考点"><a href="#第六章-不存在重点考点" class="headerlink" title="第六章 不存在重点考点"></a>第六章 不存在重点考点</h1><h2 id="⭐敏捷交互设计-p22"><a href="#⭐敏捷交互设计-p22" class="headerlink" title="⭐敏捷交互设计 p22"></a>⭐敏捷交互设计 p22</h2><ul>
+<li>快速迭代。 简单快捷</li>
+<li>让测试人员和开发者参与讨论需求。 轻松定义可测试的需求。</li>
+<li>编写可测试的需求文档。用“用户故事”方法编写需求文档。</li>
+<li>多沟通，少文档。 好的沟通是敏捷开发的先决条件。</li>
+<li>做好产品原型。 用草图和模型阐明用户界面</li>
+<li>尽早考虑测试。 需求完成时，可以接受的测试用例也基本一起完成了。</li>
+</ul>
+<h1 id="第七章-1"><a href="#第七章-1" class="headerlink" title="第七章 1"></a>第七章 1</h1><h2 id="⭐🟡直接操纵-p10-书p139-特别重要，❗背"><a href="#⭐🟡直接操纵-p10-书p139-特别重要，❗背" class="headerlink" title="⭐🟡直接操纵 p10  书p139 特别重要，❗背"></a>⭐🟡直接操纵 p10  书p139 特别重要，❗背</h2><ul>
+<li>直接操纵最早由<strong>施耐德曼</strong>提出的</li>
+<li>直接操纵界面的<strong>基本思想</strong>是指用<u><strong>光笔、鼠标、触摸屏或数据手套等坐标指点设备，直接从屏幕上获取形象化命令与数据的过程。也就是说，直接操纵的对象是命令、数据或者对数据的某种操作，直接操作的工具是屏幕坐标指点设备</strong></u></li>
+</ul>
+<h3 id="特点-4个-p13"><a href="#特点-4个-p13" class="headerlink" title="特点 4个 p13"></a>特点 4个 p13</h3><ul>
+<li><strong>该系统是真实世界的一种扩展</strong>：用户非常熟悉屏幕中的环境，倾向于关注数据本身</li>
+<li><strong>对象和操作一直可见</strong>：“虚拟现实”–纳尔逊，“所见即所得”–哈特菲尔德，“透明”–鲁特科夫斯基</li>
+<li><strong>迅速且伴有直观显示结果的增量操作</strong>：操作有反馈</li>
+<li><strong>增量操作可以方便地逆转</strong>：提供回退</li>
+</ul>
+<blockquote>
+<p> 真实世界的扩展，对象可见，增量操作，可逆</p>
+</blockquote>
+<h3 id="🟡原则-3个"><a href="#🟡原则-3个" class="headerlink" title="🟡原则 3个"></a>🟡原则 3个</h3><ol>
+<li><strong>用有意义的视觉隐喻连续表示感兴趣的对象和动作。</strong></li>
+<li><strong>用物理动作或按压带标签的按钮来取代复杂的语法，</strong></li>
+<li><strong>使用快速、斩进式的可逆动作，这些动作对兴趣对象的影响立竿见影。</strong></li>
+</ol>
+<h3 id="属性-p17"><a href="#属性-p17" class="headerlink" title="属性 p17"></a>属性 p17</h3><ul>
+<li>新用户快速学会</li>
+<li>专家用户能高效执行任务</li>
+<li>知识渊博用户，可以记住各种操作概念</li>
+<li>很少需要错误提示信息</li>
+<li>用户可立即看到动作是否正促进目标的实现</li>
+<li>减少用户焦虑</li>
+<li>用户作为动作发起者，能感受到处于控制地位，自信并有掌控感</li>
+</ul>
+<h3 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h3><ol>
+<li>控制&#x2F;显示兼容性</li>
+<li>更少的语法减少了错误率</li>
+<li>错误更容易预防</li>
+<li>更快的学习和更高的记忆力</li>
+<li>鼓励探索</li>
+</ol>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><ul>
+<li>空间或视觉表现可能过于分散</li>
+<li>高级流程图和数据库一模式可能会变得混乱</li>
+<li>设计可能会迫使有价值的信息离开屏幕</li>
+<li>用户必须学习图形表示</li>
+<li>视觉表现可能会误导人</li>
+<li>用键盘输入命令可能会更快</li>
+</ul>
+<h3 id="🟡优点-p31-6个-可以延伸（❗背"><a href="#🟡优点-p31-6个-可以延伸（❗背" class="headerlink" title="🟡优点 p31  6个 可以延伸（❗背"></a>🟡优点 p31  6个 可以延伸（❗背</h3><ul>
+<li>形象化地呈现任务概念</li>
+<li>允许简单地学习</li>
+<li>允许简单地记忆</li>
+<li>允许避免错误</li>
+<li>鼓励探索</li>
+<li>提供较高的主观满意度</li>
+</ul>
+<h3 id="🟡缺点-2个-可以延伸（❗背"><a href="#🟡缺点-2个-可以延伸（❗背" class="headerlink" title="🟡缺点  2个 可以延伸（❗背"></a>🟡缺点  2个 可以延伸（❗背</h3><p>p31</p>
+<ul>
+<li>可能很难编写程序 </li>
+<li>需要特别注意可达性</li>
+</ul>
+<p>在实践中，直接操纵对屏幕上所有对象和操作并非都是可行 的，原因如下 p11</p>
+<ol>
+<li>此操作在图形化系统中可能很难概念化</li>
+<li>系统图形能力局限性</li>
+<li>窗口中放置操纵控件的空间存在限制</li>
+<li>记住所有需要的操作会很困难</li>
+</ol>
+<h2 id="🟡间接操纵-大概明白"><a href="#🟡间接操纵-大概明白" class="headerlink" title="🟡间接操纵 大概明白"></a>🟡间接操纵 大概明白</h2><p>当出现这些情况时，我们就会使用<strong>间接操纵</strong>。在间接操纵中，文本——<strong>如下拉式或弹出式菜单——取代了符号</strong>，并用键盘键入代替了定位指向。大多数的窗口系统都综合了直接和间接操纵。菜单可以通过指向菜单图标并进行选择（直接操纵）来访问。而菜单本身，是一些操作的名称列表（间接操纵）。当列表上的某个操作通过指向或者键盘选择之后，系统便开始执行相应的命令。</p>
+<h2 id="🟡直接操纵的平移距离-书p140-分为哪几类，什么是平移距离-大概知道哪种设备是什么平移距离"><a href="#🟡直接操纵的平移距离-书p140-分为哪几类，什么是平移距离-大概知道哪种设备是什么平移距离" class="headerlink" title="🟡直接操纵的平移距离 书p140 分为哪几类，什么是平移距离 大概知道哪种设备是什么平移距离"></a>🟡直接操纵的平移距离 书p140 分为哪几类，什么是平移距离 大概知道哪种设备是什么平移距离</h2><p><strong>想要了解直接操纵隐喻，并对其进行分类，其中一种办法是观察用户与隐喻的表现之间的平移距离，即隐喻的强度</strong><br><strong>强度可以通过从“弱”到“沉浸式”的过渡</strong></p>
+<ul>
+<li>弱（基本的直接操纵）：<br>使用映射函数，将设备的动作或身体动作转换为虚拟空回中的动作，交互是间接的，转换的差异较大<br>如鼠标与光标之间的移动不是完全一致的、游戏手柄的核键与角色的运动也是不一致的</li>
+<li>中等直接操纵：<br>用户直接触摸、移动、捕获屏幕上的实体，而不需要使用设备（屏幕本身除外）与虚拟空同通信。操作支持点击、双击、多点触控等。但无法描述高级的动作，如力度、深度等信息，需要设计专门的手势。（取消了中间设备，单通道输入）</li>
+<li>强直接操纵：<br>可使用各种动作，如身体各部位的姿态，可用手、脚、头或全身完成，以上燥作都“真实“的投放在实体空间中，用户在三维空间中可以看到自己的手，实现抓取、投摇、放下等操作</li>
+<li>”沉浸式直接操纵</li>
+<li>直接操纵与虚拟现实的结合，用户戴上眼镜或其他设备，置身干空间内用户可以看到自己，可以步行、侧身等动作在空间中行走、飞行，看到的影响也会随着用户的移动变化双向多通道</li>
+</ul>
+<p>平移距离的例子：</p>
+<table>
+<thead>
+<tr>
+<th>平移距离</th>
+<th>概念</th>
+<th>特点</th>
+<th>代表设备</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>弱</td>
+<td>交互是间接的，转换的差异较大。</td>
+<td>中间设备，距离远，不平衡的传递</td>
+<td>早期的电子游戏控制器</td>
+</tr>
+<tr>
+<td>中等</td>
+<td></td>
+<td>仅为屏幕，距离为0，二维，不平衡的传递。</td>
+<td>触摸屏，多点触摸</td>
+</tr>
+<tr>
+<td>强</td>
+<td><strong>操作都“真实”的投放在实体空间中</strong></td>
+<td>距离为0，三维，不平衡的传递。</td>
+<td>数据手套，手势，操纵实物</td>
+</tr>
+<tr>
+<td>沉浸式</td>
+<td></td>
+<td>距离为0，平衡的传递。</td>
+<td>虚以现实，如头戴式显示器</td>
+</tr>
+</tbody></table>
+<h2 id="⭐🟡增强现实和虚拟现实-了解名词解释❗"><a href="#⭐🟡增强现实和虚拟现实-了解名词解释❗" class="headerlink" title="⭐🟡增强现实和虚拟现实 了解名词解释❗"></a>⭐🟡增强现实和虚拟现实 了解名词解释❗</h2><p><strong>虚拟现实</strong>的远程呈现打破了空间限制，使得用户认为身处他处。</p>
+<p><strong>增强现实</strong>可以使用户看到叠加了附加信息的现实世界。</p>
+<p><strong>态势感知</strong>通过在计算机模型中跟踪你的动作来显示你周围的真实世界的信息。<br>例子：远程医疗，全尺寸投影的体育赛事、远程会议等</p>
+<p>2.直接操纵的概念和原则</p>
+<p>6.直接操纵的优缺点<br>11.增强现实和虚拟现实 名词解释</p>
+<h2 id="🟡作业"><a href="#🟡作业" class="headerlink" title="🟡作业"></a>🟡作业</h2><p><img src="https://s2.loli.net/2023/07/09/rlYfIZJ7PTmKHFs.png"></p>
+<h1 id="第八章"><a href="#第八章" class="headerlink" title="第八章"></a>第八章</h1><h2 id="导航的种类"><a href="#导航的种类" class="headerlink" title="导航的种类"></a>导航的种类</h2><ol>
+<li>菜单栏，弹出菜单，工具栏，面板和功能区</li>
+<li>快捷方式和快速交互手势</li>
+<li>长列表</li>
+<li>序列菜单与同步菜单</li>
+</ol>
+<p>米勒定律：<strong>人的短时记忆能力广度为7±2个信息块</strong>，超过范围人的记忆容易出错</p>
+<h2 id="🟡小型显示器❗"><a href="#🟡小型显示器❗" class="headerlink" title="🟡小型显示器❗"></a>🟡小型显示器❗</h2><p>小型设备的功能非常集中，可选择的区域很少。菜单的<strong>易发现性</strong>是一个问题</p>
+<h3 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h3><ul>
+<li>同屏幕的选项少——&gt;操作深度增加</li>
+<li>按钮不能缩小——&gt;点击不到</li>
+</ul>
+<h3 id="🟡设计考虑-了解-最好能复述"><a href="#🟡设计考虑-了解-最好能复述" class="headerlink" title="🟡设计考虑 了解 最好能复述"></a>🟡设计考虑 了解 最好能复述</h3><ul>
+<li><p><strong>简化：“少即是多”–简单就是美</strong></p>
+</li>
+<li><p><strong>尽量降低或消除数据输入</strong></p>
+</li>
+<li><p><strong>考虑把不重要的功能转移到其他平台</strong></p>
+</li>
+<li><p><strong>学习能力是关键</strong></p>
+</li>
+<li><p><strong>上下文信息的使用</strong></p>
+</li>
+<li><p><strong>考虑使用的频率和重要性排序</strong></p>
+</li>
+<li><p><strong>为中断做好计划</strong></p>
+</li>
+<li><p><strong>清楚什么可选，什么不可选</strong></p>
+</li>
+<li><p><strong>为滚动和滑动手势留出空间，避免无意的行为</strong></p>
+</li>
+</ul>
+<h2 id="内容组织方法-策略有哪一些"><a href="#内容组织方法-策略有哪一些" class="headerlink" title="内容组织方法 策略有哪一些"></a>内容组织方法 策略有哪一些</h2><p>要对有意义的菜单项来<strong>分组和排序</strong>，精心编辑<strong>标题 和标签</strong>，适当的<strong>设计布局</strong>，可以缩短选择时间，提 高用户满意度。</p>
+<ul>
+<li>🟡方法<br><u>线性序列</u>：按单一方向<br><u>层次结构：按照层级划分多个级别</u><br><u>网络结构：可以通过多个路径（例如网站）到达</u></li>
+<li>注意事项<br>顺序：字母顺序、使用频率顺序、主题关联顺序<br>措辞：术语统一、选项区分、简洁、关键词前置<br>布局</li>
+<li>排版原则<br>亲密性<br>对齐<br>重复<br>对比</li>
+</ul>
+<h2 id="⭐🟡音频菜单-了解优缺点-什么情况用，如何设计"><a href="#⭐🟡音频菜单-了解优缺点-什么情况用，如何设计" class="headerlink" title="⭐🟡音频菜单 了解优缺点 什么情况用，如何设计"></a>⭐🟡音频菜单 了解优缺点 什么情况用，如何设计</h2><p><img src="https://s2.loli.net/2023/07/09/1tUTLpE2srkioQX.png"></p>
+<ul>
+<li>可视菜单<ul>
+<li>持久性</li>
+<li>比较性</li>
+</ul>
+</li>
+<li>音频菜单<ul>
+<li>依赖于记忆，难以比较</li>
+<li>依赖于时间，消磨耐心。</li>
+</ul>
+</li>
+<li>通用的方法：<ul>
+<li>先说出描述，再给出选项（数字）</li>
+<li>选项不能多，不能长，不能难理解(3-4个内)。</li>
+<li>提供重复播放和退出机制。</li>
+<li>菜单不能深，可提供跳过功能(如本机号码)。</li>
+</ul>
+</li>
+<li>使用场景：智能语音客服，相比传统的引导播报长、功能节点多，摆脱了这些问题，提供高效服务。</li>
+</ul>
+<p>5小型显示器的设计考虑<br>8音频菜单使用场景<br>作业3</p>
+<h1 id="第九章"><a href="#第九章" class="headerlink" title="第九章"></a>第九章</h1><h2 id="语音识别-概念"><a href="#语音识别-概念" class="headerlink" title="语音识别 概念"></a>语音识别 概念</h2><p><strong>将人的语言转化为机器可识别的文本或命令的的过程</strong></p>
+<h3 id="用处"><a href="#用处" class="headerlink" title="用处"></a>用处</h3><p>语音转文本<br>翻译<br>命令识别</p>
+<ul>
+<li>语音输入：语音生成文本 （快速录入、字幕自动生成、专业词汇更正） </li>
+<li>语音命令：有效识别某些命令 （语音助手） </li>
+<li>对话翻译</li>
+</ul>
+<h3 id="⭐完整的语音识别系统"><a href="#⭐完整的语音识别系统" class="headerlink" title="⭐完整的语音识别系统"></a>⭐完整的语音识别系统</h3><p><strong>语音特征提取：提取声音信息</strong></p>
+<p><strong>声学模型与模式匹配：匹配内容</strong></p>
+<p><strong>语言模型与语义理解：理解意义做出反应</strong></p>
+<h2 id="🟡✍口语交互-重点理解"><a href="#🟡✍口语交互-重点理解" class="headerlink" title="🟡✍口语交互 重点理解"></a>🟡✍口语交互 重点理解</h2><h3 id="⭐优点"><a href="#⭐优点" class="headerlink" title="⭐优点"></a>⭐优点</h3><h2 id=""><a href="#" class="headerlink" title=""></a></h2><ul>
+<li>残疾用户、无法进行读写的用户（如儿童）</li>
+<li>腾不出手的说话者</li>
+<li>不断移动的人员</li>
+<li>妨碍键盘使用的恶劣或狭小环境</li>
+<li>词汇和任务有限的应用领域</li>
+<li>比打字快：听写比打字快，对用户来说更方便。</li>
+<li>易用性：并非所有人都能很好地使用技术设备。但任何用户都可以使用语音向VWUI设备或AI助手请求任务。</li>
+<li>免提：在某些情况下，例如开车、做饭或当你远离设备时，说话比打字或敲击要实用得多。</li>
+<li>免视：UI提供免视用户体验。在驾驶等情况下，你可以专注于道路而不是设备。它对于屏幕疲劳问题也很实用。</li>
+</ul>
+<h3 id="⭐缺点"><a href="#⭐缺点" class="headerlink" title="⭐缺点"></a>⭐缺点</h3><ul>
+<li>嘈杂环境和劣质麦克风的干扰</li>
+<li>强烈的口音或不正常的词汇表会对识别产生影响</li>
+<li>说话并非总是可被用户接受的（如在公共办公室中和会议期间)</li>
+<li>命令需要学习和记忆</li>
+<li>纠错很耗费时</li>
+<li>与打字或指向相比，增加了认知负担</li>
+<li>没有独特的定制功能，编程困难</li>
+</ul>
+<h3 id="⭐发展障碍"><a href="#⭐发展障碍" class="headerlink" title="⭐发展障碍"></a>⭐发展障碍</h3><ul>
+<li>与视觉显示相比，语音输出的速度较慢</li>
+<li>语音具有短暂性</li>
+<li>隐私问题：对VUI的潜在隐私侵犯涉及到一些用户。</li>
+<li>误解和缺乏准确性：软件无法理解和解释语言的环境，从而导致错误和误解。VUI可能并不总是区分同音异义词。</li>
+<li>公共空间：由于隐私和噪音问题，很难向公共空间中的设备和A!助手发出语音命令。</li>
+</ul>
+<h3 id="设计口语交互-6种"><a href="#设计口语交互-6种" class="headerlink" title="设计口语交互 6种"></a>设计口语交互 6种</h3><p>1.发起交互：用户表明要开始语音交互。 • （欢迎提示音、语音命令（hey siri）、开始按钮） </p>
+<p>2.知道该说什么：有针对性，学习和记忆有效命令。</p>
+<p>3.反馈与对话：显示给用户的信息中应给出建议动作的细节，并要求 用户确认或取消。</p>
+<p>4.错误识别：口吃、说错及背景噪音，地方口音或外国口音 </p>
+<p>5.纠错：费时耗力，取消，重新说一遍或换表达方式。</p>
+<p>6.映射可能的动作：将程序限制到有限的应用领域，依靠上 下文信息，这是目前语音交互成功的关键。</p>
+<h3 id="⭐语音生成方法-三种"><a href="#⭐语音生成方法-三种" class="headerlink" title="⭐语音生成方法 三种"></a>⭐语音生成方法 三种</h3><ol>
+<li><strong>峰段合成</strong>-通过一组基于文本语音表示的算法生成语音</li>
+<li><strong>串联合成</strong>-将事先录好的较短人类语音片段拼接为完整的句子。</li>
+<li><strong>语音录音</strong>-可将各个语音片段拼合在一起，形成更长的语音片段。 衡量语音质量：易懂性、自然性和可接受性。小冰</li>
+</ol>
+<p>1语音技术应用场景 多选<br>  警报类型<br>2语音识别技术 概念 识别系统三部分<br>口语交互的优缺点 障碍<br>3语音识别的优点<br>4.语音识别的障碍<br>8语音生成三种方法<br>作业1</p>
+<h1 id="第十章-设备"><a href="#第十章-设备" class="headerlink" title="第十章 设备"></a>第十章 设备</h1><h2 id="指向设备"><a href="#指向设备" class="headerlink" title="指向设备"></a>指向设备</h2><p><img src="https://s2.loli.net/2023/07/09/3ihnqJHbQVSaWRk.png"></p>
+<h2 id="🟡菲茨定律-理解-利用来分析界面-作业！"><a href="#🟡菲茨定律-理解-利用来分析界面-作业！" class="headerlink" title="🟡菲茨定律 理解 利用来分析界面 作业！"></a>🟡菲茨定律 理解 利用来分析界面 作业！</h2><p>菲茨定律是用来预测从任意一点到目标中心位置所需时间的数学模型。这个模型考虑了用户定位点的初始位置与目标的相对距离以及目标的大小。用于估算用户移动光标点击链接或控件按钮所需的时间。</p>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>加大按钮</p>
+<p>关联内容靠近</p>
+<p>屏幕边放菜单栏</p>
+<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><p>1.你手边有多少触屏设备，你能分析他们是哪种屏幕么？ </p>
+<p>2.在设计导航系统时，是如何 使用菲茨定律的？ </p>
+<p>3.你的电脑屏幕是哪种屏幕？其指标是什么？ </p>
+<p>4.能否列出你身边的输入输出设备分别有什么（大于15个）？</p>
+<p>设备类型 手写板有哪几种类型等</p>
+<p>2.输入设备<br>   评测指标 手机是电容 指点输入设备包括哪些、优缺点-设备pdfP53<br>   了解菲茨定律<br>3.输出设备<br>   光栅显示器性能指标<br>作业3</p>
+<h1 id="第十一章"><a href="#第十一章" class="headerlink" title="第十一章"></a>第十一章</h1><h2 id="🟡协作模型-七个指标维度-列举实例说明分析-在线市场如何应用-抖、红、淘宝等-p17-每个维度意思，用MOCA模型分析软件✍"><a href="#🟡协作模型-七个指标维度-列举实例说明分析-在线市场如何应用-抖、红、淘宝等-p17-每个维度意思，用MOCA模型分析软件✍" class="headerlink" title="🟡协作模型 七个指标维度 列举实例说明分析 在线市场如何应用(抖、红、淘宝等) p17 每个维度意思，用MOCA模型分析软件✍"></a>🟡协作模型 七个指标维度 列举实例说明分析 在线市场如何应用(抖、红、淘宝等) p17 每个维度意思，用MOCA模型分析软件✍</h2><p><img src="https://s2.loli.net/2023/07/09/UwaNPqMksm67IxF.png"></p>
+<p><img src="https://s2.loli.net/2023/07/09/gXviBCZYwhalzML.png"></p>
+<p><img src="https://s2.loli.net/2023/07/09/yNQhdnK7sAr6mID.png"></p>
+<p><img src="https://s2.loli.net/2023/07/09/gbSUiZCJRD2oFuI.png"></p>
+<p><img src="https://s2.loli.net/2023/07/09/vL9cq8nxRsfjbJN.png"></p>
+<p><img src="https://s2.loli.net/2023/07/09/2gYAkyTJR3UFCon.png"></p>
+<p><img src="https://s2.loli.net/2023/07/09/bL5W3PJwheYi6pT.png"></p>
+<p>3.设计考虑<br>作业1</p>
+<h1 id="第十二、十三章"><a href="#第十二、十三章" class="headerlink" title="第十二、十三章"></a>第十二、十三章</h1><h2 id="5网页设计-避免十大错误-重点"><a href="#5网页设计-避免十大错误-重点" class="headerlink" title="5网页设计 避免十大错误 重点"></a>5网页设计 避免十大错误 重点</h2><ul>
+<li>基于Web显示信息的十大错误(Tullis,2005)</li>
+<li>信息在网站中藏得太深。</li>
+<li>页面加载了过多的内容。</li>
+<li>提供的导航笨拙或令人困惑。</li>
+<li>信息放到了页面之外。</li>
+<li>链接不明显、不清楚。</li>
+<li>显示信息的表格设计拙劣。</li>
+<li>文本太小，导致很多用户无法阅读。</li>
+<li>文本使用了用户无法阅读的颜色组合。</li>
+<li>使用了很差的表单。</li>
+<li>隐藏（或不提供）能帮助用户的功能。</li>
+</ul>
+<h2 id="7非拟人化设计-指南-避免分散用户注意力-重点❗"><a href="#7非拟人化设计-指南-避免分散用户注意力-重点❗" class="headerlink" title="7非拟人化设计 指南 避免分散用户注意力 重点❗"></a>7非拟人化设计 指南 避免分散用户注意力 重点❗</h2><p><strong>拟人化界面的倡导者认为，拟人化设计最有用的可能是教师、销售人员、治疗师或娱乐人物。另一种设计是通过预先录制的音频或视频呈现包的人类作者</strong></p>
+<h3 id="🟡非拟人化界面指南❗-7"><a href="#🟡非拟人化界面指南❗-7" class="headerlink" title="🟡非拟人化界面指南❗ 7"></a>🟡非拟人化界面指南❗ 7</h3><p><strong>–将计算机呈现为人时，无论是合成人物还是卡通人物，均需谨慎。</strong> </p>
+<p><strong>–在游戏或儿童软件中使用卡通人物，但在其他地方应避免使用它们。</strong></p>
+<p><strong>–设计可理解、可预测和可控制的界面。</strong></p>
+<p><strong>–提供以用户为中心的概要，用于概述性和总结性内容。</strong> </p>
+<p><strong>–利用适当的人来做音频或视频介绍或向导。</strong> </p>
+<p><strong>–计算机响应人的动作时，不使用第一人称代词“我”。</strong> </p>
+<p><strong>–使用“你”来指导用户或仅陈述事实。</strong></p>
+<p><img src="https://s2.loli.net/2023/07/09/exB67E2gk5TOwmb.png"></p>
+<h2 id="8错误消息P284"><a href="#8错误消息P284" class="headerlink" title="8错误消息P284"></a>8错误消息P284</h2><p><strong>错误消息要有特异性、具体的建设性指南和积极的语气：</strong></p>
+<ul>
+<li><strong>消息应该在可能的情况下指出用户应该做什么来纠正问题</strong></li>
+<li>使用暴力术语的不必要的敌意信息会干扰非技术用户：<br><strong>最终产品和开发过程的错误消息指南</strong><br>最终产品<ul>
+<li>尽可能具体、精确、确定必要的、相关的错误消息</li>
+<li>有建设性、指出用户需要做什么</li>
+<li>使用积极的语气，避免谴责，有礼貌</li>
+<li>选择以用户为中心的措辞，陈述问题、原因、解决方案</li>
+</ul>
+</li>
+</ul>
+<p>2.显示设计<br>.多窗口的协调 考虑因素</p>
+<p>6颜色 考太多次 </p>
+<p>8错误消息的比较 列出错误消息设计更好的方案</p>
+<h2 id="9🟡系统响应时间SRT-知道概念定义-书p294两张图看懂"><a href="#9🟡系统响应时间SRT-知道概念定义-书p294两张图看懂" class="headerlink" title="9🟡系统响应时间SRT 知道概念定义 书p294两张图看懂"></a>9🟡系统响应时间SRT 知道概念定义 书p294两张图看懂</h2><p><img src="https://s2.loli.net/2023/07/09/C6iPeXLKbVrE2Mw.png"></p>
+<p><img src="https://s2.loli.net/2023/07/09/zKTHbRBeyq7Lwhi.png"></p>
+<p><img src="https://s2.loli.net/2023/07/09/JmPGVOpeDBHYc3z.png">  </p>
+<p>减轻用户<strong>等待</strong>时的负面情绪<br>用户对SRT的期望值和态度</p>
+<ul>
+<li>SRT(系统响应时间)：<strong>从用户发起动作（通常为触碰图标、按回车键或点击鼠标)到计算机开始呈现反馈结果所需要的秒数。</strong></li>
+<li>用户思考时间：从计算机响应到用户发起下一动作所花的秒数</li>
+</ul>
+<h3 id="🟡影响用户对SRT的因素"><a href="#🟡影响用户对SRT的因素" class="headerlink" title="🟡影响用户对SRT的因素"></a>🟡影响用户对SRT的因素</h3><p>用户🟡 三个因素</p>
+<ul>
+<li><strong>以往的经验</strong>：设计能够快速引导用户上手的操作</li>
+<li><strong>个性的差异</strong>：每个人对时延 的忍耐度不同</li>
+<li><strong>任务的不同</strong>：任务的复杂性与用户对任务的熟悉程度</li>
+</ul>
+<p>19.SRT指南</p>
+<h2 id="🟡作业3-4"><a href="#🟡作业3-4" class="headerlink" title="🟡作业3 4"></a>🟡作业3 4</h2><p><img src="https://s2.loli.net/2023/07/09/SisG1Iy4AM52hgC.png"></p>
+<h1 id="第十四章-文档和用户支持"><a href="#第十四章-文档和用户支持" class="headerlink" title="第十四章 文档和用户支持"></a>第十四章 文档和用户支持</h1><h2 id="3🟡在线文档的优势❗"><a href="#3🟡在线文档的优势❗" class="headerlink" title="3🟡在线文档的优势❗"></a>3🟡在线文档的优势❗</h2><ul>
+<li><strong>物理优势</strong><ul>
+<li><strong>可在上网的电子设备上随时使用，不会丢失或放错地方，不需要物理空间，能闭速更新。</strong></li>
+</ul>
+</li>
+<li><strong>导航功能</strong><ul>
+<li><strong>可提供索引和其他搜索工具，可链接到其他外部资源</strong></li>
+</ul>
+</li>
+<li><strong>交互式服务</strong><ul>
+<li><strong>可添加书签、注释和标签；可包含图形、声音、颜色和动画</strong></li>
+<li><strong>可为残疾用户提供屏幕阅读器或其他工具</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="🟡纸面阅读和显示器阅读的比较-优缺点-书p313❗"><a href="#🟡纸面阅读和显示器阅读的比较-优缺点-书p313❗" class="headerlink" title="🟡纸面阅读和显示器阅读的比较 优缺点 书p313❗"></a>🟡纸面阅读和显示器阅读的比较 优缺点 书p313❗</h2><p>纸张印刷的历史有500多年，人们对纸张、颜色、字体、字形等进行了大量的实验，得出很有吸引力的阅读格式。</p>
+<p><strong>阅读计算机显示的内容会造成<u>视觉被劳</u>，但疲劳的原因也与休息方式中断及任务的多样性紧密相关</strong></p>
+<p><strong>即使用户没有察觉到视觉疲劳或压力，他们使用<u>显示器的效率</u>也会能低于使用纸质文档的工作效率</strong></p>
+<p><strong>设计师应该认识到，<u>槽糕的设计</u>会导致阅读困难，而且会干扰整个阅读过程</strong></p>
+<p>支持阅读的一些准则：</p>
+<ul>
+<li>不使用不常见或不熟悉的词汇</li>
+<li>避免使用难以阅读的字形（如全大写）</li>
+<li>使用清晰不凌乱的无衬线字体</li>
+<li>响应快，刷新率高</li>
+<li>采用文档分页而非滚动方式</li>
+</ul>
+<p><img src="https://s2.loli.net/2023/07/09/dyi9xagStXOj1zP.png"></p>
+<p>作业</p>
+<h1 id="第十五章没有要求"><a href="#第十五章没有要求" class="headerlink" title="第十五章没有要求"></a>第十五章没有要求</h1><h1 id="第十六章"><a href="#第十六章" class="headerlink" title="第十六章"></a>第十六章</h1><h2 id="🟡数据可视化-名词解释-p347"><a href="#🟡数据可视化-名词解释-p347" class="headerlink" title="🟡数据可视化 名词解释  p347"></a>🟡数据可视化 名词解释  p347</h2><p><strong>这种数据驱动图片的想法，称为可视化</strong></p>
+<h2 id="🟡2-数据可视化任务三个类别"><a href="#🟡2-数据可视化任务三个类别" class="headerlink" title="🟡2.数据可视化任务三个类别"></a>🟡2.数据可视化任务三个类别</h2><p><strong>明白三个大类，怎么区分</strong></p>
+<p><img src="https://s2.loli.net/2023/07/09/fdk2oc7RgnQPAIE.png"></p>
+<ul>
+<li>这三个类别合并了支持迭代视觉分析的关键任务：包括可视化创建、交互式查询、多视图协调、历史和协作</li>
+</ul>
+<p>3.数据可视化数据类型 一维二维..</p>
+<h2 id="🟡数据类型P353-不需要背大概知道"><a href="#🟡数据类型P353-不需要背大概知道" class="headerlink" title="🟡数据类型P353 不需要背大概知道"></a>🟡数据类型P353 不需要背大概知道</h2><p><img src="https://s2.loli.net/2023/07/09/2TnY9pGtWsN8Drx.png"></p>
+<h2 id="🟡数据可视化挑战-作业"><a href="#🟡数据可视化挑战-作业" class="headerlink" title="🟡数据可视化挑战 作业"></a>🟡数据可视化挑战 作业</h2><ul>
+<li>导入和清理数据</li>
+<li>集成数据挖掘</li>
+<li>查看大数据</li>
+<li>实现通用性</li>
+<li>支持临时用户</li>
+<li>传播和讲故事</li>
+<li>适配任何设备</li>
+<li>评估</li>
+</ul>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><h2 id="🟡未来界面-书p366-开放想法"><a href="#🟡未来界面-书p366-开放想法" class="headerlink" title="🟡未来界面 书p366 开放想法"></a>🟡未来界面 书p366 开放想法</h2><p>1.未来的界面和巨大的挑战P366</p>
+<p>这些设备无处不在，且又小又便宜</p>
+<p>新设各是可穿戴的、移动的、个人的和便携的</p>
+<p>新设各是嵌入式的、上下文感知的和环绕的，内置于我们的环境中（因此不可见</p>
+<p>即可访问，并能响应用户需求。通过视觉、听觉、触觉、手势和其他刺激进行交互</p>
+<p>2.信息时代十大顽疾</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Joel</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://jjuprising.github.io/2023/07/09/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E7%AC%94%E8%AE%B0/">https://jjuprising.github.io/2023/07/09/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://JJuprising.github.io" target="_blank">Joel Station</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a></div><div class="post_share"><div class="social-share" data-image="/images/NoCover.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/07/10/%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82%E7%AC%94%E8%AE%B0/"><img class="prev-cover" src="/images/NoCover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">软件需求笔记</div></div></a></div><div class="next-post pull-right"><a href="/2023/07/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/"><img class="next-cover" src="/images/NoCover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">计算机网络笔记</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/01/02/Linux%E7%AC%94%E8%AE%B0/" title="Linux笔记"><img class="cover" src="https://www.silicon.es/wp-content/uploads/2016/10/linux-logo-2-684x500.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-02</div><div class="title">Linux笔记</div></div></a></div><div><a href="/2023/07/10/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/" title="数据库笔记"><img class="cover" src="/images/NoCover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-10</div><div class="title">数据库笔记</div></div></a></div><div><a href="/2022/11/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="数据结构学习笔记"><img class="cover" src="/images/NoCover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-16</div><div class="title">数据结构学习笔记</div></div></a></div><div><a href="/2023/07/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/" title="计算机网络笔记"><img class="cover" src="/images/NoCover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-09</div><div class="title">计算机网络笔记</div></div></a></div><div><a href="/2023/01/01/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AF%BC%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="软件工程导论学习笔记"><img class="cover" src="/images/NoCover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-01</div><div class="title">软件工程导论学习笔记</div></div></a></div><div><a href="/2023/07/10/%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82%E7%AC%94%E8%AE%B0/" title="软件需求笔记"><img class="cover" src="/images/NoCover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-10</div><div class="title">软件需求笔记</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/jc_avator2.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Joel</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">32</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/JJuprising"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/JJuprising" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92"><span class="toc-number">1.1.</span> <span class="toc-text">什么是人机交互</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%AD%90%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A0%94%E7%A9%B6%E5%86%85%E5%AE%B9-7%E7%82%B9"><span class="toc-number">1.2.</span> <span class="toc-text">⭐人机交互技术的研究内容 7点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E6%8A%80%E6%9C%AF%E6%89%80%E5%AF%BC%E8%87%B4%E7%9A%84%E7%A4%BE%E4%BC%9A%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.3.</span> <span class="toc-text">人机交互技术所导致的社会问题与解决方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%AD%90%E8%AE%BE%E8%AE%A1%E4%B8%8A%E7%9A%84%E4%B8%8D%E5%90%8C%E8%A7%82%E7%82%B9%F0%9F%93%91"><span class="toc-number">1.4.</span> <span class="toc-text">⭐设计上的不同观点📑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%AD%90%E5%8F%91%E5%B1%95%E5%8E%86%E7%A8%8B"><span class="toc-number">1.5.</span> <span class="toc-text">⭐发展历程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%AD%90%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E7%9A%84%E4%B8%89%E4%B8%AA%E9%9D%A9%E5%91%BD%E6%80%A7%E4%BA%A7%E5%93%81"><span class="toc-number">1.6.</span> <span class="toc-text">⭐人机交互的三个革命性产品</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0"><span class="toc-number">2.</span> <span class="toc-text">第一章</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E7%94%A8%E6%80%A7%E5%B7%A5%E7%A8%8B"><span class="toc-number">2.1.</span> <span class="toc-text">可用性工程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9F%A1%E4%BA%A4%E4%BA%92%E7%B3%BB%E7%BB%9F%E5%8F%AF%E7%94%A8%E6%80%A7%E7%9A%84%E6%A6%82%E5%BF%B5%F0%9F%93%91"><span class="toc-number">2.2.</span> <span class="toc-text">🟡交互系统可用性的概念📑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A2%9E%E5%BC%BA%E5%8F%AF%E7%94%A8%E6%80%A7%E7%9A%84%E5%A5%BD%E5%A4%84"><span class="toc-number">2.3.</span> <span class="toc-text">增强可用性的好处</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E7%94%A8%E6%80%A7%E7%9A%84%E7%9B%AE%E6%A0%87%E5%92%8C%E5%BA%A6%E9%87%8F%F0%9F%93%91-%E4%B9%A6p9%E6%9C%80%E5%90%8E"><span class="toc-number">2.4.</span> <span class="toc-text">可用性的目标和度量📑 书p9最后</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9F%A1%E7%9B%AE%E6%A0%87"><span class="toc-number">2.4.1.</span> <span class="toc-text">🟡目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9F%A1%E5%BA%A6%E9%87%8F"><span class="toc-number">2.4.2.</span> <span class="toc-text">🟡度量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E4%B8%AA%E6%A0%B8%E5%BF%83%E4%BA%BA%E4%B8%BA%E5%9B%A0%E7%B4%A0"><span class="toc-number">2.4.3.</span> <span class="toc-text">五个核心人为因素</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%AF%E6%8C%81%E5%8F%AF%E7%94%A8%E6%80%A7%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99%EF%BC%88%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E4%B8%89%E4%B8%AA%E5%8E%9F%E5%88%99%E2%80%93%E5%A4%9A%E9%80%89%E9%A2%98%EF%BC%89-p47"><span class="toc-number">2.5.</span> <span class="toc-text">支持可用性的设计原则（如何保证三个原则–多选题） p47</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E7%94%A8%E6%80%A7%E5%8A%A8%E6%9C%BA"><span class="toc-number">2.6.</span> <span class="toc-text">可用性动机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%A0%E6%98%AF%E5%90%A6%E4%BD%93%E9%AA%8C%E8%BF%87%E5%8F%AF%E7%94%A8%E6%80%A7%E5%B7%AE%E7%9A%84%E8%BD%AF%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%9F%E5%8F%AF%E5%90%A6%E5%88%86%E6%9E%90%E5%85%B6%E5%8E%9F%E5%9B%A0%EF%BC%9F%F0%9F%93%91"><span class="toc-number">2.7.</span> <span class="toc-text">你是否体验过可用性差的软件系统？可否分析其原因？📑</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E9%80%9A%E7%94%A8%E6%80%A7"><span class="toc-number">3.</span> <span class="toc-text">第二章 通用性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9F%A1%E9%80%9A%E7%94%A8%E6%80%A7%E7%9A%84%E7%9B%AE%E6%A0%87-%E4%B9%A6p26"><span class="toc-number">3.1.</span> <span class="toc-text">🟡通用性的目标 书p26</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%AD%90%E4%BA%BA%E7%9A%84%E6%84%9F%E7%9F%A5%E5%92%8C%E7%9F%A5%E8%A7%89%E7%9A%84%E7%89%B9%E6%80%A7-p10"><span class="toc-number">3.2.</span> <span class="toc-text">⭐人的感知和知觉的特性 p10</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%AD%90%F0%9F%9F%A1%E7%9F%A5%E8%A7%89%E7%9A%84%E7%89%B9%E6%80%A7%F0%9F%93%91-ppt"><span class="toc-number">3.3.</span> <span class="toc-text">⭐🟡知觉的特性📑 ppt</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E8%AE%A4%E7%9F%A5%F0%9F%93%91"><span class="toc-number">3.4.</span> <span class="toc-text">常见认知📑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%AD%90%E5%BD%B1%E5%93%8D%E8%AE%A4%E7%9F%A5%E7%9A%84%E5%9B%A0%E7%B4%A0%F0%9F%93%91"><span class="toc-number">3.5.</span> <span class="toc-text">⭐影响认知的因素📑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BD%B1%E5%93%8D%E6%84%9F%E7%9F%A5%E5%92%8C%E8%BF%90%E5%8A%A8%E6%80%A7%E8%83%BD%E7%9A%84%E5%9B%A0%E7%B4%A0%F0%9F%93%91"><span class="toc-number">3.6.</span> <span class="toc-text">影响感知和运动性能的因素📑</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%AD%90%E4%B8%AA%E4%BD%93%E5%B7%AE%E5%BC%82%E5%92%8C%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%89%80"><span class="toc-number">3.6.1.</span> <span class="toc-text">⭐个体差异和不同的使用场所</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E7%9A%84%E8%AE%A4%E7%9F%A5%E5%92%8C%E6%84%9F%E7%9F%A5%E8%83%BD%E5%8A%9B"><span class="toc-number">3.7.</span> <span class="toc-text">不同的认知和感知能力</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9F%A1%E6%AE%8B%E7%96%BE%E7%94%A8%E6%88%B7%E3%80%81%E8%80%81%E5%B9%B4%E7%94%A8%E6%88%B7%E3%80%81%E5%84%BF%E7%AB%A5-%E4%B9%A6p31-36%E7%90%86%E8%A7%A3"><span class="toc-number">3.8.</span> <span class="toc-text">🟡残疾用户、老年用户、儿童 书p31-36理解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0%E4%B8%89%E4%B8%AA%E6%9C%89%E7%89%B9%E6%AE%8A%E9%9C%80%E6%B1%82%E7%9A%84%E7%94%A8%E6%88%B7%E7%BE%A4%E4%BD%93%E3%80%82%E5%AF%B9%E4%BA%8E%E8%BF%99%E4%BA%9B%E4%BA%BA%E7%BE%A4%E4%B8%AD%E7%9A%84%E6%AF%8F%E4%B8%80%E4%B8%AA%E4%BA%BA%EF%BC%8C%E5%BB%BA%E8%AE%AE%E6%9C%89%E4%B8%89%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%AF%E4%BB%A5%E6%94%B9%E5%96%84%E5%BD%93%E5%89%8D%E7%9A%84%E7%95%8C%E9%9D%A2%EF%BC%8C%E4%BB%A5%E6%9B%B4%E5%A5%BD%E5%9C%B0%E6%9C%8D%E5%8A%A1%E4%BA%8E%E4%BB%96%E4%BB%AC%E3%80%82%F0%9F%93%91"><span class="toc-number">3.8.1.</span> <span class="toc-text">描述三个有特殊需求的用户群体。对于这些人群中的每一个人，建议有三种方法可以改善当前的界面，以更好地服务于他们。📑</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%AD%90%E9%80%9A%E7%94%A8%E6%80%A7%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99-7%E6%9D%A1"><span class="toc-number">3.9.</span> <span class="toc-text">⭐通用性设计原则 7条</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%8C%87%E5%8D%97"><span class="toc-number">4.</span> <span class="toc-text">第三章 指南</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%90%E5%8A%9F%E7%9A%84%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E5%BC%80%E5%8F%91"><span class="toc-number">4.1.</span> <span class="toc-text">成功的用户界面开发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%AD%90%F0%9F%9F%A1%E6%8C%87%E5%8D%97%E3%80%81%E5%8E%9F%E5%88%99%E4%B8%8E%E7%90%86%E8%AE%BA%EF%BC%88%E6%A8%A1%E5%9E%8B%EF%BC%89-%E4%B9%A6p42"><span class="toc-number">4.2.</span> <span class="toc-text">⭐🟡指南、原则与理论（模型） 书p42</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%8C%87%E5%8D%97"><span class="toc-number">4.3.</span> <span class="toc-text">常用指南</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%AD%90%E5%9B%9B%E4%B8%AA%E5%85%B7%E4%BD%93%E5%AF%BC%E8%88%AA-p12"><span class="toc-number">4.4.</span> <span class="toc-text">⭐四个具体导航 p12</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9F%A1%E5%9B%BE%E5%BD%A2%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E7%9A%84%E4%B8%BB%E8%A6%81%E6%80%9D%E6%83%B3%EF%BC%88%E8%A6%81%E8%83%BD%E5%A4%9F%E8%A7%A3%E9%87%8A%E8%BF%99%E4%B8%89%E4%B8%AA%E5%90%8D%E8%AF%8D%EF%BC%89-pptp50%E2%9D%97"><span class="toc-number">4.5.</span> <span class="toc-text">🟡图形用户界面的主要思想（要能够解释这三个名词） pptp50❗</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9F%A1%E5%9B%BE%E5%BD%A2%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1%E7%9A%84%E4%B8%80%E8%88%AC%E5%8E%9F%E5%88%99-%EF%BC%88%E5%8C%BA%E5%88%86%E5%85%AB%E6%9D%A1%E9%BB%84%E9%87%91%E6%B3%95%E5%88%99%EF%BC%89p54-%E4%B9%A6p51-%E2%9D%97%E9%9D%9E%E5%B8%B8%E9%87%8D%E8%A6%81-%E8%83%8C%EF%BC%81%EF%BC%81"><span class="toc-number">4.6.</span> <span class="toc-text">🟡图形用户界面设计的一般原则 （区分八条黄金法则）p54 书p51 ❗非常重要 背！！</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9F%A1%E4%BA%94%E5%A4%A7%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E7%90%86%E8%AE%BA-%E5%8F%82%E8%80%83%E6%A1%88%E4%BE%8B%EF%BC%8C%E4%BC%9A%E7%94%A8%E6%A8%A1%E5%9E%8B%EF%BC%8C%E5%90%AB%E4%B9%89"><span class="toc-number">4.7.</span> <span class="toc-text">🟡五大人机交互理论 参考案例，会用模型，含义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9F%A1%E5%A4%9A%E5%B1%82%E7%BA%A7%E8%AE%BE%E8%AE%A1-%E4%B9%A6p47"><span class="toc-number">4.8.</span> <span class="toc-text">🟡多层级设计 书p47</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9F%A1%E4%BD%9C%E4%B8%9A-%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%85%AB%E6%9D%A1%E9%BB%84%E9%87%91%E6%B3%95%E5%88%99"><span class="toc-number">4.9.</span> <span class="toc-text">🟡作业 界面设计的八条黄金法则</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E8%AE%BE%E8%AE%A1"><span class="toc-number">5.</span> <span class="toc-text">第四章 设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9F%A1%E8%AE%BE%E8%AE%A1%E8%BF%9B%E7%A8%8B-%EF%BC%884%E4%B8%AA%E9%98%B6%E6%AE%B5%EF%BC%89p16-%F0%9F%93%91-%E4%B9%A6p76%E9%A1%B5%E5%9B%BE%E2%9D%97%E8%83%8C"><span class="toc-number">5.1.</span> <span class="toc-text">🟡设计进程 （4个阶段）p16 📑 书p76页图❗背</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9F%A1%E4%B8%BA%E5%8C%BB%E9%99%A2%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E7%B3%BB%E7%BB%9F%EF%BC%8C%E4%BD%BF%E6%8E%A5%E5%BE%85%E5%91%98%E8%83%BD%E5%A4%9F%E6%9B%B4%E5%BF%AB%E5%9C%B0%E4%B8%BA%E7%97%85%E4%BA%BA%E7%99%BB%E8%AE%B0%E3%80%82-%E5%88%A9%E7%94%A8%E5%9B%9B%E4%B8%AA%E9%98%B6%E6%AE%B5"><span class="toc-number">5.2.</span> <span class="toc-text">🟡为医院设计一个系统，使接待员能够更快地为病人登记。 利用四个阶段</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%AD%90%E7%94%A8%E6%88%B7%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95"><span class="toc-number">5.3.</span> <span class="toc-text">⭐用户分析方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%AD%90%E2%AD%90%E4%BB%BB%E5%8A%A1%E5%88%86%E6%9E%90%E2%9D%97%EF%BC%887%E7%A7%8D%E4%BB%BB%E5%8A%A1%E5%88%86%E6%9E%90%E7%9A%84%E6%96%B9%E6%B3%95-%E5%89%8D%E4%B8%A4%E7%A7%8D%E6%98%AF%E9%87%8D%E7%82%B9-%E7%9C%8B%E8%AF%BE%E4%BB%B6%EF%BC%89pptp37-%F0%9F%9F%A1%E7%94%A8%E4%BE%8B%E5%9B%BE%E3%80%81%E9%A1%BA%E5%BA%8F%E5%9B%BE"><span class="toc-number">5.4.</span> <span class="toc-text">⭐⭐任务分析❗（7种任务分析的方法 前两种是重点 看课件）pptp37  🟡用例图、顺序图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%93%91"><span class="toc-number">5.4.1.</span> <span class="toc-text">📑</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9F%A1%E8%AE%BE%E8%AE%A1%E6%A1%86%E6%9E%B6%EF%BC%88%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A3%E4%B8%AA%E6%A1%86%E6%9E%B6%EF%BC%89%E4%BA%86%E8%A7%A3"><span class="toc-number">5.5.</span> <span class="toc-text">🟡设计框架（名词解释3个框架）了解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9F%A1%E6%95%8F%E6%8D%B7%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1-%E4%B8%8D%E9%9C%80%E8%A6%81%E8%A2%AB%E6%A6%82%E5%BF%B5%EF%BC%8C%E7%9F%A5%E9%81%93%E4%BB%80%E4%B9%88%E6%98%AF%EF%BC%8C%E5%92%8C%E4%B8%80%E8%88%AC%E7%9A%84%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="toc-number">5.6.</span> <span class="toc-text">🟡敏捷交互设计 不需要被概念，知道什么是，和一般的有什么区别</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0"><span class="toc-number">6.</span> <span class="toc-text">第五章</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%93%E5%AE%B6%E8%AF%84%E5%AE%A1%E5%92%8C%E5%90%AF%E5%8F%91%E5%BC%8F%E6%96%B9%E6%B3%95"><span class="toc-number">6.1.</span> <span class="toc-text">专家评审和启发式方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%93%E5%AE%B6%E8%AF%84%E5%AE%A1"><span class="toc-number">6.1.1.</span> <span class="toc-text">专家评审</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%9F%A1%E4%BC%98%E7%82%B9-%E6%80%BB%E7%BB%93"><span class="toc-number">6.1.1.1.</span> <span class="toc-text">🟡优点 总结</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%9F%A1%E5%B1%80%E9%99%90-%E6%80%BB%E7%BB%93"><span class="toc-number">6.1.1.2.</span> <span class="toc-text">🟡局限 总结</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E8%AF%84%E5%AE%A1%E6%96%B9%E6%B3%95"><span class="toc-number">6.1.1.3.</span> <span class="toc-text">常用评审方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8F%91%E6%80%A7%E8%AF%84%E4%BC%B0%E7%9A%84%E4%B8%A4%E5%A4%A7%E5%8E%9F%E5%88%99"><span class="toc-number">6.1.2.</span> <span class="toc-text">启发性评估的两大原则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E7%82%B9"><span class="toc-number">6.1.2.1.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%BA%E7%82%B9"><span class="toc-number">6.1.2.2.</span> <span class="toc-text">缺点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E7%94%A8%E6%80%A7%E8%AF%84%E4%BC%B0%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%88%E5%A4%9A%E9%80%89%E6%88%96%E9%80%89%E6%8B%A9%EF%BC%89"><span class="toc-number">6.2.</span> <span class="toc-text">可用性评估的方法（多选或选择）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%8A%E6%9F%A5%E5%BC%8F%E6%96%B9%E6%B3%95%EF%BC%9A%E6%B2%A1%E6%9C%89%E7%94%A8%E6%88%B7%E5%8F%82%E4%B8%8E"><span class="toc-number">6.2.0.1.</span> <span class="toc-text">诊查式方法：没有用户参与</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E5%BC%8F%E6%96%B9%E6%B3%95%EF%BC%9A%E6%9C%89%E7%94%A8%E6%88%B7%E5%8F%82%E4%B8%8E"><span class="toc-number">6.2.0.2.</span> <span class="toc-text">测试式方法：有用户参与</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9F%A1A-x2F-B%E6%B5%8B%E8%AF%95-%E4%B9%A6P108"><span class="toc-number">6.3.</span> <span class="toc-text">🟡A&#x2F;B测试 书P108</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9F%A1%E5%B0%BC%E5%B0%94%E6%A3%AE%E5%8D%81%E5%A4%A7%E5%8E%9F%E5%88%99-ppt-8%E6%9D%A1%E6%B3%95%E5%88%99%E8%81%94%E7%B3%BB%E8%AE%B0%E5%BF%86"><span class="toc-number">6.4.</span> <span class="toc-text">🟡尼尔森十大原则 ppt 8条法则联系记忆</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9F%A1%E2%9D%93%E4%BD%9C%E4%B8%9A-%E5%A4%9A%E7%9C%8B%E7%9C%8B"><span class="toc-number">6.5.</span> <span class="toc-text">🟡❓作业 多看看</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E4%B8%8D%E5%AD%98%E5%9C%A8%E9%87%8D%E7%82%B9%E8%80%83%E7%82%B9"><span class="toc-number">7.</span> <span class="toc-text">第六章 不存在重点考点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%AD%90%E6%95%8F%E6%8D%B7%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1-p22"><span class="toc-number">7.1.</span> <span class="toc-text">⭐敏捷交互设计 p22</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-1"><span class="toc-number">8.</span> <span class="toc-text">第七章 1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%AD%90%F0%9F%9F%A1%E7%9B%B4%E6%8E%A5%E6%93%8D%E7%BA%B5-p10-%E4%B9%A6p139-%E7%89%B9%E5%88%AB%E9%87%8D%E8%A6%81%EF%BC%8C%E2%9D%97%E8%83%8C"><span class="toc-number">8.1.</span> <span class="toc-text">⭐🟡直接操纵 p10  书p139 特别重要，❗背</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E7%82%B9-4%E4%B8%AA-p13"><span class="toc-number">8.1.1.</span> <span class="toc-text">特点 4个 p13</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9F%A1%E5%8E%9F%E5%88%99-3%E4%B8%AA"><span class="toc-number">8.1.2.</span> <span class="toc-text">🟡原则 3个</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7-p17"><span class="toc-number">8.1.3.</span> <span class="toc-text">属性 p17</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A5%BD%E5%A4%84"><span class="toc-number">8.1.4.</span> <span class="toc-text">好处</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-number">8.1.5.</span> <span class="toc-text">问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9F%A1%E4%BC%98%E7%82%B9-p31-6%E4%B8%AA-%E5%8F%AF%E4%BB%A5%E5%BB%B6%E4%BC%B8%EF%BC%88%E2%9D%97%E8%83%8C"><span class="toc-number">8.1.6.</span> <span class="toc-text">🟡优点 p31  6个 可以延伸（❗背</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9F%A1%E7%BC%BA%E7%82%B9-2%E4%B8%AA-%E5%8F%AF%E4%BB%A5%E5%BB%B6%E4%BC%B8%EF%BC%88%E2%9D%97%E8%83%8C"><span class="toc-number">8.1.7.</span> <span class="toc-text">🟡缺点  2个 可以延伸（❗背</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9F%A1%E9%97%B4%E6%8E%A5%E6%93%8D%E7%BA%B5-%E5%A4%A7%E6%A6%82%E6%98%8E%E7%99%BD"><span class="toc-number">8.2.</span> <span class="toc-text">🟡间接操纵 大概明白</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9F%A1%E7%9B%B4%E6%8E%A5%E6%93%8D%E7%BA%B5%E7%9A%84%E5%B9%B3%E7%A7%BB%E8%B7%9D%E7%A6%BB-%E4%B9%A6p140-%E5%88%86%E4%B8%BA%E5%93%AA%E5%87%A0%E7%B1%BB%EF%BC%8C%E4%BB%80%E4%B9%88%E6%98%AF%E5%B9%B3%E7%A7%BB%E8%B7%9D%E7%A6%BB-%E5%A4%A7%E6%A6%82%E7%9F%A5%E9%81%93%E5%93%AA%E7%A7%8D%E8%AE%BE%E5%A4%87%E6%98%AF%E4%BB%80%E4%B9%88%E5%B9%B3%E7%A7%BB%E8%B7%9D%E7%A6%BB"><span class="toc-number">8.3.</span> <span class="toc-text">🟡直接操纵的平移距离 书p140 分为哪几类，什么是平移距离 大概知道哪种设备是什么平移距离</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%AD%90%F0%9F%9F%A1%E5%A2%9E%E5%BC%BA%E7%8E%B0%E5%AE%9E%E5%92%8C%E8%99%9A%E6%8B%9F%E7%8E%B0%E5%AE%9E-%E4%BA%86%E8%A7%A3%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A%E2%9D%97"><span class="toc-number">8.4.</span> <span class="toc-text">⭐🟡增强现实和虚拟现实 了解名词解释❗</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9F%A1%E4%BD%9C%E4%B8%9A"><span class="toc-number">8.5.</span> <span class="toc-text">🟡作业</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%85%AB%E7%AB%A0"><span class="toc-number">9.</span> <span class="toc-text">第八章</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%BC%E8%88%AA%E7%9A%84%E7%A7%8D%E7%B1%BB"><span class="toc-number">9.1.</span> <span class="toc-text">导航的种类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9F%A1%E5%B0%8F%E5%9E%8B%E6%98%BE%E7%A4%BA%E5%99%A8%E2%9D%97"><span class="toc-number">9.2.</span> <span class="toc-text">🟡小型显示器❗</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%BE%E7%82%B9"><span class="toc-number">9.2.1.</span> <span class="toc-text">难点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9F%A1%E8%AE%BE%E8%AE%A1%E8%80%83%E8%99%91-%E4%BA%86%E8%A7%A3-%E6%9C%80%E5%A5%BD%E8%83%BD%E5%A4%8D%E8%BF%B0"><span class="toc-number">9.2.2.</span> <span class="toc-text">🟡设计考虑 了解 最好能复述</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E7%BB%84%E7%BB%87%E6%96%B9%E6%B3%95-%E7%AD%96%E7%95%A5%E6%9C%89%E5%93%AA%E4%B8%80%E4%BA%9B"><span class="toc-number">9.3.</span> <span class="toc-text">内容组织方法 策略有哪一些</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%AD%90%F0%9F%9F%A1%E9%9F%B3%E9%A2%91%E8%8F%9C%E5%8D%95-%E4%BA%86%E8%A7%A3%E4%BC%98%E7%BC%BA%E7%82%B9-%E4%BB%80%E4%B9%88%E6%83%85%E5%86%B5%E7%94%A8%EF%BC%8C%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1"><span class="toc-number">9.4.</span> <span class="toc-text">⭐🟡音频菜单 了解优缺点 什么情况用，如何设计</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0"><span class="toc-number">10.</span> <span class="toc-text">第九章</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB-%E6%A6%82%E5%BF%B5"><span class="toc-number">10.1.</span> <span class="toc-text">语音识别 概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E5%A4%84"><span class="toc-number">10.1.1.</span> <span class="toc-text">用处</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%AD%90%E5%AE%8C%E6%95%B4%E7%9A%84%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB%E7%B3%BB%E7%BB%9F"><span class="toc-number">10.1.2.</span> <span class="toc-text">⭐完整的语音识别系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9F%A1%E2%9C%8D%E5%8F%A3%E8%AF%AD%E4%BA%A4%E4%BA%92-%E9%87%8D%E7%82%B9%E7%90%86%E8%A7%A3"><span class="toc-number">10.2.</span> <span class="toc-text">🟡✍口语交互 重点理解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%AD%90%E4%BC%98%E7%82%B9"><span class="toc-number">10.2.1.</span> <span class="toc-text">⭐优点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">10.3.</span> <span class="toc-text"></span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%AD%90%E7%BC%BA%E7%82%B9"><span class="toc-number">10.3.1.</span> <span class="toc-text">⭐缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%AD%90%E5%8F%91%E5%B1%95%E9%9A%9C%E7%A2%8D"><span class="toc-number">10.3.2.</span> <span class="toc-text">⭐发展障碍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E5%8F%A3%E8%AF%AD%E4%BA%A4%E4%BA%92-6%E7%A7%8D"><span class="toc-number">10.3.3.</span> <span class="toc-text">设计口语交互 6种</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%AD%90%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95-%E4%B8%89%E7%A7%8D"><span class="toc-number">10.3.4.</span> <span class="toc-text">⭐语音生成方法 三种</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%8D%81%E7%AB%A0-%E8%AE%BE%E5%A4%87"><span class="toc-number">11.</span> <span class="toc-text">第十章 设备</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E5%90%91%E8%AE%BE%E5%A4%87"><span class="toc-number">11.1.</span> <span class="toc-text">指向设备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9F%A1%E8%8F%B2%E8%8C%A8%E5%AE%9A%E5%BE%8B-%E7%90%86%E8%A7%A3-%E5%88%A9%E7%94%A8%E6%9D%A5%E5%88%86%E6%9E%90%E7%95%8C%E9%9D%A2-%E4%BD%9C%E4%B8%9A%EF%BC%81"><span class="toc-number">11.2.</span> <span class="toc-text">🟡菲茨定律 理解 利用来分析界面 作业！</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8"><span class="toc-number">11.3.</span> <span class="toc-text">应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83"><span class="toc-number">11.4.</span> <span class="toc-text">思考</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0"><span class="toc-number">12.</span> <span class="toc-text">第十一章</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9F%A1%E5%8D%8F%E4%BD%9C%E6%A8%A1%E5%9E%8B-%E4%B8%83%E4%B8%AA%E6%8C%87%E6%A0%87%E7%BB%B4%E5%BA%A6-%E5%88%97%E4%B8%BE%E5%AE%9E%E4%BE%8B%E8%AF%B4%E6%98%8E%E5%88%86%E6%9E%90-%E5%9C%A8%E7%BA%BF%E5%B8%82%E5%9C%BA%E5%A6%82%E4%BD%95%E5%BA%94%E7%94%A8-%E6%8A%96%E3%80%81%E7%BA%A2%E3%80%81%E6%B7%98%E5%AE%9D%E7%AD%89-p17-%E6%AF%8F%E4%B8%AA%E7%BB%B4%E5%BA%A6%E6%84%8F%E6%80%9D%EF%BC%8C%E7%94%A8MOCA%E6%A8%A1%E5%9E%8B%E5%88%86%E6%9E%90%E8%BD%AF%E4%BB%B6%E2%9C%8D"><span class="toc-number">12.1.</span> <span class="toc-text">🟡协作模型 七个指标维度 列举实例说明分析 在线市场如何应用(抖、红、淘宝等) p17 每个维度意思，用MOCA模型分析软件✍</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%8D%81%E4%BA%8C%E3%80%81%E5%8D%81%E4%B8%89%E7%AB%A0"><span class="toc-number">13.</span> <span class="toc-text">第十二、十三章</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1-%E9%81%BF%E5%85%8D%E5%8D%81%E5%A4%A7%E9%94%99%E8%AF%AF-%E9%87%8D%E7%82%B9"><span class="toc-number">13.1.</span> <span class="toc-text">5网页设计 避免十大错误 重点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7%E9%9D%9E%E6%8B%9F%E4%BA%BA%E5%8C%96%E8%AE%BE%E8%AE%A1-%E6%8C%87%E5%8D%97-%E9%81%BF%E5%85%8D%E5%88%86%E6%95%A3%E7%94%A8%E6%88%B7%E6%B3%A8%E6%84%8F%E5%8A%9B-%E9%87%8D%E7%82%B9%E2%9D%97"><span class="toc-number">13.2.</span> <span class="toc-text">7非拟人化设计 指南 避免分散用户注意力 重点❗</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9F%A1%E9%9D%9E%E6%8B%9F%E4%BA%BA%E5%8C%96%E7%95%8C%E9%9D%A2%E6%8C%87%E5%8D%97%E2%9D%97-7"><span class="toc-number">13.2.1.</span> <span class="toc-text">🟡非拟人化界面指南❗ 7</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8%E9%94%99%E8%AF%AF%E6%B6%88%E6%81%AFP284"><span class="toc-number">13.3.</span> <span class="toc-text">8错误消息P284</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9%F0%9F%9F%A1%E7%B3%BB%E7%BB%9F%E5%93%8D%E5%BA%94%E6%97%B6%E9%97%B4SRT-%E7%9F%A5%E9%81%93%E6%A6%82%E5%BF%B5%E5%AE%9A%E4%B9%89-%E4%B9%A6p294%E4%B8%A4%E5%BC%A0%E5%9B%BE%E7%9C%8B%E6%87%82"><span class="toc-number">13.4.</span> <span class="toc-text">9🟡系统响应时间SRT 知道概念定义 书p294两张图看懂</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9F%A1%E5%BD%B1%E5%93%8D%E7%94%A8%E6%88%B7%E5%AF%B9SRT%E7%9A%84%E5%9B%A0%E7%B4%A0"><span class="toc-number">13.4.1.</span> <span class="toc-text">🟡影响用户对SRT的因素</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9F%A1%E4%BD%9C%E4%B8%9A3-4"><span class="toc-number">13.5.</span> <span class="toc-text">🟡作业3 4</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0-%E6%96%87%E6%A1%A3%E5%92%8C%E7%94%A8%E6%88%B7%E6%94%AF%E6%8C%81"><span class="toc-number">14.</span> <span class="toc-text">第十四章 文档和用户支持</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3%F0%9F%9F%A1%E5%9C%A8%E7%BA%BF%E6%96%87%E6%A1%A3%E7%9A%84%E4%BC%98%E5%8A%BF%E2%9D%97"><span class="toc-number">14.1.</span> <span class="toc-text">3🟡在线文档的优势❗</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9F%A1%E7%BA%B8%E9%9D%A2%E9%98%85%E8%AF%BB%E5%92%8C%E6%98%BE%E7%A4%BA%E5%99%A8%E9%98%85%E8%AF%BB%E7%9A%84%E6%AF%94%E8%BE%83-%E4%BC%98%E7%BC%BA%E7%82%B9-%E4%B9%A6p313%E2%9D%97"><span class="toc-number">14.2.</span> <span class="toc-text">🟡纸面阅读和显示器阅读的比较 优缺点 书p313❗</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0%E6%B2%A1%E6%9C%89%E8%A6%81%E6%B1%82"><span class="toc-number">15.</span> <span class="toc-text">第十五章没有要求</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0"><span class="toc-number">16.</span> <span class="toc-text">第十六章</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9F%A1%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96-%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A-p347"><span class="toc-number">16.1.</span> <span class="toc-text">🟡数据可视化 名词解释  p347</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9F%A12-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BB%E5%8A%A1%E4%B8%89%E4%B8%AA%E7%B1%BB%E5%88%AB"><span class="toc-number">16.2.</span> <span class="toc-text">🟡2.数据可视化任务三个类别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9F%A1%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8BP353-%E4%B8%8D%E9%9C%80%E8%A6%81%E8%83%8C%E5%A4%A7%E6%A6%82%E7%9F%A5%E9%81%93"><span class="toc-number">16.3.</span> <span class="toc-text">🟡数据类型P353 不需要背大概知道</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9F%A1%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E6%8C%91%E6%88%98-%E4%BD%9C%E4%B8%9A"><span class="toc-number">16.4.</span> <span class="toc-text">🟡数据可视化挑战 作业</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-number">17.</span> <span class="toc-text">后记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9F%A1%E6%9C%AA%E6%9D%A5%E7%95%8C%E9%9D%A2-%E4%B9%A6p366-%E5%BC%80%E6%94%BE%E6%83%B3%E6%B3%95"><span class="toc-number">17.1.</span> <span class="toc-text">🟡未来界面 书p366 开放想法</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/07/10/%E6%95%B0%E6%8D%AE%E5%BA%93-php%E5%A4%A7%E4%BD%9C%E4%B8%9A/" title="数据库&amp;php大作业"><img src="/images/NoCover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据库&amp;php大作业"/></a><div class="content"><a class="title" href="/2023/07/10/%E6%95%B0%E6%8D%AE%E5%BA%93-php%E5%A4%A7%E4%BD%9C%E4%B8%9A/" title="数据库&amp;php大作业">数据库&amp;php大作业</a><time datetime="2023-07-10T02:51:46.000Z" title="发表于 2023-07-10 10:51:46">2023-07-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/10/%E7%A3%A8%E8%B9%AD%E5%A4%A9%E6%B0%94app-%E5%AE%89%E5%8D%93%E5%A4%A7%E4%BD%9C%E4%B8%9A/" title="磨蹭天气app--安卓大作业"><img src="/images/NoCover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="磨蹭天气app--安卓大作业"/></a><div class="content"><a class="title" href="/2023/07/10/%E7%A3%A8%E8%B9%AD%E5%A4%A9%E6%B0%94app-%E5%AE%89%E5%8D%93%E5%A4%A7%E4%BD%9C%E4%B8%9A/" title="磨蹭天气app--安卓大作业">磨蹭天气app--安卓大作业</a><time datetime="2023-07-10T02:28:07.000Z" title="发表于 2023-07-10 10:28:07">2023-07-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/10/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/" title="数据库笔记"><img src="/images/NoCover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据库笔记"/></a><div class="content"><a class="title" href="/2023/07/10/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/" title="数据库笔记">数据库笔记</a><time datetime="2023-07-10T02:09:42.000Z" title="发表于 2023-07-10 10:09:42">2023-07-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/10/%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82%E7%AC%94%E8%AE%B0/" title="软件需求笔记"><img src="/images/NoCover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件需求笔记"/></a><div class="content"><a class="title" href="/2023/07/10/%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82%E7%AC%94%E8%AE%B0/" title="软件需求笔记">软件需求笔记</a><time datetime="2023-07-09T16:24:37.000Z" title="发表于 2023-07-10 00:24:37">2023-07-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/09/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E7%AC%94%E8%AE%B0/" title="人机交互笔记"><img src="/images/NoCover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="人机交互笔记"/></a><div class="content"><a class="title" href="/2023/07/09/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E7%AC%94%E8%AE%B0/" title="人机交互笔记">人机交互笔记</a><time datetime="2023-07-09T15:05:50.000Z" title="发表于 2023-07-09 23:05:50">2023-07-09</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/bc.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Joel</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><script type="text/javascript" id="maid-script" src="https://unpkg.com/mermaid@undefined/dist/mermaid.min.js?v=undefined"></script><script>if (window.mermaid) {
+  var options = JSON.parse(document.getElementById('maid-script').getAttribute('mermaidoptioins'));
+  mermaid.initialize(options);
+}</script></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
