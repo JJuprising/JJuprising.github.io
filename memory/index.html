@@ -282,7 +282,21 @@
         </div>
     </div>
 </div>
-
+<audio id="music" autoplay="autoplay" controls="controls" loop="loop" preload="auto" src="http://music.163.com/song/media/outer/url?id=1939215517.mp3">
+</audio>
+<script>
+    // music
+    window.onload = function(){
+    setInterval("toggleSound()",1);
+}
+function toggleSound() {
+    var music = document.getElementById("music");//获取ID  
+    if (music.paused) { //判读是否播放  
+        music.paused=false;
+        music.play(); //没有就播放 
+    }    
+}
+</script>
     <script src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
     <script>
         alert("孙瑜妤，祝你七夕快乐。2023-8-22")
