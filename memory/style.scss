@@ -1,0 +1,247 @@
+@font-face {
+    font-family: MonumentExtended-Regular;
+    font-weight: 700;
+    src: url(./asset/font/MonumentExtended-Regular.woff2) format("truetype");
+    text-rendering: optimizeLegibility;
+}
+@font-face {
+    font-family: MonumentExtended-Black;
+    font-weight: 400;
+    src: url(./asset/font/MonumentExtended-Black.woff) format("truetype");
+}
+@font-face {
+    font-family: MonumentExtended-Light;
+    font-weight: 400;
+    src: url(./asset/font/MonumentExtended-Light.woff2) format("truetype");
+}
+@font-face {
+    font-family: NeueMachina-Regular;
+    font-weight: 400;
+    src: url(./asset/font/NeueMachina-Regular.woff2) format("truetype");
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: rgb(19, 21, 24);
+}
+.content {
+    padding: 0px 5vw;
+    box-sizing: border-box;
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 10vh;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        z-index: 100;
+        .logo {
+            position: absolute;
+            left: 4vw;
+            cursor: pointer;
+            width: 7vw;
+        }
+        .home {
+            position: absolute;
+            right: 4vw;
+            cursor: pointer;
+            font-family: "MonumentExtended-Regular";
+        }
+    }
+    .photo-wall {
+        margin-top: 10vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .photo-item {
+            cursor: pointer;
+            // width: 100vw;
+            overflow: hidden;
+            position: relative;
+            // margin-right: 20px;
+            margin-bottom: 120px;
+            &:hover {
+                .thumb-hover {
+                    opacity: 1;
+                }
+                img {
+                    transform: scale(1.2);
+                }
+            }
+            .thumb-hover {
+                background-color: rgba(19, 21, 24, 0.3);
+                background-size: auto;
+                background-position: 0% 0%;
+                background-repeat: no-repeat;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                top: 0;
+                z-index: 1;
+                transition: all 0.3s ease;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                transition: 0.5s;
+            }
+            .tips {
+                color: #e8eaee;
+                font-size: 1vw;
+                text-transform: uppercase;
+                font-family: "MonumentExtended-Black";
+                position: absolute;
+                bottom: 5%;
+                margin-left: 2vw;
+                z-index: 10;
+                .introduction {
+                    font-family: "MonumentExtended-light";
+                }
+                span {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .photo-detail {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .top-photo {
+            width: 100%;
+            margin-bottom: 120px;
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: 100%;
+                animation: photo-animation 120s;
+                animation-direction: alternate;
+            }
+        }
+        .photo-detail-item {
+            margin-bottom: 120px;
+            display: flex;
+            width: 100%;
+            img {
+                width: 100%;
+            }
+            .introduction {
+                color: #fff;
+                font-family: "NeueMachina-Regular", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                display: flex;
+                align-items: center;
+                line-height: 5vh;
+                padding: 5vw;
+            }
+        }
+    }
+    .loading {
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(19, 21, 24);
+        position: fixed;
+        left: 0;
+        top: 100vh;
+        z-index: 101;
+        img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+// 该类会让图片占据一整行
+.width-24 {
+    width: calc(100% / 24 * 24);
+}
+// 该类会让图片占据一半
+.width-11 {
+    width: calc(100% / 24 * 11);
+}
+// 该类会让图片占据一半
+.width-15 {
+    width: calc(100% / 24 * 14) !important;
+}
+@keyframes loading-init {
+    0% {
+        top: 100vh;
+    }
+    100% {
+        top: 0vh;
+    }
+}
+
+@keyframes loading-out {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: -100vh;
+    }
+}
+
+@keyframes item-out {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10%);
+    }
+}
+
+@keyframes item-init {
+    0% {
+        transform: translateY(10%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes photo-animation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 769px) {
+    // 该类会让图片占据一整行
+    .width-cell {
+        width: calc(100% / 24 * 24) !important;
+    }
+    .logo {
+        width: 15vw !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    // 该类会让图片占据一整行
+    .photo-detail-item {
+        flex-direction: column;
+        img {
+            width: 100%;
+        }
+        .introduction {
+            padding: 5vw 0 !important;
+        }
+        .d-width-cell {
+            width: calc(100% / 24 * 24) !important;
+        }
+    }
+}
