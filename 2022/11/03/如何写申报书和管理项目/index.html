@@ -178,7 +178,12 @@
 <div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2022/11/14/%E7%88%B1%E5%BF%83%E7%89%B9%E6%95%88/">爱心特效</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2022/11/02/%E8%A7%A3%E5%86%B3rehl8-Unable-to-read-consumer-identity%E7%9A%84%E9%97%AE%E9%A2%98/">解决rehl8 Unable to read consumer identity的问题</a></div></section></div>
 
 
-
+<div class="related-wrap reveal" id="related-posts">
+    <section class='header'>
+      <div class='title cap theme'>您可能感兴趣的文章</div>
+    </section>
+    <section class='body'>
+    <div class="related-posts"><a class="item" href="\2022\07\01\2022web大作业\" title="2022web大作业"><span class="title">2022web大作业</span></a><a class="item" href="\2022\07\01\中华文化酷！小程序\" title="中华文化酷！小程序"><span class="title">中华文化酷！小程序</span></a><a class="item" href="\2023\07\10\数据库-php大作业\" title="数据库&php大作业"><span class="title">数据库&php大作业</span></a><a class="item" href="\2023\07\10\磨蹭天气app-安卓大作业\" title="磨蹭天气app--安卓大作业"><span class="title">磨蹭天气app--安卓大作业</span></a><a class="item" href="\2023\03\13\AR开发-空间定位点\" title="AR开发-空间定位点与SLAM"><span class="title">AR开发-空间定位点与SLAM</span></a></div></section></div>
 
 
 
@@ -314,7 +319,7 @@
     stellar.search = {};
     stellar.search.service = 'local_search';
     if (stellar.search.service == 'local_search') {
-      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"codeblock":true,"sort":"-date"});
       stellar.search[stellar.search.service] = service_obj;
     }
   }

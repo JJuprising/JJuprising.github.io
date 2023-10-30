@@ -32,7 +32,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s2.loli.net/2022/07/01/p8Jt37wIWuxTvUV.png">
 <meta property="article:published_time" content="2022-07-01T05:18:13.000Z">
-<meta property="article:modified_time" content="2022-07-01T05:26:21.237Z">
+<meta property="article:modified_time" content="2023-10-30T08:40:14.638Z">
 <meta property="article:author" content="Joel">
 <meta property="article:tag" content="数学">
 <meta name="twitter:card" content="summary_large_image">
@@ -84,7 +84,7 @@
 
 
 
-<widget class="widget-wrapper recent"><div class="widget-header cap theme dis-select"><span class="name">最近更新</span></div><div class="widget-body related-posts fs14"><a class="item title" href="/2023/09/18/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/"><span class="title">数字图像处理笔记</span></a><a class="item title" href="/2023/09/14/%E5%A4%A7%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/"><span class="title">大型数据库笔记</span></a><a class="item title" href="/2023/09/14/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0/"><span class="title">操作系统笔记</span></a><a class="item title" href="/2023/09/20/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/"><span class="title">软件体系结构笔记</span></a><a class="item title" href="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"><span class="title">计算机组成原理</span></a></div></widget>
+<widget class="widget-wrapper recent"><div class="widget-header cap theme dis-select"><span class="name">最近更新</span></div><div class="widget-body related-posts fs14"><a class="item title" href="/2022/09/24/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><span class="title">python学习笔记</span></a><a class="item title" href="/2022/09/06/js%E5%AF%BC%E5%87%BAjson%E6%96%87%E4%BB%B6/"><span class="title">js导出json文件</span></a><a class="item title" href="/2022/07/01/2022web%E5%A4%A7%E4%BD%9C%E4%B8%9A/"><span class="title">2022web大作业</span></a><a class="item title" href="/2022/07/01/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"><span class="title">线性代数</span></a><a class="item title" href="/2022/08/24/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"><span class="title">微信小程序学习笔记</span></a></div></widget>
 
 
 
@@ -118,7 +118,12 @@
 <div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2022/07/01/2022web%E5%A4%A7%E4%BD%9C%E4%B8%9A/">2022web大作业</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2022/07/01/Cpp%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">Cpp语言程序设计</a></div></section></div>
 
 
-
+<div class="related-wrap reveal" id="related-posts">
+    <section class='header'>
+      <div class='title cap theme'>您可能感兴趣的文章</div>
+    </section>
+    <section class='body'>
+    <div class="related-posts"><a class="item" href="\2022\07\01\离散数学\" title="离散数学"><span class="title">离散数学</span></a><a class="item" href="\2022\07\01\2022web大作业\" title="2022web大作业"><span class="title">2022web大作业</span></a></div></section></div>
 
 
 
@@ -254,7 +259,7 @@
     stellar.search = {};
     stellar.search.service = 'local_search';
     if (stellar.search.service == 'local_search') {
-      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"codeblock":true,"sort":"-date"});
       stellar.search[stellar.search.service] = service_obj;
     }
   }

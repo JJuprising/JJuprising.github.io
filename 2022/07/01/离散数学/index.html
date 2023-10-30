@@ -685,7 +685,12 @@
 <div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2022/07/01/Cpp%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">Cpp语言程序设计</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2022/03/04/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BAmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/">云服务器搭建mc服务器经验总结</a></div></section></div>
 
 
-
+<div class="related-wrap reveal" id="related-posts">
+    <section class='header'>
+      <div class='title cap theme'>您可能感兴趣的文章</div>
+    </section>
+    <section class='body'>
+    <div class="related-posts"><a class="item" href="\2022\07\01\线性代数\" title="线性代数"><span class="title">线性代数</span></a><a class="item" href="\2022\07\01\2022web大作业\" title="2022web大作业"><span class="title">2022web大作业</span></a></div></section></div>
 
 
 
@@ -821,7 +826,7 @@
     stellar.search = {};
     stellar.search.service = 'local_search';
     if (stellar.search.service == 'local_search') {
-      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"codeblock":true,"sort":"-date"});
       stellar.search[stellar.search.service] = service_obj;
     }
   }

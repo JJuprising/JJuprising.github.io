@@ -296,7 +296,12 @@
 <div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2023/06/08/Android-Studio%E9%99%8D%E9%9B%A8%E7%83%AD%E5%8A%9B%E5%9B%BE/">Android Studio降雨热力图</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2023/03/13/AR%E5%BC%80%E5%8F%91-%E7%A9%BA%E9%97%B4%E5%AE%9A%E4%BD%8D%E7%82%B9/">AR开发-空间定位点与SLAM</a></div></section></div>
 
 
-
+<div class="related-wrap reveal" id="related-posts">
+    <section class='header'>
+      <div class='title cap theme'>您可能感兴趣的文章</div>
+    </section>
+    <section class='body'>
+    <div class="related-posts"><a class="item" href="\2022\07\01\2022web大作业\" title="2022web大作业"><span class="title">2022web大作业</span></a></div></section></div>
 
 
 
@@ -432,7 +437,7 @@
     stellar.search = {};
     stellar.search.service = 'local_search';
     if (stellar.search.service == 'local_search') {
-      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"codeblock":true,"sort":"-date"});
       stellar.search[stellar.search.service] = service_obj;
     }
   }

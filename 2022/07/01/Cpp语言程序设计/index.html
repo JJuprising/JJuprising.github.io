@@ -1248,7 +1248,12 @@
 <div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2022/07/01/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2022/07/01/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">离散数学</a></div></section></div>
 
 
-
+<div class="related-wrap reveal" id="related-posts">
+    <section class='header'>
+      <div class='title cap theme'>您可能感兴趣的文章</div>
+    </section>
+    <section class='body'>
+    <div class="related-posts"><a class="item" href="\2022\07\01\2022web大作业\" title="2022web大作业"><span class="title">2022web大作业</span></a><a class="item" href="\2022\09\29\Java学习笔记\" title="Java学习笔记"><span class="title">Java学习笔记</span></a><a class="item" href="\2022\09\24\python学习笔记\" title="python学习笔记"><span class="title">python学习笔记</span></a><a class="item" href="\2022\07\01\中华文化酷！小程序\" title="中华文化酷！小程序"><span class="title">中华文化酷！小程序</span></a><a class="item" href="\2023\01\02\Linux笔记\" title="Linux笔记"><span class="title">Linux笔记</span></a></div></section></div>
 
 
 
@@ -1384,7 +1389,7 @@
     stellar.search = {};
     stellar.search.service = 'local_search';
     if (stellar.search.service == 'local_search') {
-      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"codeblock":true,"sort":"-date"});
       stellar.search[stellar.search.service] = service_obj;
     }
   }

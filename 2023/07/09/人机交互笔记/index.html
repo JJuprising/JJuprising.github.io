@@ -1165,7 +1165,12 @@
 <div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2023/07/10/%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82%E7%AC%94%E8%AE%B0/">软件需求笔记</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2023/07/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/">计算机网络笔记</a></div></section></div>
 
 
-
+<div class="related-wrap reveal" id="related-posts">
+    <section class='header'>
+      <div class='title cap theme'>您可能感兴趣的文章</div>
+    </section>
+    <section class='body'>
+    <div class="related-posts"><a class="item" href="\2023\01\02\Linux笔记\" title="Linux笔记"><span class="title">Linux笔记</span></a><a class="item" href="\2023\10\11\latex常用命令\" title="latex常用命令"><span class="title">latex常用命令</span></a><a class="item" href="\2023\07\10\数据库笔记\" title="数据库笔记"><span class="title">数据库笔记</span></a><a class="item" href="\2022\11\16\数据结构学习笔记\" title="数据结构学习笔记"><span class="title">数据结构学习笔记</span></a><a class="item" href="\2022\07\01\2022web大作业\" title="2022web大作业"><span class="title">2022web大作业</span></a></div></section></div>
 
 
 
@@ -1301,7 +1306,7 @@
     stellar.search = {};
     stellar.search.service = 'local_search';
     if (stellar.search.service == 'local_search') {
-      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"codeblock":true,"sort":"-date"});
       stellar.search[stellar.search.service] = service_obj;
     }
   }

@@ -163,7 +163,12 @@
 <div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2022/07/01/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">离散数学</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2022/03/03/my-first-blog/">my-first-blog</a></div></section></div>
 
 
-
+<div class="related-wrap reveal" id="related-posts">
+    <section class='header'>
+      <div class='title cap theme'>您可能感兴趣的文章</div>
+    </section>
+    <section class='body'>
+    <div class="related-posts"><a class="item" href="\2022\11\14\爱心特效\" title="爱心特效"><span class="title">爱心特效</span></a><a class="item" href="\2022\09\06\js导出json文件\" title="js导出json文件"><span class="title">js导出json文件</span></a></div></section></div>
 
 
 
@@ -299,7 +304,7 @@
     stellar.search = {};
     stellar.search.service = 'local_search';
     if (stellar.search.service == 'local_search') {
-      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"codeblock":true,"sort":"-date"});
       stellar.search[stellar.search.service] = service_obj;
     }
   }
