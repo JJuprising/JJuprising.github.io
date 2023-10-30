@@ -1,147 +1,114 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>软件体系结构笔记 | Joel Station</title><meta name="author" content="Joel"><meta name="copyright" content="Joel"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="1 构件管理1.构建描述：构建模型是对构建本质的抽象描述 2.构建分类与组织 已有的三大类构建分类方法：  关键字分类法 刻面分类法 超文本组织方法  构成一个系统的构件可分为以下5类：  独立而成熟的构建 有限制的构件 适应性构件 装配的构件 可修改的构件  3.人员及权限管理 构件重用构件开发的目的是重用，为了让构件在新的软件项目发挥作用，必须完成：  检索与提取构件 理解与评价构件 修改构件">
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.0.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>软件体系结构笔记 - Joel Station</title>
+
+  
+    <meta name="description" content="1 构件管理1.构建描述：构建模型是对构建本质的抽象描述 2.构建分类与组织 已有的三大类构建分类方法：  关键字分类法 刻面分类法 超文本组织方法  构成一个系统的构件可分为以下5类：  独立而成熟的构建 有限制的构件 适应性构件 装配的构件 可修改的构件  3.人员及权限管理 构件重用构件开发的目的是重用，为了让构件在新的软件项目发挥作用，必须完成：  检索与提取构件 理解与评价构件 修改构件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="软件体系结构笔记">
 <meta property="og:url" content="https://jjuprising.github.io/2023/09/20/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Joel Station">
 <meta property="og:description" content="1 构件管理1.构建描述：构建模型是对构建本质的抽象描述 2.构建分类与组织 已有的三大类构建分类方法：  关键字分类法 刻面分类法 超文本组织方法  构成一个系统的构件可分为以下5类：  独立而成熟的构建 有限制的构件 适应性构件 装配的构件 可修改的构件  3.人员及权限管理 构件重用构件开发的目的是重用，为了让构件在新的软件项目发挥作用，必须完成：  检索与提取构件 理解与评价构件 修改构件">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://jjuprising.github.io/images/NoCover.jpg">
+<meta property="og:image" content="d:/Blog/source/_posts/软件体系结构笔记.assets/image-20230927090653322.png">
+<meta property="og:image" content="d:/Blog/source/_posts/软件体系结构笔记.assets/image-20230927094351154.png">
+<meta property="og:image" content="d:/Blog/source/_posts/软件体系结构笔记.assets/image-20230927095041358.png">
+<meta property="og:image" content="d:/Blog/source/_posts/软件体系结构笔记.assets/image-20230927095238536.png">
+<meta property="og:image" content="d:/Blog/source/_posts/软件体系结构笔记.assets/image-20230927095304341.png">
+<meta property="og:image" content="d:/Blog/source/_posts/软件体系结构笔记.assets/image-20230927095943041.png">
+<meta property="og:image" content="d:/Blog/source/_posts/软件体系结构笔记.assets/image-20231011090546301.png)">
 <meta property="article:published_time" content="2023-09-20T01:24:48.000Z">
-<meta property="article:modified_time" content="2023-10-11T01:56:51.237Z">
+<meta property="article:modified_time" content="2023-10-25T01:00:34.360Z">
 <meta property="article:author" content="Joel">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jjuprising.github.io/images/NoCover.jpg"><link rel="shortcut icon" href="/img/jc_favicon2.png"><link rel="canonical" href="https://jjuprising.github.io/2023/09/20/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '',
-  date_suffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  lightbox: 'fancybox',
-  Snackbar: undefined,
-  source: {
-    justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
-    }
-  },
-  isPhotoFigcaption: false,
-  islazyload: false,
-  isAnchor: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: '软件体系结构笔记',
-  isPost: true,
-  isHome: false,
-  isHighlightShrink: false,
-  isToc: true,
-  postUpdate: '2023-10-11 09:56:51'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
-
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
-        }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
-
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
-
-        if (!itemStr) {
-          return undefined
-        }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
-
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return item.value
-      }
-    }
+<meta name="twitter:image" content="d:/Blog/source/_posts/软件体系结构笔记.assets/image-20230927090653322.png">
   
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    })
   
-      win.activateDarkMode = function () {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = function () {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
+  
+  
+
+  <!-- feed -->
+  
+
+  
     
-          if (t === 'dark') activateDarkMode()
-          else if (t === 'light') activateLightMode()
-        
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
     
-    const detectApple = () => {
-      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/jc_avator2.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/images/NoCover.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Joel Station</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">软件体系结构笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-09-20T01:24:48.000Z" title="发表于 2023-09-20 09:24:48">2023-09-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-10-11T01:56:51.237Z" title="更新于 2023-10-11 09:56:51">2023-10-11</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="软件体系结构笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>1</p>
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="title" href="/"><div class="main" ff="title">Joel Station</div></a></div>
+
+<nav class="menu dis-select"></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/blog/" placeholder="文章搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">软件体系结构笔记</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="toc-text">构件管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E4%BB%B6%E9%87%8D%E7%94%A8"><span class="toc-text">构件重用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%9A%84%E5%85%B4%E8%B5%B7%E5%92%8C%E5%8F%91%E5%B1%95"><span class="toc-text">软件体系结构的兴起和发展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">软件体系结构的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%91%E5%B1%95%E9%98%B6%E6%AE%B5"><span class="toc-text">发展阶段</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%8D%E7%B1%BB"><span class="toc-text">种类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E6%A8%A1%E5%9E%8B"><span class="toc-text">结构模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E6%A8%A1%E5%9E%8B"><span class="toc-text">框架模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E6%A8%A1%E5%9E%8B"><span class="toc-text">动态模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="toc-text">过程模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9E%8B"><span class="toc-text">功能模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1%E6%A8%A1%E5%9E%8B"><span class="toc-text">4+1模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%A7%86%E5%9B%BE"><span class="toc-text">逻辑视图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E8%A7%86%E5%9B%BE"><span class="toc-text">开发视图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E7%A8%8B%E8%A7%86%E5%9B%BE"><span class="toc-text">过程视图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E8%A7%86%E5%9B%BE"><span class="toc-text">物理视图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E8%A7%86%E5%9B%BE%E5%92%8C%E8%BF%9B%E7%A8%8B%E8%A7%86%E5%9B%BE%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-text">物理视图和进程视图的关系</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF"><span class="toc-text">场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E9%A3%8E%E6%A0%BC%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">软件体系结构风格的定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%86%9F%E6%82%89%E7%9A%84%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-text">熟悉的软件体系结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E9%A3%8E%E6%A0%BC%E5%88%86%E7%B1%BB"><span class="toc-text">软件体系结构风格分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E6%8D%AE%E6%B5%81%E9%A3%8E%E6%A0%BC"><span class="toc-text">什么是数据流风格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%A1%E9%81%93%E8%BF%87%E6%BB%A4%E5%99%A8%E9%A3%8E%E6%A0%BC"><span class="toc-text">管道过滤器风格</span></a></li></ol></div></div></widget>
+
+
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div><div id="post-meta">发布于&nbsp;<time datetime="2023-09-20T01:24:48.000Z">2023-09-20</time></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>软件体系结构笔记</span></h1>
+<p>1</p>
 <h3 id="构件管理"><a href="#构件管理" class="headerlink" title="构件管理"></a>构件管理</h3><p>1.<strong>构建描述</strong>：构建模型是对构建本质的抽象描述</p>
 <p><strong>2.构建分类与组织</strong></p>
 <p>已有的三大类构建分类方法：</p>
@@ -226,18 +193,23 @@
 <li><p>每个视图只关系系统的一个侧面，结合才一起能反映系统软件体系结构的全部内容</p>
 </li>
 </ul>
-<p><img src="D:\Blog\source_posts\软件体系结构笔记.assets\image-20230927090653322.png" alt="image-20230927090653322"></p>
-<p><img src="D:\Blog\source_posts\软件体系结构笔记.assets\image-20230927094351154.png" alt="image-20230927094351154"></p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="D:\Blog\source\_posts\软件体系结构笔记.assets\image-20230927090653322.png" alt="image-20230927090653322"/></div><div class="image-meta"><span class="image-caption center">image-20230927090653322</span></div></div>
+
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="D:\Blog\source\_posts\软件体系结构笔记.assets\image-20230927094351154.png" alt="image-20230927094351154"/></div><div class="image-meta"><span class="image-caption center">image-20230927094351154</span></div></div>
+
 <h3 id="逻辑视图"><a href="#逻辑视图" class="headerlink" title="逻辑视图"></a>逻辑视图</h3><ul>
 <li>逻辑架构主要支持功能性需求——即在为用户提供服务方面系统所应该提供的功能</li>
 <li>在面向对象技术中，通过<strong>抽象、封装和继承</strong>，可以用<strong>对象模型来代表逻辑视图</strong>，用<strong>类图</strong>来<strong>描述逻辑视图</strong></li>
 </ul>
 <p>表示方法：Booch标记法</p>
-<p><img src="D:\Blog\source_posts\软件体系结构笔记.assets\image-20230927095041358.png" alt="image-20230927095041358"></p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="D:\Blog\source\_posts\软件体系结构笔记.assets\image-20230927095041358.png" alt="image-20230927095041358"/></div><div class="image-meta"><span class="image-caption center">image-20230927095041358</span></div></div>
+
 <p>类图用来显示一个类的集合和它们的逻辑关系：<strong>关联、使用、组合、继承</strong>等等</p>
 <p>例子：</p>
-<p><img src="D:\Blog\source_posts\软件体系结构笔记.assets\image-20230927095238536.png" alt="image-20230927095238536"></p>
-<p><img src="D:\Blog\source_posts\软件体系结构笔记.assets\image-20230927095304341.png" alt="image-20230927095304341"></p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="D:\Blog\source\_posts\软件体系结构笔记.assets\image-20230927095238536.png" alt="image-20230927095238536"/></div><div class="image-meta"><span class="image-caption center">image-20230927095238536</span></div></div>
+
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="D:\Blog\source\_posts\软件体系结构笔记.assets\image-20230927095304341.png" alt="image-20230927095304341"/></div><div class="image-meta"><span class="image-caption center">image-20230927095304341</span></div></div>
+
 <h3 id="开发视图"><a href="#开发视图" class="headerlink" title="开发视图"></a>开发视图</h3><ul>
 <li>也称模块视图，关注软件开发环境下实际模块的组织。主要侧重于软件模块的组织和管理</li>
 <li>大部分情况考虑的内部需求与以下几项有关：<ul>
@@ -251,7 +223,8 @@
 <li>关注程序包，可以直接使用第三方SDK、框架或中间件</li>
 </ul>
 <p>表示方法：Booch方法的变形</p>
-<p><img src="D:\Blog\source_posts\软件体系结构笔记.assets\image-20230927095943041.png" alt="image-20230927095943041"></p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="D:\Blog\source\_posts\软件体系结构笔记.assets\image-20230927095943041.png" alt="image-20230927095943041"/></div><div class="image-meta"><span class="image-caption center">image-20230927095943041</span></div></div>
+
 <h3 id="过程视图"><a href="#过程视图" class="headerlink" title="过程视图"></a>过程视图</h3><ul>
 <li><p>侧重系统的运行特性，关注一些非功能性需求</p>
 <ul>
@@ -295,86 +268,233 @@
 </ul>
 </li>
 </ul>
-<p><img src="D:\Blog\source_posts\软件体系结构笔记.assets\image-20231011090546301.png" alt="image-20231011090546301"></p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><h4 id="逻辑视图：设计满足功能需求的架构"><a href="#逻辑视图：设计满足功能需求的架构" class="headerlink" title="逻辑视图：设计满足功能需求的架构"></a>逻辑视图：设计满足功能需求的架构</h4><p>应用层负责什么，通讯层负责什么…</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="D:\Blog\source\_posts\软件体系结构笔记.assets\image-20231011090546301.png)" alt="### 实例 #### 逻辑视图：设计满足功能需求的架构 应用层负责什么，通讯层负责什么... * 应用层负责设备状态的显示，并提供模拟控制台供用户发送调试命令。 * 应用层使用通讯层和嵌入层进行交互，但应用层不知道通讯的细节。 * 通讯层负责在RS232协议之上实现一套专用的"应用协议"。 * 当应用层发送来包含调试指令的协议包，由通讯层负责按RS232协议将之传递给嵌入层 #### 开发视图：设计满足开发期质量属性的架构 采用哪些现成框架、哪些第三方SDK、哪些中间件平台 #### 进程视图：设计满足运行期质量属性的架构 关注进程、线程、对象等运行时概念，以及相关的并发、同步、通信等问题 设备调试系统采用多线程的设计 #### 物理视图：和部署相关的架构决策 关 * 目标程序及其依赖的运行库和系统软件 * 最终如何安装或部署到物理机器 * 如何部署机器和网络来配合软件系统的可靠性、可伸缩性等要求 ## 体系结构的核心模型 核心模型的5种元素： * **构件** * 具有某种功能的可重用软件模板单元 * 分类：复合构件、原子构件 * **连接件** * 构件之间的交互 * 连接件接口由一组角色组成，每一个角色定义了该连接件表示的交互的参与者 * **配置** * 表示构件和连接件的拓扑逻辑和约束 * 端口 * 表示构件和外部环节的交互点 * 角色 ## 体系结构的生命周期模型 需求分析--建立体系结构--设计--实现--测试 # 软件体系结构风格 **软件体系结构的组成：** * 构件，各种基本的软件构造模块（函数、对象、模式等 image-20231011090546301"/></div><div class="image-meta"><span class="image-caption center">### 实例 #### 逻辑视图：设计满足功能需求的架构 应用层负责什么，通讯层负责什么... * 应用层负责设备状态的显示，并提供模拟控制台供用户发送调试命令。 * 应用层使用通讯层和嵌入层进行交互，但应用层不知道通讯的细节。 * 通讯层负责在RS232协议之上实现一套专用的"应用协议"。 * 当应用层发送来包含调试指令的协议包，由通讯层负责按RS232协议将之传递给嵌入层 #### 开发视图：设计满足开发期质量属性的架构 采用哪些现成框架、哪些第三方SDK、哪些中间件平台 #### 进程视图：设计满足运行期质量属性的架构 关注进程、线程、对象等运行时概念，以及相关的并发、同步、通信等问题 设备调试系统采用多线程的设计 #### 物理视图：和部署相关的架构决策 关 * 目标程序及其依赖的运行库和系统软件 * 最终如何安装或部署到物理机器 * 如何部署机器和网络来配合软件系统的可靠性、可伸缩性等要求 ## 体系结构的核心模型 核心模型的5种元素： * **构件** * 具有某种功能的可重用软件模板单元 * 分类：复合构件、原子构件 * **连接件** * 构件之间的交互 * 连接件接口由一组角色组成，每一个角色定义了该连接件表示的交互的参与者 * **配置** * 表示构件和连接件的拓扑逻辑和约束 * 端口 * 表示构件和外部环节的交互点 * 角色 ## 体系结构的生命周期模型 需求分析--建立体系结构--设计--实现--测试 # 软件体系结构风格 **软件体系结构的组成：** * 构件，各种基本的软件构造模块（函数、对象、模式等 image-20231011090546301</span></div></div>；
 <ul>
-<li>应用层负责设备状态的显示，并提供模拟控制台供用户发送调试命令。</li>
-<li>应用层使用通讯层和嵌入层进行交互，但应用层不知道通讯的细节。</li>
-<li>通讯层负责在RS232协议之上实现一套专用的”应用协议”。</li>
-<li>当应用层发送来包含调试指令的协议包，由通讯层负责按RS232协议将之传递给嵌入层</li>
+<li>连接件，将它们组合起来形成完整的软件系统</li>
+<li>物理分布</li>
+<li>约束</li>
+<li>性能</li>
 </ul>
-<h4 id="开发视图：设计满足开发期质量属性的架构"><a href="#开发视图：设计满足开发期质量属性的架构" class="headerlink" title="开发视图：设计满足开发期质量属性的架构"></a>开发视图：设计满足开发期质量属性的架构</h4><p>采用哪些现成框架、哪些第三方SDK、哪些中间件平台</p>
-<h4 id="进程视图：设计满足运行期质量属性的架构"><a href="#进程视图：设计满足运行期质量属性的架构" class="headerlink" title="进程视图：设计满足运行期质量属性的架构"></a>进程视图：设计满足运行期质量属性的架构</h4><p>关注进程、线程、对象等运行时概念，以及相关的并发、同步、通信等问题</p>
-<p>设备调试系统采用多线程的设计</p>
-<h4 id="物理视图：和部署相关的架构决策"><a href="#物理视图：和部署相关的架构决策" class="headerlink" title="物理视图：和部署相关的架构决策"></a>物理视图：和部署相关的架构决策</h4><p>关</p>
-<ul>
-<li>目标程序及其依赖的运行库和系统软件</li>
-<li>最终如何安装或部署到物理机器</li>
-<li>如何部署机器和网络来配合软件系统的可靠性、可伸缩性等要求</li>
+<blockquote>
+<p>体系结构&#x3D;构件+连接件+约束</p>
+</blockquote>
+<h2 id="软件体系结构风格的定义"><a href="#软件体系结构风格的定义" class="headerlink" title="软件体系结构风格的定义"></a><strong>软件体系结构风格的定义</strong></h2><ul>
+<li>惯用模式</li>
+<li>词汇表和约束，即构件连接件+约束</li>
+<li>共同的结构和语义特征</li>
 </ul>
-<h2 id="体系结构的核心模型"><a href="#体系结构的核心模型" class="headerlink" title="体系结构的核心模型"></a>体系结构的核心模型</h2><p>核心模型的5种元素：</p>
-<ul>
-<li><strong>构件</strong><ul>
-<li>具有某种功能的可重用软件模板单元</li>
-<li>分类：复合构件、原子构件</li>
+<h3 id="熟悉的软件体系结构"><a href="#熟悉的软件体系结构" class="headerlink" title="熟悉的软件体系结构"></a>熟悉的软件体系结构</h3><ul>
+<li>Client&#x2F;Server结构</li>
+<li>Browse&#x2F;Server结构</li>
+<li>Three-tier三层cs结构</li>
+<li>Distributed分布式结构</li>
 </ul>
-</li>
-<li><strong>连接件</strong><ul>
-<li>构件之间的交互</li>
-<li>连接件接口由一组角色组成，每一个角色定义了该连接件表示的交互的参与者</li>
+<h2 id="软件体系结构风格分类"><a href="#软件体系结构风格分类" class="headerlink" title="软件体系结构风格分类"></a>软件体系结构风格分类</h2><ul>
+<li>经典SA风格</li>
+<li>其他常用SA风格</li>
+<li>异构（复合）SA风格</li>
 </ul>
-</li>
-<li><strong>配置</strong><ul>
-<li>表示构件和连接件的拓扑逻辑和约束</li>
+<h3 id="什么是数据流风格"><a href="#什么是数据流风格" class="headerlink" title="什么是数据流风格"></a>什么是数据流风格</h3><ul>
+<li>数据从一个处理单元流入到另一个处理单元，每经过一个单元就做一次转换</li>
 </ul>
-</li>
-<li>端口<ul>
-<li>表示构件和外部环节的交互点</li>
-</ul>
-</li>
-<li>角色</li>
-</ul>
-<h2 id="体系结构的生命周期模型"><a href="#体系结构的生命周期模型" class="headerlink" title="体系结构的生命周期模型"></a>体系结构的生命周期模型</h2><p>需求分析–建立体系结构–设计–实现–测试</p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Joel</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://jjuprising.github.io/2023/09/20/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/">https://jjuprising.github.io/2023/09/20/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://JJuprising.github.io" target="_blank">Joel Station</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/images/NoCover.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/10/11/latex%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"><img class="prev-cover" src="https://img-blog.csdnimg.cn/img_convert/c58732283f0f19b81dcd000da8bf92b7.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">latex常用命令</div></div></a></div><div class="next-post pull-right"><a href="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"><img class="next-cover" src="/images/NoCover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">计算机组成原理</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/jc_avator2.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Joel</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/JJuprising"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/JJuprising" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">构件管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E4%BB%B6%E9%87%8D%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">构件重用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%9A%84%E5%85%B4%E8%B5%B7%E5%92%8C%E5%8F%91%E5%B1%95"><span class="toc-number"></span> <span class="toc-text">软件体系结构的兴起和发展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">1.</span> <span class="toc-text">软件体系结构的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%91%E5%B1%95%E9%98%B6%E6%AE%B5"><span class="toc-number">2.</span> <span class="toc-text">发展阶段</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%BB%BA%E6%A8%A1"><span class="toc-number"></span> <span class="toc-text">软件体系结构建模</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%8D%E7%B1%BB"><span class="toc-number"></span> <span class="toc-text">种类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">结构模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">框架模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E6%A8%A1%E5%9E%8B"><span class="toc-number">3.</span> <span class="toc-text">动态模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="toc-number">4.</span> <span class="toc-text">过程模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9E%8B"><span class="toc-number">5.</span> <span class="toc-text">功能模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1%E6%A8%A1%E5%9E%8B"><span class="toc-number"></span> <span class="toc-text">4+1模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%A7%86%E5%9B%BE"><span class="toc-number">1.</span> <span class="toc-text">逻辑视图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E8%A7%86%E5%9B%BE"><span class="toc-number">2.</span> <span class="toc-text">开发视图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E7%A8%8B%E8%A7%86%E5%9B%BE"><span class="toc-number">3.</span> <span class="toc-text">过程视图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E8%A7%86%E5%9B%BE"><span class="toc-number">4.</span> <span class="toc-text">物理视图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E8%A7%86%E5%9B%BE%E5%92%8C%E8%BF%9B%E7%A8%8B%E8%A7%86%E5%9B%BE%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">4.1.</span> <span class="toc-text">物理视图和进程视图的关系</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF"><span class="toc-number">5.</span> <span class="toc-text">场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">6.</span> <span class="toc-text">小结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-number">7.</span> <span class="toc-text">实例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%A7%86%E5%9B%BE%EF%BC%9A%E8%AE%BE%E8%AE%A1%E6%BB%A1%E8%B6%B3%E5%8A%9F%E8%83%BD%E9%9C%80%E6%B1%82%E7%9A%84%E6%9E%B6%E6%9E%84"><span class="toc-number">7.1.</span> <span class="toc-text">逻辑视图：设计满足功能需求的架构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E8%A7%86%E5%9B%BE%EF%BC%9A%E8%AE%BE%E8%AE%A1%E6%BB%A1%E8%B6%B3%E5%BC%80%E5%8F%91%E6%9C%9F%E8%B4%A8%E9%87%8F%E5%B1%9E%E6%80%A7%E7%9A%84%E6%9E%B6%E6%9E%84"><span class="toc-number">7.2.</span> <span class="toc-text">开发视图：设计满足开发期质量属性的架构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E8%A7%86%E5%9B%BE%EF%BC%9A%E8%AE%BE%E8%AE%A1%E6%BB%A1%E8%B6%B3%E8%BF%90%E8%A1%8C%E6%9C%9F%E8%B4%A8%E9%87%8F%E5%B1%9E%E6%80%A7%E7%9A%84%E6%9E%B6%E6%9E%84"><span class="toc-number">7.3.</span> <span class="toc-text">进程视图：设计满足运行期质量属性的架构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E8%A7%86%E5%9B%BE%EF%BC%9A%E5%92%8C%E9%83%A8%E7%BD%B2%E7%9B%B8%E5%85%B3%E7%9A%84%E6%9E%B6%E6%9E%84%E5%86%B3%E7%AD%96"><span class="toc-number">7.4.</span> <span class="toc-text">物理视图：和部署相关的架构决策</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%9A%84%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9E%8B"><span class="toc-number"></span> <span class="toc-text">体系结构的核心模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%A8%A1%E5%9E%8B"><span class="toc-number"></span> <span class="toc-text">体系结构的生命周期模型</span></a></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/10/11/latex%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="latex常用命令"><img src="https://img-blog.csdnimg.cn/img_convert/c58732283f0f19b81dcd000da8bf92b7.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="latex常用命令"/></a><div class="content"><a class="title" href="/2023/10/11/latex%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="latex常用命令">latex常用命令</a><time datetime="2023-10-11T14:35:28.000Z" title="发表于 2023-10-11 22:35:28">2023-10-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/20/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/" title="软件体系结构笔记"><img src="/images/NoCover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件体系结构笔记"/></a><div class="content"><a class="title" href="/2023/09/20/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/" title="软件体系结构笔记">软件体系结构笔记</a><time datetime="2023-09-20T01:24:48.000Z" title="发表于 2023-09-20 09:24:48">2023-09-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" title="计算机组成原理"><img src="/images/NoCover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机组成原理"/></a><div class="content"><a class="title" href="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" title="计算机组成原理">计算机组成原理</a><time datetime="2023-09-19T00:58:36.000Z" title="发表于 2023-09-19 08:58:36">2023-09-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/18/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/" title="数字图像处理笔记"><img src="/images/NoCover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数字图像处理笔记"/></a><div class="content"><a class="title" href="/2023/09/18/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/" title="数字图像处理笔记">数字图像处理笔记</a><time datetime="2023-09-18T06:17:22.000Z" title="发表于 2023-09-18 14:17:22">2023-09-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/17/JJ%E7%9A%84%E7%AE%97%E6%B3%95%E4%B9%8B%E6%97%85/" title="JJ的算法之旅"><img src="/images/NoCover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JJ的算法之旅"/></a><div class="content"><a class="title" href="/2023/09/17/JJ%E7%9A%84%E7%AE%97%E6%B3%95%E4%B9%8B%E6%97%85/" title="JJ的算法之旅">JJ的算法之旅</a><time datetime="2023-09-16T17:39:06.000Z" title="发表于 2023-09-17 01:39:06">2023-09-17</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/bc.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Joel</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><script type="text/javascript" id="maid-script" src="https://unpkg.com/mermaid@undefined/dist/mermaid.min.js?v=undefined"></script><script>if (window.mermaid) {
-  var options = JSON.parse(document.getElementById('maid-script').getAttribute('mermaidoptioins'));
-  mermaid.initialize(options);
-}</script></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script>var preloader = {
-  endLoading: () => {
-    document.body.style.overflow = 'auto';
-    document.getElementById('loading-box').classList.add("loaded")
-  },
-  initLoading: () => {
-    document.body.style.overflow = '';
-    document.getElementById('loading-box').classList.remove("loaded")
+<blockquote>
+<p>注意：数据流风格不是某个过程的数据流图，它描述的是系统体系结构级别的设计</p>
+</blockquote>
+<h3 id="管道过滤器风格"><a href="#管道过滤器风格" class="headerlink" title="管道过滤器风格"></a>管道过滤器风格</h3><p>编译器</p>
 
-  }
-}
-window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>(() => {
-  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
-  if ($mermaidWrap.length) {
-    window.runMermaid = () => {
-      window.loadMermaid = true
-      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
 
-      Array.from($mermaidWrap).forEach((item, index) => {
-        const mermaidSrc = item.firstElementChild
-        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
-        const mermaidID = 'mermaid-' + index
-        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
-        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
-          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
-        })
-      })
+
+<div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div></section></div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2023/10/11/latex%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">latex常用命令</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a></div></section></div>
+
+
+
+
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><p>本站由 <a href="/">@anonymity</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
     }
+  };
+  stellar.version = '1.19.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+    root : '/',
+  };
 
-    const loadMermaid = () => {
-      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
     }
-
-    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
   }
-})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
-POWERMODE.shake = true;
-POWERMODE.mobile = false;
-document.body.addEventListener('input', POWERMODE);
-</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>
