@@ -1,126 +1,147 @@
-<!DOCTYPE html>
-<html lang='zh-CN'>
-
-<head>
-  <meta name="generator" content="Hexo 6.0.0">
-  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0">
-  <meta charset="utf-8">
-  
-
-  <meta http-equiv='x-dns-prefetch-control' content='on' />
-  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
-  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
-  <link rel='dns-prefetch' href='//unpkg.com'>
-
-  <meta name="renderer" content="webkit">
-  <meta name="force-rendering" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-  <meta name="HandheldFriendly" content="True" >
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="theme-color" content="#f8f8f8">
-  
-  <title>脑电笔记 - Joel Station</title>
-
-  
-    <meta name="description" content="s实验常用评估指标image-20231018192044991  背景静息态脑电一般在频域进行分析，以刻画信号的周期性特征 需要使用频谱分析来描述脑电信号功率沿频率的分布特征。 任务态脑电 通常采用时频分析——时间-频率域中分析 事件相关的频谱变化被称为事件相关同步化&#x2F;去同步化(ERS&#x2F;ERD)，通常在时间-频率域中随时间变化的频谱功率可以通过时频分析方法进行估计 频谱估计基">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>脑电笔记 | Joel Station</title><meta name="author" content="Joel"><meta name="copyright" content="Joel"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="s实验常用评估指标 背景静息态脑电一般在频域进行分析，以刻画信号的周期性特征 需要使用频谱分析来描述脑电信号功率沿频率的分布特征。 任务态脑电 通常采用时频分析——时间-频率域中分析 事件相关的频谱变化被称为事件相关同步化&#x2F;去同步化(ERS&#x2F;ERD)，通常在时间-频率域中随时间变化的频谱功率可以通过时频分析方法进行估计 频谱估计基本概念时间序列信号在某通道连续记录的脑电信号，在">
 <meta property="og:type" content="article">
 <meta property="og:title" content="脑电笔记">
 <meta property="og:url" content="https://jjuprising.github.io/2023/04/01/%E8%84%91%E7%94%B5%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Joel Station">
-<meta property="og:description" content="s实验常用评估指标image-20231018192044991  背景静息态脑电一般在频域进行分析，以刻画信号的周期性特征 需要使用频谱分析来描述脑电信号功率沿频率的分布特征。 任务态脑电 通常采用时频分析——时间-频率域中分析 事件相关的频谱变化被称为事件相关同步化&#x2F;去同步化(ERS&#x2F;ERD)，通常在时间-频率域中随时间变化的频谱功率可以通过时频分析方法进行估计 频谱估计基">
+<meta property="og:description" content="s实验常用评估指标 背景静息态脑电一般在频域进行分析，以刻画信号的周期性特征 需要使用频谱分析来描述脑电信号功率沿频率的分布特征。 任务态脑电 通常采用时频分析——时间-频率域中分析 事件相关的频谱变化被称为事件相关同步化&#x2F;去同步化(ERS&#x2F;ERD)，通常在时间-频率域中随时间变化的频谱功率可以通过时频分析方法进行估计 频谱估计基本概念时间序列信号在某通道连续记录的脑电信号，在">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="c:/Users/chan/AppData/Roaming/Typora/typora-user-images/image-20231018192044991.png">
-<meta property="og:image" content="d:/Typora/images/image-20230402145312464.png">
-<meta property="og:image" content="d:/Typora/images/image-20230402145429594.png">
-<meta property="og:image" content="d:/Typora/images/image-20230402153653507.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200418225702674.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mjc2NTcwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="d:/Typora/images/image-20230401234449494.png">
-<meta property="og:image" content="d:/Typora/images/image-20230401234757051.png">
-<meta property="og:image" content="d:/Typora/images/image-20230401234810906.png">
-<meta property="og:image" content="d:/Typora/images/image-20230401233434429.png">
-<meta property="og:image" content="d:/Typora/images/image-20230402005247706.png">
-<meta property="og:image" content="d:/Typora/images/image-20230402005339811.png">
-<meta property="og:image" content="d:/Typora/images/image-20230402005509859.png">
-<meta property="og:image" content="d:/Typora/images/image-20230402095023714.png">
-<meta property="og:image" content="d:/Typora/images/image-20230402010906679.png">
-<meta property="og:image" content="d:/Typora/images/image-20230402011721328.png">
-<meta property="og:image" content="d:/Typora/images/image-20230402213147265.png">
-<meta property="og:image" content="d:/Typora/images/image-20230402113108116.png">
-<meta property="og:image" content="d:/Typora/images/image-20230423203429043.png">
+<meta property="og:image" content="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg2.png">
 <meta property="article:published_time" content="2023-04-01T15:20:49.000Z">
 <meta property="article:modified_time" content="2023-10-18T11:29:49.395Z">
 <meta property="article:author" content="Joel">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="c:/Users/chan/AppData/Roaming/Typora/typora-user-images/image-20231018192044991.png">
-  
-  
-  
-  
+<meta name="twitter:image" content="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg2.png"><link rel="shortcut icon" href="/img/jc_favicon2.png"><link rel="canonical" href="https://jjuprising.github.io/2023/04/01/%E8%84%91%E7%94%B5%E7%AC%94%E8%AE%B0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '脑电笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-10-18 19:29:49'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-  <!-- feed -->
-  
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-<link rel="stylesheet" href="/css/main.css">
-
-  
-
-  
-
-  
-
-  
-
-
-  
-</head>
-
-<body>
-  
-
-
-
-
-  <div class='l_body' id='start'>
-    <aside class='l_left' layout='post'>
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-
-  
-
-<header class="header"><div class="logo-wrap"><a class="title" href="/"><div class="main" ff="title">Joel Station</div></a></div>
-
-<nav class="menu dis-select"></nav>
-</header>
-
-
-<div class="widgets">
-<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/blog/" placeholder="文章搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
-
-
-<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">脑电笔记</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%91%E8%B0%B1%E4%BC%B0%E8%AE%A1%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">频谱估计基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E4%BF%A1%E5%8F%B7"><span class="toc-text">时间序列信号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%91%E7%8E%87"><span class="toc-text">频率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%91%E8%B0%B1"><span class="toc-text">频谱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%91%E8%B0%B1%E5%88%86%E6%9E%90"><span class="toc-text">频谱分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%91%E5%9F%9F%E5%92%8C%E6%97%B6%E5%9F%9F"><span class="toc-text">频域和时域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%91%E8%B0%B1%E5%9B%BE%E5%92%8C%E6%B3%A2%E5%BD%A2%E5%9B%BE"><span class="toc-text">频谱图和波形图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ssvep"><span class="toc-text">ssvep</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p300-ssvep-%E6%BD%98%E8%80%81%E5%B8%88"><span class="toc-text">p300+ssvep 潘老师</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#P300-SD"><span class="toc-text">P300 SD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSVEP"><span class="toc-text">SSVEP</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C"><span class="toc-text">实验</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#p300-ssvep"><span class="toc-text">p300+ssvep</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A3%80%E6%B5%8B"><span class="toc-text">检测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C-1"><span class="toc-text">实验</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p300-ssvep-1"><span class="toc-text">p300+ssvep</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSVEP-1"><span class="toc-text">SSVEP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TRCA%E6%8F%90%E5%8F%96%E4%BB%BB%E5%8A%A1%E7%9B%B8%E5%85%B3%E6%88%90%E5%88%86"><span class="toc-text">TRCA提取任务相关成分</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%92%8C%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0"><span class="toc-text">深度学习和机器学习</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%81%E7%A7%BB%E5%AD%A6%E4%B9%A0"><span class="toc-text">迁移学习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95"><span class="toc-text">两种方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E9%A2%91%E5%9F%9F"><span class="toc-text">时频域</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-text">方法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E8%BE%93%E5%85%A5"><span class="toc-text">直接输入</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E6%B3%A2%E5%8F%98%E6%8D%A2"><span class="toc-text">小波变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">两个基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%A9%E6%94%BE"><span class="toc-text">缩放</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E5%B0%BA%E5%BA%A6%E5%9B%BE%E5%A4%84%E7%90%86%E4%BF%A1%E5%8F%B7"><span class="toc-text">利用尺度图处理信号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%8D%E9%87%87%E6%A0%B7"><span class="toc-text">降采样</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E5%A4%84%E7%90%86"><span class="toc-text">预处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BB%91%E5%8A%A8%E6%97%B6%E9%97%B4%E7%AA%97"><span class="toc-text">滑动时间窗</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%E6%96%B9%E6%B3%95"><span class="toc-text">分类方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E5%A7%8B%E6%95%B0%E6%8D%AE%E7%89%B9%E5%BE%81%E7%AE%97%E6%B3%95"><span class="toc-text">原始数据特征算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E8%A1%8C%E5%A4%9A%E5%B1%82%E6%84%9F%E7%9F%A5%E7%BD%91%E7%BB%9C%E7%AE%97%E6%B3%95"><span class="toc-text">平行多层感知网络算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BB%8E%E6%9B%BC%E5%87%A0%E4%BD%95%E4%B8%8E%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA%E7%AE%97%E6%B3%95"><span class="toc-text">黎曼几何与支持向量机算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E5%B0%BA%E5%BA%A6-CSP-%E7%AE%97%E6%B3%95"><span class="toc-text">多尺度 CSP 算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CNN-SSVEP"><span class="toc-text">CNN SSVEP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MFCNN"><span class="toc-text">MFCNN</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%A2%91%E5%8C%96%E5%A4%84%E7%90%86"><span class="toc-text">时频化处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%9E%84%E5%BB%BA"><span class="toc-text">神经网络构建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB"><span class="toc-text">目标识别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C-2"><span class="toc-text">实验</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%B7%E7%A7%AF"><span class="toc-text">卷积</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CNN-LSTM"><span class="toc-text">CNN+LSTM</span></a></li></ol></div></div></widget>
-
-
-
-
-</div>
-
-
-    </aside>
-    <div class='l_main'>
-      
-
-      
-
-
-
-<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div><div id="post-meta">发布于&nbsp;<time datetime="2023-04-01T15:20:49.000Z">2023-04-01</time></div></div>
-
-<article class='md-text content post'>
-<h1 class="article-title"><span>脑电笔记</span></h1>
-<h1 id="s实验常用评估指标"><a href="#s实验常用评估指标" class="headerlink" title="s实验常用评估指标"></a>s实验常用评估指标</h1><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="C:\Users\chan\AppData\Roaming\Typora\typora-user-images\image-20231018192044991.png" alt="image-20231018192044991"/></div><div class="image-meta"><span class="image-caption center">image-20231018192044991</span></div></div>
-
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/jc_avator2.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">40</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg2.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Joel Station</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">脑电笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-04-01T15:20:49.000Z" title="发表于 2023-04-01 23:20:49">2023-04-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-10-18T11:29:49.395Z" title="更新于 2023-10-18 19:29:49">2023-10-18</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">8.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>26分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="脑电笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="s实验常用评估指标"><a href="#s实验常用评估指标" class="headerlink" title="s实验常用评估指标"></a>s实验常用评估指标</h1><p><img src="C:\Users\chan\AppData\Roaming\Typora\typora-user-images\image-20231018192044991.png" alt="image-20231018192044991"></p>
 <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p><strong>静息态脑电</strong>一般在频域进行分析，以刻画信号的周期性特征</p>
 <p>需要使用频谱分析来描述脑电信号功率沿频率的分布特征。</p>
 <p><strong>任务态脑电</strong> 通常采用时频分析——时间-频率域中分析</p>
@@ -159,19 +180,16 @@
 <p>第一个Run用于设置GUI中目标键的刺激频率，因为不同的受试者在不同刺激频率下产生SSVEP电位的幅度是不一样的[97]，第一个Run包含32个trial，共需要6分钟的时间。在每个trial中，受试者需要注视GUI中的一个闪烁按钮10秒钟（由屏幕中的箭头来指示）。在32个trial中，4个闪烁按钮的次序由系统随机产生的，每个闪烁按钮将被标示8次。响应最大的设为目标键，其他是伪键</p>
 <h3 id="p300-ssvep"><a href="#p300-ssvep" class="headerlink" title="p300+ssvep"></a>p300+ssvep</h3><p>本实验只采用“Fz”、“Cz”、“P7”、“P3”、“Pz”、“P4”、“P8”、“O1”、<br>“Oz”与“O2”这10个通道的脑电信号。所有电极的阻抗值皆为5𝐾Ω以下。脑电信号以<strong>250Hz</strong>的频率采样，并在<strong>0.1至30Hz</strong>的范围内进行带通滤波。</p>
 <p>四组按钮中的四个大按钮分别以随机的顺序闪烁（形状变为方形，颜色变为绿色），每两次闪烁之间包含100ms的增强和100ms的间隔。因此，一个round包含四个大按钮的闪烁，共需要持续800ms（一个round被定义为每个大按钮闪烁一次的完整周期）</p>
-<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="D:\Typora\images\image-20230402145312464.png" alt="image-20230402145312464"/></div><div class="image-meta"><span class="image-caption center">image-20230402145312464</span></div></div>
-
+<p><img src="D:\Typora\images\image-20230402145312464.png" alt="image-20230402145312464"></p>
 <p>也就是小圈跟大圈固定频率黑到红闪，每隔100ms有一个随机的增强，即大按钮变为绿色方形，持续100ms</p>
 <h4 id="检测"><a href="#检测" class="headerlink" title="检测"></a>检测</h4><p>P300检测是<strong>每800毫秒</strong>(1round)进行一次，对应一轮所有按钮组的闪烁</p>
 <p>ssvep检测是每200毫秒进行一次,我们选取8个通道中当前时间点的<strong>前3.2秒数据单元（3.2X250Hz，800数据点）进行SSVEP检测。</strong></p>
 <h4 id="实验-1"><a href="#实验-1" class="headerlink" title="实验"></a><strong>实验</strong></h4><p>8位来自本实验室的20～33岁的健康受试者参加了3个实验，包括1个离<br>线实验和2个在线实验。在实验之前，每位受试者参加一个包括30个trial的Session，采用如图4-2所示的GUI进行P300模型的训练。特别地，在每一个trial中，所有4组按钮中的大按钮以随机次序闪烁，每个大按钮闪烁10次。同一时刻，受试者要求注视着给定的目标按钮。收集的数据用于构建一个P300分类模型，用于后面3个实验。</p>
 <p>进行3个Session，每 一个Session由80个trial组成</p>
-<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="D:\Typora\images\image-20230402145429594.png" alt="image-20230402145429594"/></div><div class="image-meta"><span class="image-caption center">image-20230402145429594</span></div></div>
-
+<p><img src="D:\Typora\images\image-20230402145429594.png" alt="image-20230402145429594"></p>
 <h1 id="P300-ssvep-薛仲林"><a href="#P300-ssvep-薛仲林" class="headerlink" title="P300+ssvep 薛仲林"></a>P300+ssvep 薛仲林</h1><p>P300 电位检测：首先将采集 P300 信号进行带通滤波，其中通带频率为 0.1− 10Hz，然后进行 200 降采样，即每 5 个数据点选 1 个。提取每个导联的在脑电范式刺激范式后800毫秒的P300脑电数据，将8个导联脑电数据归一限制到[-1,1]之内，将 8 个导联脑电数据归一化数据特征向量，组成一个脑电数据特征向量矩阵。 </p>
 <p>每个被试人员均进行 6 次实验，一次实验输入 5 个目标字符，共输入字符30 个。在每两次实验之后被试人员休息 2 分钟，其中每次实验定义为一个 session，每输入一个目标字符为一个 run，每一个字符闪烁为trial，其中包含受试人员目标字符定义为一个 target，不包含受试人员的目标字符为 nontargat。此外依次从左到右定义行列闪烁 trail 编号为 1<del>36，共 36trial。1</del>36 号 trail 有且仅有一个target，35 个nontargat。36 个 trail 随机闪烁一次为一个 sequence。15 个sequence为一个 run，完成一个字符输入如下图 2.9 所示。</p>
-<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="D:\Typora\images\image-20230402153653507.png" alt="image-20230402153653507"/></div><div class="image-meta"><span class="image-caption center">image-20230402153653507</span></div></div>
-
+<p><img src="D:\Typora\images\image-20230402153653507.png" alt="image-20230402153653507"></p>
 <h2 id="p300-ssvep-1"><a href="#p300-ssvep-1" class="headerlink" title="p300+ssvep"></a>p300+ssvep</h2><p>为了将SSVEP频带与P300频带分离，以0.2Hz的步长选择12个高于12Hz的闪烁频率，从12.4到14.6Hz。根据 [35]，可以通过模拟方法对40个频率 (范围从8hz到15.8Hz，步长为0.2Hz) 的任何刺激相位的ssvep进行模拟，其中涵盖了该实验的所有刺激频率。因此，通过使用具有200ms的刺激持续时间的模拟方法在公共SSVEP数据集上搜索JFPM方法的相位间隔 (从0到0.05 π) 来优化初始相位，从而在两个相邻频率之间产生0.35 π 的相位间隔。</p>
 <h1 id="传统方法"><a href="#传统方法" class="headerlink" title="传统方法"></a>传统方法</h1><h2 id="SSVEP-1"><a href="#SSVEP-1" class="headerlink" title="SSVEP"></a>SSVEP</h2><h3 id="TRCA提取任务相关成分"><a href="#TRCA提取任务相关成分" class="headerlink" title="TRCA提取任务相关成分"></a>TRCA提取任务相关成分</h3><p>虽然基于CCA的方法在识别SSVEP信号方面具有不错的表现,但这类方法的性能仍旧<strong>易受到自发脑电活动的干扰的影响</strong>。除此之外,研究人员们考虑到基于CCA的方法还有一个很大的问题,即<strong>没有利用到相位信息</strong>(参考信号中正余弦中没有包含相位项)。那么如果能够有效地利用相位信息,想必会给SSVEP的识别性能带来较大的提升。</p>
 <p>由此研究人员便提出了TRCA方法,TRCA的方法即通过最大化每个task中神经影像数据的<strong>复现性</strong>(reproducibility),提取任务相关成分(task-related com-ponents)。对于SSVEP这种锁时(time-locked)信号,该方法非常合适,因为在SSVEP中可以最大化多个trial之间的可再现性,提高SNR(Signal-to-Noise),抑制自发脑电活动。</p>
@@ -182,8 +200,7 @@
 <p>我们希望能够提取到任务相关成分s(t)，以增大信噪比。</p>
 <p>首先将多通道的EEG信号加权求和，表示为一个线性模型y(t)，为了使得y(t)&#x3D;&#x3D;s(t)，就必须使每个通道相关成分的加权求和结果为1，无关成分加权求和结果为0。如果我们得到了这样的一个解，那么多通道的<strong>EEG信号经过线性加权求和</strong>后，便能够得到在多个trial之间具有高度相关性的<em>y</em>(<em>t</em>)。</p>
 <p>原本trial(颜色片段)之间变化较大的N通道EEG信号，经过处理后得到的y ( t ) y*(<em>t</em>)在trial之间相关性较高。空间滤波器表示为W&#x3D;[W1,W2,..]，上述这一过程表示为<strong>Y&#x3D;W<sup>T</sup>X</strong>，X表示原本trials各通道的信号x<sub>i</sub>(t)</p>
-<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img-blog.csdnimg.cn/20200418225702674.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mjc2NTcwMw==,size_16,color_FFFFFF,t_70" alt="空间滤波器"/></div><div class="image-meta"><span class="image-caption center">空间滤波器</span></div></div>
-
+<p><img src="https://img-blog.csdnimg.cn/20200418225702674.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mjc2NTcwMw==,size_16,color_FFFFFF,t_70" alt="空间滤波器"></p>
 <p>于是，问题的重点就来到了如何求解出空间滤波器W，这里给出了两种方法，分别是：</p>
 <ul>
 <li>协方差最大化(CovMax)</li>
@@ -210,19 +227,15 @@
 <p>当数据矩阵 $X$ 中的每一行表示一个观测样本时，$X$ 的每一列表示一个随机变量的均值可以通过对 $X$ 按列求平均得到。在这种情况下，上式可以改写为：<br>$$<br>C=1n−1(X−xˉ)T(X−xˉ)C &#x3D; \frac{1}{n-1} (X - \bar{x})^T (X - \bar{x})C=n−11​(X−xˉ)T(X−xˉ)<br>$$</p>
 <p>其中，$\bar{x}$ 是一个 $1 \times n$ 的向量，表示每个观测样本的均值。在这种情况下，协方差矩阵可以看作是去均值化的观测样本数据矩阵的转置矩阵与去均值化的观测样本数据矩阵之积的标准化。</p>
 <p>因此，我们可以得出结论，将去均值化的数据矩阵的转置矩阵与去均值化的数据矩阵之积除以 $n-1$，就可以得到协方差矩阵。这也是为什么可以通过两个矩阵相乘来计算协方差矩阵的原因。</p>
-<h1 id="深度学习方法"><a href="#深度学习方法" class="headerlink" title="深度学习方法"></a>深度学习方法</h1><h2 id="深度学习和机器学习"><a href="#深度学习和机器学习" class="headerlink" title="深度学习和机器学习"></a>深度学习和机器学习</h2><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="D:\Typora\images\image-20230401234449494.png" alt="image-20230401234449494"/></div><div class="image-meta"><span class="image-caption center">image-20230401234449494</span></div></div>
-
+<h1 id="深度学习方法"><a href="#深度学习方法" class="headerlink" title="深度学习方法"></a>深度学习方法</h1><h2 id="深度学习和机器学习"><a href="#深度学习和机器学习" class="headerlink" title="深度学习和机器学习"></a>深度学习和机器学习</h2><p><img src="D:\Typora\images\image-20230401234449494.png" alt="image-20230401234449494"></p>
 <p>机器学习特征通常需要手动设计，分类器需要手动选择，随着数据增大而收敛，停滞不前</p>
 <p>深度学习，端到端，给一个网络数据和任务，特征提取和建模步骤都是自动完成的，随着数据变大而扩展，越来越好</p>
 <h2 id="迁移学习"><a href="#迁移学习" class="headerlink" title="迁移学习"></a>迁移学习</h2><p>加载预训练的网络，比如一个Alexnet能输出1000个分类，如果我们实际只需要4分类，那么可以替换掉最后几层来加快学习</p>
 <p>比从空白开始训练省时省力</p>
-<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="D:\Typora\images\image-20230401234757051.png" alt="image-20230401234757051"/></div><div class="image-meta"><span class="image-caption center">image-20230401234757051</span></div></div>
-
-<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="D:\Typora\images\image-20230401234810906.png" alt="image-20230401234810906"/></div><div class="image-meta"><span class="image-caption center">image-20230401234810906</span></div></div>
-
+<p><img src="D:\Typora\images\image-20230401234757051.png" alt="image-20230401234757051"></p>
+<p><img src="D:\Typora\images\image-20230401234810906.png" alt="image-20230401234810906"></p>
 <h3 id="两种方法"><a href="#两种方法" class="headerlink" title="两种方法"></a>两种方法</h3><h4 id="时频域"><a href="#时频域" class="headerlink" title="时频域"></a>时频域</h4><p>1.将时域信号转换为时频域表示形式，并训练卷积神经网络，直接从这些时频表示中提取模式。</p>
-<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="D:\Typora\images\image-20230401233434429.png" alt="image-20230401233434429"/></div><div class="image-meta"><span class="image-caption center">image-20230401233434429</span></div></div>
-
+<p><img src="D:\Typora\images\image-20230401233434429.png" alt="image-20230401233434429"></p>
 <p>时频表示，描述了信号中的频谱成分如何随时间的变化而变化，增强了可能不可见的模式</p>
 <h5 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h5><p>将信号从时频表示保存为图像的技术，有：</p>
 <ul>
@@ -238,30 +251,25 @@
 <h2 id="降采样"><a href="#降采样" class="headerlink" title="降采样"></a>降采样</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1US4y1g7gC/?spm_id_from=333.337.search-card.all.click&vd_source=8ecff66abb776707f111647a284db8d9">Python脑电数据处理EEG-深度学习建模_哔哩哔哩_bilibili</a></p>
 <p>lstm，提取12个特征，它数据有pos和neg两个阶段，已经标好label</p>
 <p>要分析多少赫兹的信号就将采样到它的两倍</p>
-<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="D:\Typora\images\image-20230402005247706.png" alt="image-20230402005247706"/></div><div class="image-meta"><span class="image-caption center">image-20230402005247706</span></div></div>
-
+<p><img src="D:\Typora\images\image-20230402005247706.png" alt="image-20230402005247706"></p>
 <p>滤了1-100.功率频谱图100之后骤降</p>
-<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="D:\Typora\images\image-20230402005339811.png" alt="image-20230402005339811"/></div><div class="image-meta"><span class="image-caption center">image-20230402005339811</span></div></div>
-
+<p><img src="D:\Typora\images\image-20230402005339811.png" alt="image-20230402005339811"></p>
 <p>将功率谱密度图转为numpy array格式</p>
-<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="D:\Typora\images\image-20230402005509859.png" alt="image-20230402005509859"/></div><div class="image-meta"><span class="image-caption center">image-20230402005509859</span></div></div>
-
+<p><img src="D:\Typora\images\image-20230402005509859.png" alt="image-20230402005509859"></p>
 <p>计算面积值</p>
 <p>注意换算，比如取300ms的值，采样率对应出来的numpy array是多少到多少</p>
 <h2 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h2><h3 id="滑动时间窗"><a href="#滑动时间窗" class="headerlink" title="滑动时间窗"></a>滑动时间窗</h3><h2 id="分类方法"><a href="#分类方法" class="headerlink" title="分类方法"></a>分类方法</h2><h3 id="原始数据特征算法"><a href="#原始数据特征算法" class="headerlink" title="原始数据特征算法"></a>原始数据特征算法</h3><p>原始数据特征的卷积神经网络分类算法由 robin 提出，该算法提取的特征是初始脑电信号中的时空特征。时空特征的提取主要是基于滑动时间窗方法，在每一个 7.5s 的试验中，选用 4s 的运动想象时间，滑动窗口的长度设为 2s，时窗步进为 0.1s，每一次试验产生 21个时间窗，总共产生 6048（288*21）个短时域信号图作为训练样本。该方法的分类器是VGGnet 的卷积神经网络（CNN）</p>
 <p>这种原始数据特征算法具有两个优势，第一是数据预处理简单，对时序信号进行裁剪，并且相邻时间窗之间重叠率高，边缘信息对分类精度的影响较低。第二是易与 CNN 分类器结合，裁剪后生成的样本图可以作为二维图片输入 CNN 中进行训练分类。</p>
 <p>缺点包含两点，第一点是<strong>时序特征的实质是信号波形</strong>，实验数据采集过程中被试者的脑区状态对于特征的影响较大，算法可靠性较低，不同被试的分类效果差异较大。第二点是网络参数较大，以 2s 的时间窗为例，采样频率为 250Hz，则时间窗的时间点长度为 500（250*2），远大于相同信号的频域长度（脑电信号一般在 50Hz 左右），因此需要多次迭代训练。</p>
 <h3 id="平行多层感知网络算法"><a href="#平行多层感知网络算法" class="headerlink" title="平行多层感知网络算法"></a>平行多层感知网络算法</h3><p>平行多层感知网络（MLP）网络提取的是能量特征，包括静态能量特征和动态能量特征。如下图所示，标准的 MLP 网络用于分类静态能量，结合 MLP 层和 CNN（卷积层+池化层+全连接层）的结构用于分类动态能量，在两个并行网络的输出端是最大池化层，起到筛选识别分类的作用，选取两个网络识别的较大概率，对脑电信号分类作出判别（类似于数学中的 argmax 函数）。</p>
-<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="D:\Typora\images\image-20230402095023714.png" alt="image-20230402095023714"/></div><div class="image-meta"><span class="image-caption center">image-20230402095023714</span></div></div>
-
+<p><img src="D:\Typora\images\image-20230402095023714.png" alt="image-20230402095023714"></p>
 <p>MLP 算法应用的网络结构相对简单，并没有过多的层数堆积，因此实际的分类时间相对较短，同时并行网络的优点是在保留卷积神经网络权值共享特点的基础上，实现更有针对性的特征提取和分类。</p>
 <p><strong>并行的神经网络处理架构</strong>是新兴的脑电处理思想之一，徐高伟[25]提出的方法是在脑电分类中，设置并行的 RNN 网络，一路为训练完毕网络，一路为训练网络（网络结构相同），在训练过程中完成模型的迁移和修正。而平行多层感知网络虽然具备并行网络并行取优的特点，但是仅把初始信号划分为动态能量和静态能量，缺乏可靠的数据预处理环节，导致数据分类准确率不高。并行网络的结构更适合与<strong>迁移学习或监督学习的方法结合</strong>，搭配合理高效的数据预处理环节，构建学习能力更强的脑电信号分类框架。</p>
 <h3 id="黎曼几何与支持向量机算法"><a href="#黎曼几何与支持向量机算法" class="headerlink" title="黎曼几何与支持向量机算法"></a><strong>黎曼几何与支持向量机算法</strong></h3><p>黎曼几何与支持向量机算法是目前对于四分类脑电信号识别效果最好的方法之一（M. Hersche, T. Rellstab, P. D. Schiavone, L. Cavigelli, L.Benini, and A. Rahimi. Fastand accurate multiclass inference for mi-bcis using large multiscale temporal and spectralfeatures[C]. in 2018 26th European Signal Processing Conference (EUSIPCO), 2018, 1690-1694）</p>
 <h3 id="多尺度-CSP-算法"><a href="#多尺度-CSP-算法" class="headerlink" title="多尺度 CSP 算法"></a><strong>多尺度</strong> <strong>CSP</strong> 算法</h3><p>多尺度 CSP 算法也是提取的多尺度特征，包括时间，频率和空间特征</p>
 <h2 id="CNN-SSVEP"><a href="#CNN-SSVEP" class="headerlink" title="CNN SSVEP"></a>CNN SSVEP</h2><p> <a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1811.10280.pdf">Using variable natural environment brain-computer interface stimuli for real-time humanoid robot navigation</a>.</p>
 <p>在离线实验期间，受试者会固定在闪烁的刺激之一上。每个SSVEP类收集来自每个受试者的皮层大脑信号进行40个实验试验，以形成离线先验训练集或训练每个受试者的CNN模型 (离线校准)。</p>
-<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="D:\Typora\images\image-20230402010906679.png" alt="image-20230402010906679"/></div><div class="image-meta"><span class="image-caption center">image-20230402010906679</span></div></div>
-
+<p><img src="D:\Typora\images\image-20230402010906679.png" alt="image-20230402010906679"></p>
 <p>我们使用离线先验实验数据集训练SSVEP卷积单元 (SCU) CNN架构 [17]，包括一维卷积层、批归一化和最大池化 (如图4所示)。我们首先对9至100Hz之间的输入信号进行带通滤波，以减少在这项工作中不感兴趣的不期望的高频或低频。通过使用大型初始卷积滤波器来捕获由九个输入通道组成的滤波信号，以捕获我们对干EEG数据进行分类感兴趣的频率。SCU CNN模型使用具有随机梯度下降的反向传播进行训练 [24]。对于此训练，最初通过网格搜索在验证集上选择的关键超参数是L2权重衰减缩放0.004，dropout级别0.5，卷积内核大小1 × 10，内核步长4，maxpool内核大小2，分类交叉熵作为优化函数，ADAM梯度下降算法 [25] 和remu作为所有隐藏层上的激活函数。</p>
 <h2 id="MFCNN"><a href="#MFCNN" class="headerlink" title="MFCNN"></a>MFCNN</h2><p><a target="_blank" rel="noopener" href="https://kns.cnki.net/kcms2/article/abstract?v=3uoqIhG8C44YLTlOAiTRKibYlV5Vjs7iJTKGjg9uTdeTsOI_ra5_XbpIojxN0lnj9_VcSXrN1CnJ8R3DtVzVZrrHHAbjlqMS&uniplatform=NZKPT">用于稳态视觉诱发电位目标识别的多尺度特征融合卷积神经网络方法 - 中国知网 (cnki.net)</a></p>
 <p>将SSVEP信号数据转化为二维时频图像作为输入，基于MFCNN模型框架有效提取目标信号多尺度级联特征，实现SSVEP信号目标自适应特征提取及端到端识别。</p>
@@ -269,221 +277,59 @@
 <h3 id="神经网络构建"><a href="#神经网络构建" class="headerlink" title="神经网络构建"></a>神经网络构建</h3><p>小波变换将SSVEP信号转化成频率-时间-小波系数图(时频图),不同颜色分布的图像作为输入，利用CNN进一步提取图像特征进行学习并分类。</p>
 <h3 id="目标识别"><a href="#目标识别" class="headerlink" title="目标识别"></a>目标识别</h3><p>首先，采集受试者在不同闪烁目标刺激下的多通道SSVEP信号，经过预<strong>处理</strong>整合后输入至网络模型中，利用小波变换构造SSVEP信号为二维时频图像样本集</p>
 <p>随机选取数据集的70%为训练集对MFCNN模型进行训练，30%为测试集</p>
-<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="D:\Typora\images\image-20230402011721328.png" alt="image-20230402011721328"/></div><div class="image-meta"><span class="image-caption center">image-20230402011721328</span></div></div>
-
+<p><img src="D:\Typora\images\image-20230402011721328.png" alt="image-20230402011721328"></p>
 <h3 id="实验-2"><a href="#实验-2" class="headerlink" title="实验"></a>实验</h3><p>实验开始时，受试者有２ｓ的</p>
 <p>（ａ）实验时序图</p>
 <p>（ｂ）实验场景图</p>
 <p>图４ 实验时序图与场景图</p>
-<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="D:\Typora\images\image-20230402213147265.png" alt="image-20230402213147265"/></div><div class="image-meta"><span class="image-caption center">image-20230402213147265</span></div></div>
-
+<p><img src="D:\Typora\images\image-20230402213147265.png" alt="image-20230402213147265"></p>
 <p>2s静息准 备 时 间，当 ＰＣ 机 提 示 音 响 起，正 式 开 始 闪烁，重复２０次为一轮，单次刺激目标的呈现时间为４ｓ，随后提示音响起闪烁停止，受试者间隔休息２ｓ后再次进行下一次闪烁，每个刺激目标呈现３轮，轮与轮之间也给予受试者充足的休息时间。</p>
 <h2 id="卷积"><a href="#卷积" class="headerlink" title="卷积"></a>卷积</h2><p>预处理(滑动时间窗，原数据少，避免过拟合)–功率谱特征提取PSD</p>
 <p>我们选用功率谱密度（PSD）<strong>作为网络的输入特征</strong>。选用原因包含以下两点；第一，前文提到了为了降低信号分类中的个体差异影响，在数据预处理阶段首先利用 DWT 分析不同被试关于运动想象任务的频率分布情况，PSD 生成特征图横轴即为频率轴，可以和数据预处理做有效整合。第二，数据预处理部分的滑动时间窗方法，程序实现过程中是基于python 的 epoch 实现的，<strong>PSD 特征图可以伴随 epoch 生成</strong>，与数据准备环节做有效的衔接，没有窗口信号的多余操作，直接进行变换域处理，保证了特征图的有效性和稳定性。</p>
 <p>本实验选用的是 Welch 方法[53]生成 PSD 特征图，该方法也是采用了信号的滑窗处理方法，并利用快速傅里叶变换（FFT）计算信号能量分布。</p>
-<h2 id="CNN-LSTM"><a href="#CNN-LSTM" class="headerlink" title="CNN+LSTM"></a>CNN+LSTM</h2><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="D:\Typora\images\image-20230402113108116.png" alt="image-20230402113108116"/></div><div class="image-meta"><span class="image-caption center">image-20230402113108116</span></div></div>
-
+<h2 id="CNN-LSTM"><a href="#CNN-LSTM" class="headerlink" title="CNN+LSTM"></a>CNN+LSTM</h2><p><img src="D:\Typora\images\image-20230402113108116.png" alt="image-20230402113108116"></p>
 <p>EEG系统以2048年Hz的采样率收集。放置八个Ag&#x2F;AgCl电极PO7，PO3，POZ，PO4，PO8，O1，Oz和O2覆盖枕区。对于每个受试者，他们参加了15个模块的实验。每个块包含12个试验，对应于以随机顺序生成的所有12个刺激。每次试验持续5 s，分别包括1 s的提示期和4 s的目标刺激。总共收集了180个试验。</p>
-<h1 id="前景"><a href="#前景" class="headerlink" title="前景"></a>前景</h1><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="D:\Typora\images\image-20230423203429043.png" alt="image-20230423203429043"/></div><div class="image-meta"><span class="image-caption center">image-20230423203429043</span></div></div>
+<h1 id="前景"><a href="#前景" class="headerlink" title="前景"></a>前景</h1><p><img src="D:\Typora\images\image-20230423203429043.png" alt="image-20230423203429043"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Joel</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://jjuprising.github.io/2023/04/01/%E8%84%91%E7%94%B5%E7%AC%94%E8%AE%B0/">https://jjuprising.github.io/2023/04/01/%E8%84%91%E7%94%B5%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://JJuprising.github.io" target="_blank">Joel Station</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg2.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/06/08/Android-Studio%E9%99%8D%E9%9B%A8%E7%83%AD%E5%8A%9B%E5%9B%BE/"><img class="prev-cover" src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg3.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Android Studio降雨热力图</div></div></a></div><div class="next-post pull-right"><a href="/2023/03/13/AR%E5%BC%80%E5%8F%91-%E7%A9%BA%E9%97%B4%E5%AE%9A%E4%BD%8D%E7%82%B9/"><img class="next-cover" src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg2.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">AR开发-空间定位点与SLAM</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/jc_avator2.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Joel</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">40</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/JJuprising"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/JJuprising" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#s%E5%AE%9E%E9%AA%8C%E5%B8%B8%E7%94%A8%E8%AF%84%E4%BC%B0%E6%8C%87%E6%A0%87"><span class="toc-number">1.</span> <span class="toc-text">s实验常用评估指标</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">2.</span> <span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%91%E8%B0%B1%E4%BC%B0%E8%AE%A1%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">2.1.</span> <span class="toc-text">频谱估计基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E4%BF%A1%E5%8F%B7"><span class="toc-number">2.1.1.</span> <span class="toc-text">时间序列信号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%91%E7%8E%87"><span class="toc-number">2.1.2.</span> <span class="toc-text">频率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%91%E8%B0%B1"><span class="toc-number">2.1.3.</span> <span class="toc-text">频谱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%91%E8%B0%B1%E5%88%86%E6%9E%90"><span class="toc-number">2.1.4.</span> <span class="toc-text">频谱分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%91%E5%9F%9F%E5%92%8C%E6%97%B6%E5%9F%9F"><span class="toc-number">2.2.</span> <span class="toc-text">频域和时域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%91%E8%B0%B1%E5%9B%BE%E5%92%8C%E6%B3%A2%E5%BD%A2%E5%9B%BE"><span class="toc-number">2.3.</span> <span class="toc-text">频谱图和波形图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ssvep"><span class="toc-number">2.4.</span> <span class="toc-text">ssvep</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">信号处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#P300"><span class="toc-number">4.</span> <span class="toc-text">P300</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#p300-ssvep-%E6%BD%98%E8%80%81%E5%B8%88"><span class="toc-number">4.1.</span> <span class="toc-text">p300+ssvep 潘老师</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#P300-SD"><span class="toc-number">4.1.1.</span> <span class="toc-text">P300 SD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSVEP"><span class="toc-number">4.1.2.</span> <span class="toc-text">SSVEP</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C"><span class="toc-number">4.1.2.1.</span> <span class="toc-text">实验</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#p300-ssvep"><span class="toc-number">4.1.3.</span> <span class="toc-text">p300+ssvep</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A3%80%E6%B5%8B"><span class="toc-number">4.1.3.1.</span> <span class="toc-text">检测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C-1"><span class="toc-number">4.1.3.2.</span> <span class="toc-text">实验</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#P300-ssvep-%E8%96%9B%E4%BB%B2%E6%9E%97"><span class="toc-number">5.</span> <span class="toc-text">P300+ssvep 薛仲林</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#p300-ssvep-1"><span class="toc-number">5.1.</span> <span class="toc-text">p300+ssvep</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BC%A0%E7%BB%9F%E6%96%B9%E6%B3%95"><span class="toc-number">6.</span> <span class="toc-text">传统方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SSVEP-1"><span class="toc-number">6.1.</span> <span class="toc-text">SSVEP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TRCA%E6%8F%90%E5%8F%96%E4%BB%BB%E5%8A%A1%E7%9B%B8%E5%85%B3%E6%88%90%E5%88%86"><span class="toc-number">6.1.1.</span> <span class="toc-text">TRCA提取任务相关成分</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95"><span class="toc-number">7.</span> <span class="toc-text">深度学习方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%92%8C%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0"><span class="toc-number">7.1.</span> <span class="toc-text">深度学习和机器学习</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%81%E7%A7%BB%E5%AD%A6%E4%B9%A0"><span class="toc-number">7.2.</span> <span class="toc-text">迁移学习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95"><span class="toc-number">7.2.1.</span> <span class="toc-text">两种方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E9%A2%91%E5%9F%9F"><span class="toc-number">7.2.1.1.</span> <span class="toc-text">时频域</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-number">7.2.1.1.1.</span> <span class="toc-text">方法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E8%BE%93%E5%85%A5"><span class="toc-number">7.2.1.2.</span> <span class="toc-text">直接输入</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E6%B3%A2%E5%8F%98%E6%8D%A2"><span class="toc-number">7.3.</span> <span class="toc-text">小波变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">7.3.1.</span> <span class="toc-text">两个基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%A9%E6%94%BE"><span class="toc-number">7.3.1.1.</span> <span class="toc-text">缩放</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E5%B0%BA%E5%BA%A6%E5%9B%BE%E5%A4%84%E7%90%86%E4%BF%A1%E5%8F%B7"><span class="toc-number">7.4.</span> <span class="toc-text">利用尺度图处理信号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%8D%E9%87%87%E6%A0%B7"><span class="toc-number">7.5.</span> <span class="toc-text">降采样</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E5%A4%84%E7%90%86"><span class="toc-number">7.6.</span> <span class="toc-text">预处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BB%91%E5%8A%A8%E6%97%B6%E9%97%B4%E7%AA%97"><span class="toc-number">7.6.1.</span> <span class="toc-text">滑动时间窗</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%E6%96%B9%E6%B3%95"><span class="toc-number">7.7.</span> <span class="toc-text">分类方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E5%A7%8B%E6%95%B0%E6%8D%AE%E7%89%B9%E5%BE%81%E7%AE%97%E6%B3%95"><span class="toc-number">7.7.1.</span> <span class="toc-text">原始数据特征算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E8%A1%8C%E5%A4%9A%E5%B1%82%E6%84%9F%E7%9F%A5%E7%BD%91%E7%BB%9C%E7%AE%97%E6%B3%95"><span class="toc-number">7.7.2.</span> <span class="toc-text">平行多层感知网络算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BB%8E%E6%9B%BC%E5%87%A0%E4%BD%95%E4%B8%8E%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA%E7%AE%97%E6%B3%95"><span class="toc-number">7.7.3.</span> <span class="toc-text">黎曼几何与支持向量机算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E5%B0%BA%E5%BA%A6-CSP-%E7%AE%97%E6%B3%95"><span class="toc-number">7.7.4.</span> <span class="toc-text">多尺度 CSP 算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CNN-SSVEP"><span class="toc-number">7.8.</span> <span class="toc-text">CNN SSVEP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MFCNN"><span class="toc-number">7.9.</span> <span class="toc-text">MFCNN</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%A2%91%E5%8C%96%E5%A4%84%E7%90%86"><span class="toc-number">7.9.1.</span> <span class="toc-text">时频化处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%9E%84%E5%BB%BA"><span class="toc-number">7.9.2.</span> <span class="toc-text">神经网络构建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB"><span class="toc-number">7.9.3.</span> <span class="toc-text">目标识别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C-2"><span class="toc-number">7.9.4.</span> <span class="toc-text">实验</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%B7%E7%A7%AF"><span class="toc-number">7.10.</span> <span class="toc-text">卷积</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CNN-LSTM"><span class="toc-number">7.11.</span> <span class="toc-text">CNN+LSTM</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E6%99%AF"><span class="toc-number">8.</span> <span class="toc-text">前景</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/10/30/BCI-MindBrige%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/" title="BCI-MindBrige使用手册"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="BCI-MindBrige使用手册"/></a><div class="content"><a class="title" href="/2023/10/30/BCI-MindBrige%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/" title="BCI-MindBrige使用手册">BCI-MindBrige使用手册</a><time datetime="2023-10-30T09:09:43.000Z" title="发表于 2023-10-30 17:09:43">2023-10-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/10/11/latex%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="latex常用命令"><img src="https://s2.loli.net/2023/10/17/bGawt1HvRmexfpI.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="latex常用命令"/></a><div class="content"><a class="title" href="/2023/10/11/latex%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="latex常用命令">latex常用命令</a><time datetime="2023-10-11T14:35:28.000Z" title="发表于 2023-10-11 22:35:28">2023-10-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/20/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/" title="软件体系结构笔记"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件体系结构笔记"/></a><div class="content"><a class="title" href="/2023/09/20/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/" title="软件体系结构笔记">软件体系结构笔记</a><time datetime="2023-09-20T01:24:48.000Z" title="发表于 2023-09-20 09:24:48">2023-09-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" title="计算机组成原理"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机组成原理"/></a><div class="content"><a class="title" href="/2023/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" title="计算机组成原理">计算机组成原理</a><time datetime="2023-09-19T00:58:36.000Z" title="发表于 2023-09-19 08:58:36">2023-09-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/18/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/" title="数字图像处理笔记"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数字图像处理笔记"/></a><div class="content"><a class="title" href="/2023/09/18/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/" title="数字图像处理笔记">数字图像处理笔记</a><time datetime="2023-09-18T06:17:22.000Z" title="发表于 2023-09-18 14:17:22">2023-09-18</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/bc.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Joel</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><script type="text/javascript" id="maid-script" src="https://unpkg.com/mermaid@undefined/dist/mermaid.min.js?v=undefined"></script><script>if (window.mermaid) {
+  var options = JSON.parse(document.getElementById('maid-script').getAttribute('mermaidoptioins'));
+  mermaid.initialize(options);
+}</script></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
 
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
 
-
-<div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
-</div></section></div>
-
-</article>
-
-<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2023/06/08/Android-Studio%E9%99%8D%E9%9B%A8%E7%83%AD%E5%8A%9B%E5%9B%BE/">Android Studio降雨热力图</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2023/03/13/AR%E5%BC%80%E5%8F%91-%E7%A9%BA%E9%97%B4%E5%AE%9A%E4%BD%8D%E7%82%B9/">AR开发-空间定位点与SLAM</a></div></section></div>
-
-
-<div class="related-wrap reveal" id="related-posts">
-    <section class='header'>
-      <div class='title cap theme'>您可能感兴趣的文章</div>
-    </section>
-    <section class='body'>
-    <div class="related-posts"><a class="item" href="\2022\07\01\2022web大作业\" title="2022web大作业"><span class="title">2022web大作业</span></a></div></section></div>
-
-
-
-
-
-      
-<footer class="page-footer reveal fs12"><hr><div class="text"><p>本站由 <a href="/">@anonymity</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
-</div></footer>
-
-      <div class='float-panel mobile-only blur' style='display:none'>
-  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
-    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
-  </button>
-</div>
-
-    </div>
-  </div>
-  <div class='scripts'>
-    <script type="text/javascript">
-  const stellar = {
-    // 懒加载 css https://github.com/filamentgroup/loadCSS
-    loadCSS: (href, before, media, attributes) => {
-      var doc = window.document;
-      var ss = doc.createElement("link");
-      var ref;
-      if (before) {
-        ref = before;
-      } else {
-        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
-        ref = refs[refs.length - 1];
-      }
-      var sheets = doc.styleSheets;
-      if (attributes) {
-        for (var attributeName in attributes) {
-          if (attributes.hasOwnProperty(attributeName)) {
-            ss.setAttribute(attributeName, attributes[attributeName]);
-          }
-        }
-      }
-      ss.rel = "stylesheet";
-      ss.href = href;
-      ss.media = "only x";
-      function ready(cb) {
-        if (doc.body) {
-          return cb();
-        }
-        setTimeout(function () {
-          ready(cb);
-        });
-      }
-      ready(function () {
-        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
-      });
-      var onloadcssdefined = function (cb) {
-        var resolvedHref = ss.href;
-        var i = sheets.length;
-        while (i--) {
-          if (sheets[i].href === resolvedHref) {
-            return cb();
-          }
-        }
-        setTimeout(function () {
-          onloadcssdefined(cb);
-        });
-      };
-      function loadCB() {
-        if (ss.addEventListener) {
-          ss.removeEventListener("load", loadCB);
-        }
-        ss.media = media || "all";
-      }
-      if (ss.addEventListener) {
-        ss.addEventListener("load", loadCB);
-      }
-      ss.onloadcssdefined = onloadcssdefined;
-      onloadcssdefined(loadCB);
-      return ss;
-    },
-
-    // 从 butterfly 和 volantis 获得灵感
-    loadScript: (src, opt) => new Promise((resolve, reject) => {
-      var script = document.createElement('script');
-      if (src.startsWith('/')){
-        src = stellar.config.root + src.substring(1);
-      }
-      script.src = src;
-      if (opt) {
-        for (let key of Object.keys(opt)) {
-          script[key] = opt[key]
-        }
-      } else {
-        // 默认异步，如果需要同步，第二个参数传入 {} 即可
-        script.async = true
-      }
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    }),
-
-    // https://github.com/jerryc127/hexo-theme-butterfly
-    jQuery: (fn) => {
-      if (typeof jQuery === 'undefined') {
-        stellar.loadScript(stellar.plugins.jQuery).then(fn)
-      } else {
-        fn()
-      }
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
     }
-  };
-  stellar.version = '1.19.0';
-  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0';
-  stellar.config = {
-    date_suffix: {
-      just: '刚刚',
-      min: '分钟前',
-      hour: '小时前',
-      day: '天前',
-      month: '个月前',
-    },
-    root : '/',
-  };
 
-  // required plugins (only load if needs)
-  stellar.plugins = {
-    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
-  };
-
-  if ('local_search') {
-    stellar.search = {};
-    stellar.search.service = 'local_search';
-    if (stellar.search.service == 'local_search') {
-      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"codeblock":true,"sort":"-date"});
-      stellar.search[stellar.search.service] = service_obj;
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
     }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
   }
-
-  // stellar js
-  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
-
-  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
-  // optional plugins
-  if ('true' == 'true') {
-    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
-  }
-  if ('true' == 'true') {
-    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
-  }
-  if ('' == 'true') {
-    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
-  }
-  if ('true' == 'true') {
-    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
-  }
-  if ('true' == 'true') {
-    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
-  }
-  if ('false' == 'true') {
-    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
-  }
-  if ('true' == 'true') {
-    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
-  }
-</script>
-
-<!-- required -->
-
-  
-<script src="/js/main.js" async></script>
-
-
-
-<!-- optional -->
-
-
-
-<!-- inject -->
-
-
-  </div>
-</body>
-</html>
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
