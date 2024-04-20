@@ -1,22 +1,23 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>大型数据库笔记 | Joel Station</title><meta name="author" content="Joel"><meta name="copyright" content="Joel"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="环境配置登录oracle(Oracle已经安装)：sqlplus sys&#x2F;orcl as sysdba  sqlplus scott&#x2F;tiger  (以超级管理员登录必须加as sysdba) 1sz [文件名]   切换用户：su - oracle  （-和oracle中间有空格） 运行设置Oracle环境shell脚本：. oraenv （. 后面有空格） 注释：. &#x3D; source">
-<meta property="og:type" content="article">
-<meta property="og:title" content="大型数据库笔记">
-<meta property="og:url" content="https://jjuprising.github.io/2023/09/14/%E5%A4%A7%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/index.html">
-<meta property="og:site_name" content="Joel Station">
-<meta property="og:description" content="环境配置登录oracle(Oracle已经安装)：sqlplus sys&#x2F;orcl as sysdba  sqlplus scott&#x2F;tiger  (以超级管理员登录必须加as sysdba) 1sz [文件名]   切换用户：su - oracle  （-和oracle中间有空格） 运行设置Oracle环境shell脚本：. oraenv （. 后面有空格） 注释：. &#x3D; source">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg3.png">
-<meta property="article:published_time" content="2023-09-14T06:54:24.000Z">
-<meta property="article:modified_time" content="2023-11-30T06:16:51.708Z">
-<meta property="article:author" content="Joel">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg3.png"><link rel="shortcut icon" href="/img/jc_favicon2.png"><link rel="canonical" href="https://jjuprising.github.io/2023/09/14/%E5%A4%A7%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>大型数据库笔记 | Joel Station</title><meta name="author" content="Joel"><meta name="copyright" content="Joel"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="大型数据库笔记"><meta name="application-name" content="大型数据库笔记"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="大型数据库笔记"><meta property="og:url" content="https://jjuprising.github.io/2023/09/14/%E5%A4%A7%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/index.html"><meta property="og:site_name" content="Joel Station"><meta property="og:description" content="环境配置登录oracle(Oracle已经安装)：sqlplus sys&amp;#x2F;orcl as sysdba  sqlplus scott&amp;#x2F;tiger  (以超级管理员登录必须加as sysdba) 1sz [文件名]   切换用户：su - oracle  （-和oracle中间有空格） 运行"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg"><meta property="article:author" content="Joel"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg"><meta name="description" content="环境配置登录oracle(Oracle已经安装)：sqlplus sys&amp;#x2F;orcl as sysdba  sqlplus scott&amp;#x2F;tiger  (以超级管理员登录必须加as sysdba) 1sz [文件名]   切换用户：su - oracle  （-和oracle中间有空格） 运行"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="https://jjuprising.github.io/2023/09/14/%E5%A4%A7%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2023/09/03/125766904/ee23df8517f3c3e3efc4145658269c06_5714860933110284659.png"},
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
   root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: undefined,
   algolia: undefined,
-  localSearch: {"path":"./search.json","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
-  translate: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
   noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
   copy: {
     success: '复制成功',
     error: '复制错误',
@@ -24,9 +25,10 @@
   },
   relativeDate: {
     homepage: false,
+    simplehomepage: true,
     post: false
   },
-  runtime: '',
+  runtime: '天',
   date_suffix: {
     just: '刚刚',
     min: '分钟前',
@@ -34,25 +36,31 @@
     day: '天前',
     month: '个月前'
   },
-  copyright: undefined,
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: Joel","link":"链接: ","source":"来源: Joel Station","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
   lightbox: 'fancybox',
-  Snackbar: undefined,
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
   source: {
     justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
     }
   },
   isPhotoFigcaption: false,
-  islazyload: false,
-  isAnchor: false
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
 }</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'Joel Station',
   title: '大型数据库笔记',
+  postAI: '',
+  pageFillDescription: '环境配置, 01体系结构, OracleDB体系结构, 内存结构, SGA, 后台进程, 进程监视器进程 (PMON), **恢复器进程 (**RECO), 归档进程 (ARCn), 归档模式, 逻辑和物理数据库结构, 04实例, 数据字典视图, 06配置Oracle Network, 07Storage, 08User, 权限, 系统权限, 对象权限, 09Locking, 锁, 机制, 10Undo, 还原数据, 11Auditing, 基础, Gauss安装环境配置登录已经安装以超级管理员登录必须加文件名切换用户和中间有空格运行设置环境脚本后面有空格注释执行文件输入实例名按回车是运行脚本用户登录体系结构体系结构内存结构内存结构创建并使用内存结构来满足多种需要例如使用内存来存储正在运行的程序代码在各用户之间共享的数据以及所连接的每个用户的专用数据区域一个实例有两个关联的基本内存结构系统全局区一组共享的内存结构称为组件其中包含一个实例的数据和控制信息由所有服务器进程和后台进程共享中存储的数据有高速缓存的数据块和共享区域等程序全局区包含某个服务器进程或后台进程的数据及控制信息的内存区域是在服务器进程或后台进程启动时创建的非共享内存服务器进程对的访问是独占式的每个服务器进程和后台进程都具有自己的共享池数据缓冲区重做日志缓冲区后台进程进程监视器进程进程监视器进程在用户进程失败时执行进程恢复负责清除数据库缓冲区高速缓存和释放该用户进程占用的资源例如会重置活动事务处理表的状态释放锁并从活动进程列表中删除该进程定期检查分派程序和服务器进程的状态并重新启动任何已停止运行除了故意终止的分派程序和服务器进程还会在网络监听程序中注册有关实例和分派程序进程的信息与一样定期检查以查看是否需要运行如果其它进程检测到需要该进程也可以调用它恢复器进程恢复器进程是一个用于分布式数据库配置的后台进程它可以自动解决涉及分布式事务处理的故障实例的进程会自动连接到有问题的分布式事务处理中涉及的其它数据库当进程在涉及到的数据库服务器之间重新建立连接后它会自动解决所有有问题的事务处理并从每个数据库的暂挂事务处理表中删除所有对应于已解决的有问题事务处理的行如果进程无法与远程服务器连接会在某个计时间隔之后自动尝试重新连接但是在再次尝试另一个连接之前会等待一段时间该时间会随尝试次数不断增加呈幂指数增长归档进程发生日志切换之后归档进程会将重做日志文件复制到指定的存储设备仅当数据库处于模式且已启用自动归档时才会存在进程如果您预计归档的工作负荷很重例如在成批加载数据期间可以增加最大归档进程数此外也可以有多个归档日志目标位置建议每个目标位置至少有一个归档进程默认设置是四个归档进程归档模式默认为非归档模式查看数据库是否处于归档模式改变数据库的归档模式步骤停止并装载数据库停启动到装载数据库阶段修改数据库为归档模式打开数据库测试是否生成归档日志表生成重做日志信息日志切换生成归档日志检查是否生成归档日志在文件夹下查看是否有归档文件生成改为非归档模式状态打开数据库逻辑和物理数据库结构数据库具有逻辑结构和物理结构数据库表空间和数据文件本幻灯片对数据库表空间和数据文件之间的关系进行了说明每个数据库都在逻辑上分为两个或多个表空间在每个表空间均显式创建一个或多个数据文件以在物理上存储表空间中所有逻辑结构的数据对于表空间不创建数据文件而是创建临时文件表空间的数据文件可以采用任何受支持的存储技术进行物理存储表空间数据库分为多个逻辑存储单元这些单元称为表空间用于对相关逻辑结构或数据文件进行分组例如表空间一般会将一个应用程序的所有段分成一组以简化一些管理操作数据块的数据存储在数据块中数据块是粒度最低的一级一个数据块对应于磁盘中特定字节数的物理空间每个表空间的数据块大小是在表空间创建时指定的数据库以数据块为单位使用和分配空闲数据库空间自动存储管理不需要做实验室磁盘太少实例图形界面管理服务器控制台地址可以在此文件中查看控制台的操作查看状态启动停止不要执行停止这条命令改显示日期显示当前会话中的当前参数值阶段执行以下任务必须装载数据库重命名数据文件启用和禁用联机重做日志文件归档选项执行完整的数据库恢复阶段数据字典视图用法举例查找用户有哪些索引以及这些索引所在的表空间名称配置保存失败修改文件权限可以用权限系统权限允许用户在数据库中执行特定的操作对象权限允许用户访问和操纵特定的对象分配权限查权限系统权限所有系统权限授予系统权限被授权用户可以转授权给其它用户收回权限没有级联慎用查询用户具有的系统权限撤销系统权限的语句对象权限授予对象权限查看用户对象权限撤销对象权限时会级联撤销用户只能撤销授予他们的那些权限例如无法撤销授予的对象权限只有被授予者或者具有系统权限的用户可以撤销对象权限锁防止多个会话同时更改同一数据在指定语句的最低可能级别自动获取机制插入更新删除行级锁修改对象如表移动对象级锁查询不需要任何锁事务处理结束使用或操作前一直保持锁定还原数据还原数据是原始的修改之前的数据副本针对更改数据的每个事务处理而捕获保存旧值还原数据至少保留到事务处理结束用于支持回滚操作读取一致性查询提供与查询开始时的数据一致的结果快照太旧闪回查询闪回事务处理和闪回表从失败的事务处理中进行恢复还原信息至少保留到事务处理结束每个事务处理仅分配一个还原段还原段可根据需要自动增长和收缩一个还原段可以同时服务多个事务处理还原信息分为三类未提交的还原信息活动提交的还原信息未过期过期的还原信息过期指定审计选项每次行使审计的系统权限时都会生成一条记录设计触发器基础打开管理界面极速浏览器打开安装文件查找非编辑状态查找内容',
   isPost: true,
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2023-11-30 14:16:51'
+  postUpdate: '2023-11-30 14:16:51',
+  postMainColor: '',
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -66,65 +74,104 @@
     display: inline !important
   }
 </style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
         }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
-
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
-
-        if (!itemStr) {
-          return undefined
-        }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
-
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return item.value
       }
-    }
-  
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    })
-  
-      win.activateDarkMode = function () {
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
         document.documentElement.setAttribute('data-theme', 'dark')
         if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
         }
       }
-      win.activateLightMode = function () {
+      win.activateLightMode = () => {
         document.documentElement.setAttribute('data-theme', 'light')
         if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
         }
       }
       const t = saveToLocal.get('theme')
     
-          if (t === 'dark') activateDarkMode()
-          else if (t === 'light') activateLightMode()
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
         
       const asideStatus = saveToLocal.get('aside-status')
       if (asideStatus !== undefined) {
@@ -135,13 +182,28 @@
         }
       }
     
-    const detectApple = () => {
-      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-        document.documentElement.classList.add('apple')
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
       }
-    }
-    detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/jc_avator2.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">43</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg3.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Joel Station</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">大型数据库笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-09-14T06:54:24.000Z" title="发表于 2023-09-14 14:54:24">2023-09-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-11-30T06:16:51.708Z" title="更新于 2023-11-30 14:16:51">2023-11-30</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="大型数据库笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><p>登录oracle(Oracle已经安装)：<code>sqlplus sys/orcl as sysdba</code> </p>
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">Joel Station</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/C/" style="font-size: 1.05rem;">C++<sup>1</sup></a><a href="/tags/DL/" style="font-size: 1.05rem;">DL<sup>1</sup></a><a href="/tags/JavaScript/" style="font-size: 1.05rem;">JavaScript<sup>1</sup></a><a href="/tags/Linux/" style="font-size: 1.05rem;">Linux<sup>2</sup></a><a href="/tags/c/" style="font-size: 1.05rem;">c++<sup>1</sup></a><a href="/tags/html/" style="font-size: 1.05rem;">html<sup>2</sup></a><a href="/tags/javascript/" style="font-size: 1.05rem;">javascript<sup>1</sup></a><a href="/tags/minecraft/" style="font-size: 1.05rem;">minecraft<sup>1</sup></a><a href="/tags/python/" style="font-size: 1.05rem;">python<sup>2</sup></a><a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 1.05rem;">云服务器<sup>1</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.05rem;">前端<sup>1</sup></a><a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 1.05rem;">小程序<sup>1</sup></a><a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 1.05rem;">教程<sup>2</sup></a><a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 1.05rem;">数学<sup>2</sup></a><a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 1.05rem;">服务器<sup>1</sup></a><a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 1.05rem;">深度学习<sup>1</sup></a><a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 1.05rem;">笔记<sup>8</sup></a><a href="/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" style="font-size: 1.05rem;">经验分享<sup>1</sup></a><a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 1.05rem;">编程语言<sup>6</sup></a><a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 1.05rem;">项目<sup>5</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">三月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/10/"><span class="card-archive-list-date">十月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/09/"><span class="card-archive-list-date">九月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">6</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">6</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">四月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="article-meta tags"></span></div></div><h1 class="post-title" itemprop="name headline">大型数据库笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2023-09-14T06:54:24.000Z" title="发表于 2023-09-14 14:54:24">2023-09-14</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2023-11-30T06:16:51.708Z" title="更新于 2023-11-30 14:16:51">2023-11-30</time></span></div><div class="meta-secondline"><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为长沙"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>长沙</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src=""></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://jjuprising.github.io/2023/09/14/%E5%A4%A7%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/"><header><h1 id="CrawlerTitle" itemprop="name headline">大型数据库笔记</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">Joel</span><time itemprop="dateCreated datePublished" datetime="2023-09-14T06:54:24.000Z" title="发表于 2023-09-14 14:54:24">2023-09-14</time><time itemprop="dateCreated datePublished" datetime="2023-11-30T06:16:51.708Z" title="更新于 2023-11-30 14:16:51">2023-11-30</time></header><h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><p>登录oracle(Oracle已经安装)：<code>sqlplus sys/orcl as sysdba</code> </p>
 <p>sqlplus scott&#x2F;tiger </p>
 <p>(以超级管理员登录必须加as sysdba)</p>
 <figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sz [文件名]</span><br></pre></td></tr></table></figure>
@@ -153,27 +215,27 @@
 <li>输入实例名：<code>orcl</code>  按回车</li>
 </ul>
 <p>su -xxx，-xxx是运行脚本</p>
-<p><img src="D:\Blog\source_posts\大型数据库笔记.assets\image-20230915001830676.png" alt="image-20230915001830676"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="D:\Blog\source_posts\大型数据库笔记.assets\image-20230915001830676.png" alt="image-20230915001830676"></p>
 <p>sys用户 dba登录</p>
-<h1 id="01体系结构"><a href="#01体系结构" class="headerlink" title="01体系结构"></a>01体系结构</h1><h2 id="OracleDB体系结构"><a href="#OracleDB体系结构" class="headerlink" title="OracleDB体系结构"></a>OracleDB体系结构</h2><p><img src="D:\Blog\source_posts\大型数据库笔记.assets\image-20230914150100943.png" alt="image-20230914150100943"></p>
+<h1 id="01体系结构"><a href="#01体系结构" class="headerlink" title="01体系结构"></a>01体系结构</h1><h2 id="OracleDB体系结构"><a href="#OracleDB体系结构" class="headerlink" title="OracleDB体系结构"></a>OracleDB体系结构</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="D:\Blog\source_posts\大型数据库笔记.assets\image-20230914150100943.png" alt="image-20230914150100943"></p>
 <h2 id="内存结构"><a href="#内存结构" class="headerlink" title="内存结构"></a>内存结构</h2><p><strong>Oracle DB</strong> <strong>内存结构</strong></p>
 <p>Oracle DB 创建并使用内存结构来满足多种需要。例如，使用内存来存储正在运行的程序代码、在各用户之间共享的数据以及所连接的每个用户的专用数据区域。<br> 一个实例有两个关联的基本内存结构： </p>
 <p>•<strong>系统全局区 (SGA)：</strong>一组共享的内存结构（称为 SGA 组件），其中包含一个 Oracle DB 实例的数据和控制信息。SGA 由所有服务器进程和后台进程共享。SGA 中存储的数据有高速缓存的数据块和共享 SQL 区域等。</p>
 <p>•<strong>程序全局区 (PGA)：</strong>包含某个服务器进程或后台进程的数据及控制信息的内存区域。PGA 是 Oracle DB 在服务器进程或后台进程启动时创建的非共享内存。服务器进程对 PGA 的访问是独占式的。每个服务器进程和后台进程都具有自己的 PGA。</p>
-<p><img src="D:\Blog\source_posts\大型数据库笔记.assets\image-20230914150838773.png" alt="image-20230914150838773"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="D:\Blog\source_posts\大型数据库笔记.assets\image-20230914150838773.png" alt="image-20230914150838773"></p>
 <h3 id="SGA"><a href="#SGA" class="headerlink" title="SGA"></a>SGA</h3><p><strong>共享池</strong></p>
 <p><strong>数据缓冲区</strong></p>
 <p><strong>重做日志缓冲区</strong></p>
 <h2 id="后台进程"><a href="#后台进程" class="headerlink" title="后台进程"></a>后台进程</h2><h3 id="进程监视器进程-PMON"><a href="#进程监视器进程-PMON" class="headerlink" title="进程监视器进程 (PMON)"></a><strong>进程监视器进程 (PMON)</strong></h3><p>进程监视器进程 (PMON) 在用户进程失败时执行进程恢复。PMON 负责清除数据库缓冲区高速缓存和释放该用户进程占用的资源。例如，PMON 会重置活动事务处理表的状态，释放锁，并从活动进程列表中删除该进程 ID。</p>
 <p>PMON 定期检查分派程序和服务器进程的状态，并重新启动任何已停止运行（除了 Oracle DB 故意终止）的分派程序和服务器进程。PMON 还会在网络监听程序中注册有关实例和分派程序进程的信息。</p>
 <p>与 SMON 一样，PMON 定期检查以查看是否需要运行；如果其它进程检测到需要该进程，也可以调用它。</p>
-<p><img src="D:\Blog\source_posts\大型数据库笔记.assets\image-20230914161215340.png" alt="image-20230914161215340"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="D:\Blog\source_posts\大型数据库笔记.assets\image-20230914161215340.png" alt="image-20230914161215340"></p>
 <h3 id="恢复器进程-RECO"><a href="#恢复器进程-RECO" class="headerlink" title="**恢复器进程 (**RECO)"></a>**恢复器进程 (**RECO)</h3><p>恢复器进程 (RECO) 是一个用于分布式数据库配置的后台进程，它可以自动解决涉及分布式事务处理的故障。实例的 RECO 进程会自动连接到有问题的分布式事务处理中涉及的其它数据库。当 RECO 进程在涉及到的数据库服务器之间重新建立连接后，它会自动解决所有有问题的事务处理，并从每个数据库的暂挂事务处理表中删除所有对应于已解决的有问题事务处理的行。</p>
 <p>如果 RECO 进程无法与远程服务器连接，RECO 会在某个计时间隔之后自动尝试重新连接。但是，RECO 在再次尝试另一个连接之前，会等待一段时间，该时间会随尝试次数不断<br> 增加（呈幂指数增长）。</p>
-<p><img src="D:\Blog\source_posts\大型数据库笔记.assets\image-20230914161228190.png" alt="image-20230914161228190"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="D:\Blog\source_posts\大型数据库笔记.assets\image-20230914161228190.png" alt="image-20230914161228190"></p>
 <h3 id="归档进程-ARCn"><a href="#归档进程-ARCn" class="headerlink" title="归档进程 (ARCn)"></a><strong>归档进程 (ARCn)</strong></h3><p>发生日志切换之后，归档进程 (ARC<em>n</em>) 会将重做日志文件复制到指定的存储设备。仅当<br> 数据库处于 ARCHIVELOG 模式且已启用自动归档时，才会存在 ARC<em>n</em> 进程。</p>
 <p>如果您预计归档的工作负荷很重（例如在成批加载数据期间），可以增加最大归档进程数。此外，也可以有多个归档日志目标位置。建议每个目标位置至少有一个归档进程。默认<br> 设置是四个归档进程。</p>
-<p><img src="D:\Blog\source_posts\大型数据库笔记.assets\image-20230914161301300.png" alt="image-20230914161301300"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="D:\Blog\source_posts\大型数据库笔记.assets\image-20230914161301300.png" alt="image-20230914161301300"></p>
 <h3 id="归档模式"><a href="#归档模式" class="headerlink" title="归档模式"></a>归档模式</h3><p>默认为非归档模式。</p>
 <p><strong>查看数据库是否处于归档模式：</strong><code>archive log list</code>。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; archive log list</span><br></pre></td></tr></table></figure>
@@ -230,9 +292,9 @@
 </li>
 </ul>
 <p>OPEN阶段</p>
-<p><img src="D:\Blog\source_posts\大型数据库笔记.assets\image-20231007142725996.png" alt="image-20231007142725996"></p>
-<p><img src="D:\Blog\source_posts\大型数据库笔记.assets\image-20231007144423909.png" alt="image-20231007144423909"></p>
-<h2 id="数据字典视图"><a href="#数据字典视图" class="headerlink" title="数据字典视图"></a>数据字典视图</h2><p><img src="D:\Blog\source_posts\大型数据库笔记.assets\image-20231007145236364.png" alt="image-20231007145236364"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="D:\Blog\source_posts\大型数据库笔记.assets\image-20231007142725996.png" alt="image-20231007142725996"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="D:\Blog\source_posts\大型数据库笔记.assets\image-20231007144423909.png" alt="image-20231007144423909"></p>
+<h2 id="数据字典视图"><a href="#数据字典视图" class="headerlink" title="数据字典视图"></a>数据字典视图</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="D:\Blog\source_posts\大型数据库笔记.assets\image-20231007145236364.png" alt="image-20231007145236364"></p>
 <p><strong>用法举例：</strong></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> table_name, tablespace_name </span><br><span class="line"><span class="keyword">FROM</span> user_tables;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> sequence_name, min_value, max_value, increment_by </span><br><span class="line"><span class="keyword">FROM</span> all_sequences </span><br><span class="line"><span class="keyword">WHERE</span> sequence_owner <span class="keyword">IN</span> (<span class="string">&#x27;MDSYS&#x27;</span>,<span class="string">&#x27;XDB&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> USERNAME, ACCOUNT_STATUS </span><br><span class="line"><span class="keyword">FROM</span> dba_users </span><br><span class="line"><span class="keyword">WHERE</span> ACCOUNT_STATUS <span class="operator">=</span> <span class="string">&#x27;OPEN&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">DESCRIBE</span> dba_indexes</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
@@ -312,7 +374,7 @@
 <blockquote>
 <p>还原信息：至少保留到事务处理结束</p>
 </blockquote>
-<p><img src="/%E5%A4%A7%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0.assets/image-20231109142603647.png" alt="image-20231109142603647"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/%E5%A4%A7%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0.assets/image-20231109142603647.png" alt="image-20231109142603647"></p>
 <ul>
 <li>每个事务处理仅分配一个还原段。 </li>
 <li>还原段可根据需要自动增长和收缩</li>
@@ -325,7 +387,7 @@
 <li><strong>过期的</strong>还原信息（过期）：</li>
 </ul>
 <h1 id="11Auditing"><a href="#11Auditing" class="headerlink" title="11Auditing"></a>11Auditing</h1><p><strong>指定审计选项</strong>,每次行使审计的系统权限时，都会生成一条记录</p>
-<p><img src="/%E5%A4%A7%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0.assets/image-20231116143337623.png" alt="image-20231116143337623"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/%E5%A4%A7%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0.assets/image-20231116143337623.png" alt="image-20231116143337623"></p>
 <p>设计触发器</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR</span> REPLACE <span class="keyword">TRIGGER</span> system.hrsalary_audit </span><br><span class="line">AFTER <span class="keyword">UPDATE</span> <span class="keyword">OF</span> sal</span><br><span class="line"><span class="keyword">ON</span> scott.emp</span><br><span class="line"><span class="keyword">REFERENCING</span> <span class="keyword">NEW</span> <span class="keyword">AS</span> <span class="keyword">NEW</span> <span class="keyword">OLD</span> <span class="keyword">AS</span> <span class="keyword">OLD</span></span><br><span class="line"><span class="keyword">FOR</span> <span class="keyword">EACH</span> <span class="type">ROW</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">IF :old.sal <span class="operator">!=</span> :new.sal <span class="keyword">THEN</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> system.audit_employees </span><br><span class="line"><span class="keyword">VALUES</span> </span><br><span class="line">  (</span><br><span class="line">    sys_context(<span class="string">&#x27;userenv&#x27;</span>, <span class="string">&#x27;os_user&#x27;</span>), </span><br><span class="line">    sysdate, </span><br><span class="line">    sys_context(<span class="string">&#x27;userenv&#x27;</span>, <span class="string">&#x27;ip_address&#x27;</span>),</span><br><span class="line">    :new.empno <span class="operator">||</span> <span class="string">&#x27; salary changed from &#x27;</span><span class="operator">||</span>:old.sal<span class="operator">||</span> <span class="string">&#x27; to &#x27;</span> <span class="operator">||</span>:new.sal); <span class="keyword">END</span> IF; <span class="keyword">END</span>; <span class="operator">/</span></span><br></pre></td></tr></table></figure>
 
@@ -338,46 +400,148 @@
 <p>360极速浏览器打开</p>
 <p><a target="_blank" rel="noopener" href="https://192.168.126.151:5500/em">https://192.168.126.151:5500/em</a></p>
 <h1 id="Gauss安装"><a href="#Gauss安装" class="headerlink" title="Gauss安装"></a>Gauss安装</h1><p>文件查找，非编辑状态：”&#x2F;查找内容”</p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Joel</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://jjuprising.github.io/2023/09/14/%E5%A4%A7%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/">https://jjuprising.github.io/2023/09/14/%E5%A4%A7%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://JJuprising.github.io" target="_blank">Joel Station</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg3.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/09/17/JJ%E7%9A%84%E7%AE%97%E6%B3%95%E4%B9%8B%E6%97%85/"><img class="prev-cover" src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg3.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">JJ的算法之旅</div></div></a></div><div class="next-post pull-right"><a href="/2023/09/14/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0/"><img class="next-cover" src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg2.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">操作系统笔记</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/jc_avator2.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Joel</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">43</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/JJuprising"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/JJuprising" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">环境配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#01%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">2.</span> <span class="toc-text">01体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#OracleDB%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">2.1.</span> <span class="toc-text">OracleDB体系结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84"><span class="toc-number">2.2.</span> <span class="toc-text">内存结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SGA"><span class="toc-number">2.2.1.</span> <span class="toc-text">SGA</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E5%8F%B0%E8%BF%9B%E7%A8%8B"><span class="toc-number">2.3.</span> <span class="toc-text">后台进程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%9B%91%E8%A7%86%E5%99%A8%E8%BF%9B%E7%A8%8B-PMON"><span class="toc-number">2.3.1.</span> <span class="toc-text">进程监视器进程 (PMON)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%81%A2%E5%A4%8D%E5%99%A8%E8%BF%9B%E7%A8%8B-RECO"><span class="toc-number">2.3.2.</span> <span class="toc-text">**恢复器进程 (**RECO)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%92%E6%A1%A3%E8%BF%9B%E7%A8%8B-ARCn"><span class="toc-number">2.3.3.</span> <span class="toc-text">归档进程 (ARCn)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%92%E6%A1%A3%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.3.4.</span> <span class="toc-text">归档模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E5%92%8C%E7%89%A9%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BB%93%E6%9E%84"><span class="toc-number">2.4.</span> <span class="toc-text">逻辑和物理数据库结构</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#04%E5%AE%9E%E4%BE%8B"><span class="toc-number">3.</span> <span class="toc-text">04实例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AD%97%E5%85%B8%E8%A7%86%E5%9B%BE"><span class="toc-number">3.1.</span> <span class="toc-text">数据字典视图</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#06%E9%85%8D%E7%BD%AEOracle-Network"><span class="toc-number">4.</span> <span class="toc-text">06配置Oracle Network</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#07Storage"><span class="toc-number">5.</span> <span class="toc-text">07Storage</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#08User"><span class="toc-number">6.</span> <span class="toc-text">08User</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%83%E9%99%90"><span class="toc-number">6.1.</span> <span class="toc-text">权限</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E6%9D%83%E9%99%90"><span class="toc-number">6.1.1.</span> <span class="toc-text">系统权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%9D%83%E9%99%90"><span class="toc-number">6.1.2.</span> <span class="toc-text">对象权限</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#09Locking"><span class="toc-number">7.</span> <span class="toc-text">09Locking</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%81"><span class="toc-number">7.1.</span> <span class="toc-text">锁</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%BA%E5%88%B6"><span class="toc-number">7.1.1.</span> <span class="toc-text">机制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10Undo"><span class="toc-number">8.</span> <span class="toc-text">10Undo</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%98%E5%8E%9F%E6%95%B0%E6%8D%AE"><span class="toc-number">8.1.</span> <span class="toc-text">还原数据</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11Auditing"><span class="toc-number">9.</span> <span class="toc-text">11Auditing</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80"><span class="toc-number">10.</span> <span class="toc-text">基础</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Gauss%E5%AE%89%E8%A3%85"><span class="toc-number">11.</span> <span class="toc-text">Gauss安装</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/03/18/%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB-AlexNet/" title="AlexNet"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="AlexNet"/></a><div class="content"><a class="title" href="/2024/03/18/%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB-AlexNet/" title="AlexNet">AlexNet</a><time datetime="2024-03-17T16:23:18.534Z" title="发表于 2024-03-18 00:23:18">2024-03-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/03/07/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5/" title="大数据原理与实践"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="大数据原理与实践"/></a><div class="content"><a class="title" href="/2024/03/07/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5/" title="大数据原理与实践">大数据原理与实践</a><time datetime="2024-03-07T06:09:38.555Z" title="发表于 2024-03-07 14:09:38">2024-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/19/%E6%95%B0%E6%A8%A1notes/" title="数模notes"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数模notes"/></a><div class="content"><a class="title" href="/2023/11/19/%E6%95%B0%E6%A8%A1notes/" title="数模notes">数模notes</a><time datetime="2023-11-18T16:00:00.000Z" title="发表于 2023-11-19 00:00:00">2023-11-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/10/30/BCI-MindBrige%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/" title="BCI-MindBrige使用手册"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="BCI-MindBrige使用手册"/></a><div class="content"><a class="title" href="/2023/10/30/BCI-MindBrige%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/" title="BCI-MindBrige使用手册">BCI-MindBrige使用手册</a><time datetime="2023-10-30T09:09:43.000Z" title="发表于 2023-10-30 17:09:43">2023-10-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/10/11/latex%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="latex常用命令"><img src="https://s2.loli.net/2023/10/17/bGawt1HvRmexfpI.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="latex常用命令"/></a><div class="content"><a class="title" href="/2023/10/11/latex%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="latex常用命令">latex常用命令</a><time datetime="2023-10-11T14:35:28.000Z" title="发表于 2023-10-11 22:35:28">2023-10-11</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/bc.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Joel</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><script type="text/javascript" id="maid-script" src="https://unpkg.com/mermaid@undefined/dist/mermaid.min.js?v=undefined"></script><script>if (window.mermaid) {
-  var options = JSON.parse(document.getElementById('maid-script').getAttribute('mermaidoptioins'));
-  mermaid.initialize(options);
-}</script></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">本地搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
-  endLoading: () => {
-    document.body.style.overflow = 'auto';
-    document.getElementById('loading-box').classList.add("loaded")
-  },
-  initLoading: () => {
-    document.body.style.overflow = '';
-    document.getElementById('loading-box').classList.remove("loaded")
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">Joel</div><div class="post-copyright__author_desc"></div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://jjuprising.github.io/2023/09/14/%E5%A4%A7%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://jjuprising.github.io/2023/09/14/%E5%A4%A7%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/')">大型数据库笔记</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://jjuprising.github.io/2023/09/14/%E5%A4%A7%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=大型数据库笔记&amp;url=https://jjuprising.github.io/2023/09/14/%E5%A4%A7%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/&amp;pic=" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://JJuprising.github.io" target="_blank">Joel Station</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"></div></div></div><div class="post_share"><div class="social-share" data-image="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/09/14/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">操作系统笔记</div></div></a></div><div class="next-post pull-right"><a href="/2023/09/17/JJ%E7%9A%84%E7%AE%97%E6%B3%95%E4%B9%8B%E6%97%85/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">JJ的算法之旅</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__description"></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://bu.dusays.com/2023/01/13/63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://bu.dusays.com/2023/05/13/645fa415e8694.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">环境配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#01%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">2.</span> <span class="toc-text">01体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#OracleDB%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">2.1.</span> <span class="toc-text">OracleDB体系结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84"><span class="toc-number">2.2.</span> <span class="toc-text">内存结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SGA"><span class="toc-number">2.2.1.</span> <span class="toc-text">SGA</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E5%8F%B0%E8%BF%9B%E7%A8%8B"><span class="toc-number">2.3.</span> <span class="toc-text">后台进程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%9B%91%E8%A7%86%E5%99%A8%E8%BF%9B%E7%A8%8B-PMON"><span class="toc-number">2.3.1.</span> <span class="toc-text">进程监视器进程 (PMON)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%81%A2%E5%A4%8D%E5%99%A8%E8%BF%9B%E7%A8%8B-RECO"><span class="toc-number">2.3.2.</span> <span class="toc-text">**恢复器进程 (**RECO)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%92%E6%A1%A3%E8%BF%9B%E7%A8%8B-ARCn"><span class="toc-number">2.3.3.</span> <span class="toc-text">归档进程 (ARCn)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%92%E6%A1%A3%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.3.4.</span> <span class="toc-text">归档模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E5%92%8C%E7%89%A9%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BB%93%E6%9E%84"><span class="toc-number">2.4.</span> <span class="toc-text">逻辑和物理数据库结构</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#04%E5%AE%9E%E4%BE%8B"><span class="toc-number">3.</span> <span class="toc-text">04实例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AD%97%E5%85%B8%E8%A7%86%E5%9B%BE"><span class="toc-number">3.1.</span> <span class="toc-text">数据字典视图</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#06%E9%85%8D%E7%BD%AEOracle-Network"><span class="toc-number">4.</span> <span class="toc-text">06配置Oracle Network</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#07Storage"><span class="toc-number">5.</span> <span class="toc-text">07Storage</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#08User"><span class="toc-number">6.</span> <span class="toc-text">08User</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%83%E9%99%90"><span class="toc-number">6.1.</span> <span class="toc-text">权限</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E6%9D%83%E9%99%90"><span class="toc-number">6.1.1.</span> <span class="toc-text">系统权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%9D%83%E9%99%90"><span class="toc-number">6.1.2.</span> <span class="toc-text">对象权限</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#09Locking"><span class="toc-number">7.</span> <span class="toc-text">09Locking</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%81"><span class="toc-number">7.1.</span> <span class="toc-text">锁</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%BA%E5%88%B6"><span class="toc-number">7.1.1.</span> <span class="toc-text">机制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10Undo"><span class="toc-number">8.</span> <span class="toc-text">10Undo</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%98%E5%8E%9F%E6%95%B0%E6%8D%AE"><span class="toc-number">8.1.</span> <span class="toc-text">还原数据</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11Auditing"><span class="toc-number">9.</span> <span class="toc-text">11Auditing</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80"><span class="toc-number">10.</span> <span class="toc-text">基础</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Gauss%E5%AE%89%E8%A3%85"><span class="toc-number">11.</span> <span class="toc-text">Gauss安装</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/18/%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB-AlexNet/" title="AlexNet">AlexNet</a><time datetime="2024-03-17T16:23:18.534Z" title="发表于 2024-03-18 00:23:18">2024-03-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/07/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5/" title="大数据原理与实践">大数据原理与实践</a><time datetime="2024-03-07T06:09:38.555Z" title="发表于 2024-03-07 14:09:38">2024-03-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/19/%E6%95%B0%E6%A8%A1notes/" title="数模notes">数模notes</a><time datetime="2023-11-18T16:00:00.000Z" title="发表于 2023-11-19 00:00:00">2023-11-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/10/30/BCI-MindBrige%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/" title="BCI-MindBrige使用手册">BCI-MindBrige使用手册</a><time datetime="2023-10-30T09:09:43.000Z" title="发表于 2023-10-30 17:09:43">2023-10-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/10/11/latex%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="latex常用命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2023/10/17/bGawt1HvRmexfpI.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="latex常用命令"/></a><div class="content"><a class="title" href="/2023/10/11/latex%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="latex常用命令">latex常用命令</a><time datetime="2023-10-11T14:35:28.000Z" title="发表于 2023-10-11 22:35:28">2023-10-11</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2024 By <a class="footer-bar-link" href="/" title="Joel" target="_blank">Joel</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">43</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">20</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">10</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/C/" style="font-size: 0.88rem;">C++<sup>1</sup></a><a href="/tags/DL/" style="font-size: 0.88rem;">DL<sup>1</sup></a><a href="/tags/JavaScript/" style="font-size: 0.88rem;">JavaScript<sup>1</sup></a><a href="/tags/Linux/" style="font-size: 0.88rem;">Linux<sup>2</sup></a><a href="/tags/c/" style="font-size: 0.88rem;">c++<sup>1</sup></a><a href="/tags/html/" style="font-size: 0.88rem;">html<sup>2</sup></a><a href="/tags/javascript/" style="font-size: 0.88rem;">javascript<sup>1</sup></a><a href="/tags/minecraft/" style="font-size: 0.88rem;">minecraft<sup>1</sup></a><a href="/tags/python/" style="font-size: 0.88rem;">python<sup>2</sup></a><a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 0.88rem;">云服务器<sup>1</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 0.88rem;">前端<sup>1</sup></a><a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 0.88rem;">小程序<sup>1</sup></a><a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 0.88rem;">教程<sup>2</sup></a><a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 0.88rem;">数学<sup>2</sup></a><a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 0.88rem;">服务器<sup>1</sup></a><a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 0.88rem;">深度学习<sup>1</sup></a><a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 0.88rem;">笔记<sup>8</sup></a><a href="/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" style="font-size: 0.88rem;">经验分享<sup>1</sup></a><a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 0.88rem;">编程语言<sup>6</sup></a><a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 0.88rem;">项目<sup>5</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2020 By 安知鱼 V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
 
-  }
-}
-window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>(() => {
-  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
-  if ($mermaidWrap.length) {
-    window.runMermaid = () => {
-      window.loadMermaid = true
-      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
 
-      Array.from($mermaidWrap).forEach((item, index) => {
-        const mermaidSrc = item.firstElementChild
-        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
-        const mermaidID = 'mermaid-' + index
-        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
-        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
-          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
-        })
-      })
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 Joel 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
     }
-
-    const loadMermaid = () => {
-      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
-    }
-
-    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
   }
-})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
-POWERMODE.shake = true;
-POWERMODE.mobile = false;
-document.body.addEventListener('input', POWERMODE);
-</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
