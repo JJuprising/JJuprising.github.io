@@ -1,0 +1,485 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>LLM and Agent | yjchen</title><meta name="author" content="JJuprising"><meta name="copyright" content="JJuprising"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="LLM and Agent"><meta name="application-name" content="LLM and Agent"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="LLM and Agent"><meta property="og:url" content="https://jjuprising.github.io/2024/10/25/LLM-and-Agent/index.html"><meta property="og:site_name" content="yjchen"><meta property="og:description" content="此笔记用于记录自己在学习大模型和agent的知识点"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://th.bing.com/th/id/OIP.xrX90o6umInaSd-VYdeR7wHaD4?rs=1&amp;pid=ImgDetMainPr"><meta property="article:author" content="JJuprising"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://th.bing.com/th/id/OIP.xrX90o6umInaSd-VYdeR7wHaD4?rs=1&amp;pid=ImgDetMainPr"><meta name="description" content="此笔记用于记录自己在学习大模型和agent的知识点"><link rel="shortcut icon" href="/images/sta_logo.jpg"><link rel="canonical" href="https://jjuprising.github.io/2024/10/25/LLM-and-Agent/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2023/09/03/125766904/ee23df8517f3c3e3efc4145658269c06_5714860933110284659.png"},
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":null},
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: JJuprising","link":"链接: ","source":"来源: yjchen","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'yjchen',
+  title: 'LLM and Agent',
+  postAI: '',
+  pageFillDescription: 'Prompt, 思维链Cot, Agent, 实现模式, 智能体系统, Planning, Reflection, Chain of thoughts思维链, Tree of Thoughts思维树, Tool, 基于LangChain的Agent的代码实现, 概念, 架构Schema, AgentAction, AgentFinish, Intermediate Steps中间步骤, Agent, Agent输入, Agent输出, AgentExecutor, 工具, 考虑事项, 构建, 术语, instruction-tuned  and fine-tuned model, instruction-tuned 指令调优, Fine-tune 微调的三个要素函数答案空间和从答案到最终结果的映射其中函数主要利用将原始输入转化为带或者占位符的完型填空格式答案空间主要用于搜索适合填充到位置的候选而从答案到最终结果的映射主要是根据填充的答案得到最终的预测结果系列之一人工设计篇文章开发者社区火山引擎超强入门教程文章有提到工程有疑问指出就是为了避免特征工程但是貌似又回到了特征工程其实可能不应该说是一个特征工程而是因为有了下游任务和预训练的消失了被称为现代第四范式工程能够将下游任务进行任务重定义使得所有的任务转变为语言模型问题思维链通过要求模型在输出最终答案之前显式输出中间逐步的推理步骤这一方法来增强大模型的算数常识和推理能力简单但有效一文读懂思维链博客这个词很早就出现了在过去有随着出现最近的爆火或者说跟普通的有什么区别吴恩达老师的解释非常清晰比如你想让帮助写一篇文章的提纲非智能体模式输入一段它给出回答相当于让一个人在电脑前打字完成一篇提纲同时不能要求有错字智能体模式思考是否需要查阅资料是的话就上网查找写了一个初稿反思哪里需要修改继续修改重复步骤零样本提示只给出一次然后得到结果的准确率是很低的同样的带智能体工作流的会高于的实现模式比较早的是模式循环即思考行动观察思考就是的推理步骤确定如何解决问题基于思考采取行动采取措施执行特定任务推动问题向解决的方向发展观察行动之后观察结果检验行动是否有效是否接近了问题的答案如果明白它得到了答案就结束问题否则根据观察再次进行思考产生新的想法重复直到得到答案回到主题上关于循环我放上一个实操例子准备两个工具其中一个可以通过查询给定城市的天气信息包括温度体感温度湿度和风速输入参数为城市位置北京另外一个可以查询当前的时间输入参数无两个工具的输出均是结构化数据用户输入今天我将从北京飞往三亚请根据天气情况给我定制穿衣计划循环真实案例如下今天我将从北京飞往三亚请根据天气情况给我定制穿衣计划需要获取北京和三亚的实时天气信息北京城市位置北京温度体感温度湿度风速需要获取三亚的实时天气信息三亚城市位置三亚温度体感温度湿度风速根据获取到的天气信息可以为从北京前往三亚的旅程制定穿衣计划北京的天气温度约为体感温度为湿度为风速为建议穿着轻薄衣物如长袖恤短裤或裙子搭配一件轻便外套以应对温差变化鞋子可以选择舒适的运动鞋或休闲鞋三亚的天气温度约为体感温度为湿度为风速为建议穿着透气性好的轻薄衣物如短袖上衣短裤或裙子选择凉鞋或拖鞋以适应热带气候的高温与高湿环境从北京飞往三亚的旅行中建议您在北京时穿着轻薄衣物并携带一件轻便外套以应对温差变化到达三亚后应穿着透气性好的轻薄衣物并选择凉鞋或拖鞋以适应热带气候的高温与高湿环境可以发现循环的具体实现形式仍然是问答的形式大模型通过思考了解需要分别调用工具查询北京和三亚的天气并且最后在来提出衣服着装方面的建议这个时候大家就有疑问了在上述例子第三行中为工具调用的结果那么大模型回答问题的时候为什么能够形成循环大模型是怎样从到选择正确的并且识别出工具的呢这就需要提示工程以及输出数据结构化提示工程构造模板如对应工具输入输出格式等天气查询天气查询基于给定的城市获取天气信息天气信息包括温度体感温度湿度和风速城市名称获取当前时间获取当前时间获取当前的系统时间可以看到在系统提示词中已经将各个工具以及对应工具的输入输出定义好此外也告诉大模型需要按照的模式输出结果封私信大模型是怎么进行的知乎智能体系统内容综合自应用研究主管以及吴恩达老师的演讲吴恩达老师列出了四个设计模式记忆所有的上下文学习参考都可以看成是利用模型的短期记忆来学习长期记忆长期记忆为代理提供了长期存储和召回无限信息的能力它们通常通过利用外部的向量存储和快速检索来存储和召回无限信息计划子目标和分解代理将大型任务分解为较小可管理的子目标从而有效地处理复杂的任务反思和改进代理可以对过去的行动进行自我批评和自我反思从错误中学习并改进未来的步骤从而提高最终结果的质量使用工具代理通过学会调用外部来获取模型权重通常在预训练后很难修改中缺少的额外信息包括当前信息代码执行能力访问专有信息源等例如让给出一段代码然后让它修改其中的它会给出版本接着跟他说不能通过某个测试单元它会给出版本以上这个为编程智能体同时你可以设置一个评审智能体跟他说你是评审专家请审查代码这就构成了一个简单的多智能体系统思维链思维链已成为提高模型在复杂任务上表现的标准提示技术模型被指示逐步思考以利用更多的测试时计算将困难任务分解为更小更简单的步骤链式思维将大任务转化为多个可管理的任务并对模型的思维过程的解释提供了启示例如你给出一张图片想让用语言描述一个女孩用图片中小男孩的姿势在读书从图片得到位姿势找到处理图像的模型生成女孩思维树还提到了思维树通过在每一步探索多种推理可能性来扩展它首先将问题拆解成多个思维步骤并在每一步生成多个想法形成树状结构搜索过程可以是广度优先搜索或深度优先搜索每个状态由分类器通过提示或多数投票进行评估例如数据收集检索处理等等的工具基于的的代码实现概念代理的核心理念是使用语言模型选择一系列要采取的行动架构表示要执行的动作有两个属性即应该被调用的工具的名称和一个属性该工具的输入准备返回给用户的完成结果它包括一个键值对的还有响应的字符串中间步骤这些代表了当前代理运行中之前的代理操作及其相应的输出这些对于传递给未来的迭代至关重要以便代理知道它已经完成了哪些工作这被输入为一个请注意观察目前被留作类型以保持最大的灵活性在实际操作中这通常是一个字符串输入代理的输入是键值映射只有一个必需的键如上中间步骤所述通常负责将这些对转换为可以最佳传递给的格式输出输出是要采取的下一个行动或发送给用户的最终响应或具体来说这可以被表述为输出解析器负责将原始输出转换为这三种类型之一代理执行器是代理的运行时这实际上是调用代理的内容执行它选择的操作将操作输出传递回代理并重复在伪代码中这大致看起来像工具工具是代理可以调用的功能工具抽象由两个部分组成工具的输入模式这告诉调用工具所需的参数没有这个它将不知道正确的输入是什么这些参数应该有合理的名称和描述要运行的函数这通常只是被调用的函数考虑事项关于工具有两个重要的设计考虑给予代理访问合适工具的权限以最有助于代理的方式描述工具如果不考虑这两点您将无法构建一个有效的代理如果您不给代理访问正确工具集的权限它将永远无法实现您赋予的目标如果您没有很好地描述工具代理将不知道如何正确使用它们提供了一套广泛的内置工具同时也使您能够轻松定义自己的工具包括自定义描述有关内置工具的完整列表请参阅工具集成部分构建构建一个自定义一般有五步定义推理引擎定义定义封装添加记忆可以用实现检索自己预设的外部数据例如某网站的文档内容等术语指令调优指令调优模型是一种通过特定的训练方法优化模型在执行指令或任务时的表现的机器学习模型简单来说这种模型在训练过程中会特别关注听从指令的能力以便在实际应用中更好地理解和执行用户的命令以下是的一些关键特点和训练方式训练数据类型与普通的监督学习不同模型的训练数据通常包含大量指令或任务描述以及相应的答案这些数据可能涵盖从回答问题到解释概念生成文本等多种任务类型强化学习模型有时会使用强化学习如强化学习自反馈以便在与人类反馈交互中不断改进人类反馈可以帮助模型优化回答的质量和相关性广泛应用这种模型通常被应用于生成式比如智能对话自动问答代码生成写作协助等场景通过指令调优模型可以更好地理解用户意图并且在执行任务时更具一致性和准确性例如的和等模型就是通过的方式来提升其在多种任务场景中的表现微调微调模型是一种在已有的基础模型上进行进一步训练的技术目的是让模型适应特定的任务或领域需求是对已经经过大量数据训练的预训练模型进行定制化的调整以便在目标任务上达到更好的性能一般包括以下几个步骤选择预训练模型首先选择一个在大规模数据集上训练过的模型例如等这些模型在通用任务上已经具备较好的理解或生成能力准备领域数据根据目标任务如情感分析机器翻译医学诊断等收集与之相关的数据通常这些数据量不需要像训练基础模型时那么庞大因为预训练模型已经掌握了基本的特征和语言模式设置特定任务目标根据任务需求定义损失函数和评价指标例如对于情感分析目标是预测正面或负面情绪对于文本生成目标是生成合适的回复调整模型参数将预训练模型加载进来通过新数据对模型进行多轮训练以更新模型的权重参数使其在该任务上的表现更好验证和优化在验证集上测试微调后的模型以确保其在目标任务上达到预期效果并进行必要的优化调整优点高效无需从零开始训练整个模型只需在预训练模型上进一步训练节省了大量计算资源适应性强通过微调可以将通用模型调整为特定领域的专家从而显著提升特定任务的表现数据需求少由于模型已经掌握了通用知识只需少量的数据就可以让模型学习到目标任务的特定知识例如模型可以通过微调来专门为客服场景或技术支持场景优化从而更准确地回答用户问题这种技术在自然语言处理计算机视觉语音识别等领域得到了广泛应用',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-11-29 15:55:05',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="/./images/ava.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">yjchen</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/cv/cyj_CV.pdf"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> CV</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://www.itra.co.jp/uploads/media/2019/05/20190528205238_1.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://www.itra.co.jp/uploads/media/2019/05/20190528205238_1.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/C/" style="font-size: 1.05rem;">C++<sup>1</sup></a><a href="/tags/DL/" style="font-size: 1.05rem;">DL<sup>1</sup></a><a href="/tags/JavaScript/" style="font-size: 1.05rem;">JavaScript<sup>1</sup></a><a href="/tags/Linux/" style="font-size: 1.05rem;">Linux<sup>2</sup></a><a href="/tags/c/" style="font-size: 1.05rem;">c++<sup>1</sup></a><a href="/tags/html/" style="font-size: 1.05rem;">html<sup>2</sup></a><a href="/tags/javascript/" style="font-size: 1.05rem;">javascript<sup>1</sup></a><a href="/tags/minecraft/" style="font-size: 1.05rem;">minecraft<sup>1</sup></a><a href="/tags/python/" style="font-size: 1.05rem;">python<sup>2</sup></a><a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 1.05rem;">云服务器<sup>1</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.05rem;">前端<sup>1</sup></a><a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 1.05rem;">小程序<sup>1</sup></a><a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 1.05rem;">教程<sup>2</sup></a><a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 1.05rem;">数学<sup>2</sup></a><a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 1.05rem;">服务器<sup>1</sup></a><a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 1.05rem;">深度学习<sup>1</sup></a><a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 1.05rem;">笔记<sup>8</sup></a><a href="/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" style="font-size: 1.05rem;">经验分享<sup>1</sup></a><a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 1.05rem;">编程语言<sup>6</sup></a><a href="/tags/%E8%84%91%E7%94%B5/" style="font-size: 1.05rem;">脑电<sup>1</sup></a><a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 1.05rem;">项目<sup>5</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/11/"><span class="card-archive-list-date">十一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/10/"><span class="card-archive-list-date">十月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/06/"><span class="card-archive-list-date">六月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/05/"><span class="card-archive-list-date">五月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/04/"><span class="card-archive-list-date">四月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">三月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/10/"><span class="card-archive-list-date">十月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="article-meta tags"></span></div></div><h1 class="post-title" itemprop="name headline">LLM and Agent</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2024-10-25T07:16:33.000Z" title="发表于 2024-10-25 15:16:33">2024-10-25</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-11-29T07:55:05.361Z" title="更新于 2024-11-29 15:55:05">2024-11-29</time></span></div><div class="meta-secondline"><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为广州"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>广州</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://th.bing.com/th/id/OIP.xrX90o6umInaSd-VYdeR7wHaD4?rs=1&amp;pid=ImgDetMainPr"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://jjuprising.github.io/2024/10/25/LLM-and-Agent/"><header><h1 id="CrawlerTitle" itemprop="name headline">LLM and Agent</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">JJuprising</span><time itemprop="dateCreated datePublished" datetime="2024-10-25T07:16:33.000Z" title="发表于 2024-10-25 15:16:33">2024-10-25</time><time itemprop="dateCreated datePublished" datetime="2024-11-29T07:55:05.361Z" title="更新于 2024-11-29 15:55:05">2024-11-29</time></header><h1 id="Prompt"><a href="#Prompt" class="headerlink" title="Prompt"></a>Prompt</h1><p><strong>prompt learning的三个要素，prompt函数，答案空间和从答案到最终结果的映射</strong>，其中prompt函数主要利用prompt将原始输入转化为带[MASK]（或者占位符）的完型填空格式，答案空间主要用于搜索适合填充到[MASK]位置的候选，而从答案到最终结果的映射主要是根据填充的答案得到最终的预测结果。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://developer.volcengine.com/articles/7385390440238809126">Prompt learning系列之answer engineering(一) 人工设计篇 - 文章 - 开发者社区 - 火山引擎 (volcengine.com)</a></p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/tardis/zm/art/442486331?source_id=1005">【NLP】Prompt Learning 超强入门教程 (zhihu.com)</a></p>
+<p>文章有提到Prompt工程，有疑问指出DL就是为了避免特征工程，但是Prompt貌似又回到了特征工程。</p>
+<p>其实可能不应该说是一个特征工程，而是因为有了LLM，下游任务和预训练的gap消失了（被称为，现代NLP第四范式）。Prompt工程能够将下游任务进行任务重定义，使得所有的NLP任务转变为语言模型问题。</p>
+<h2 id="思维链Cot"><a href="#思维链Cot" class="headerlink" title="思维链Cot"></a>思维链Cot</h2><p>COT通过要求模型在输出最终答案之前，<strong>显式输出中间逐步的推理步骤</strong>这一方法来增强大模型的算数、常识和推理能力。简单，但有效。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://www.itra.co.jp/uploads/media/2019/05/20190528205238_1.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/7beb1c71399974de6f18876604b071ab.png" alt="在这里插入图片描述"></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Julialove102123/article/details/135499567">一文读懂「Chain of Thought，CoT」思维链-CSDN博客</a></p>
+<h1 id="Agent"><a href="#Agent" class="headerlink" title="Agent"></a>Agent</h1><p>agent这个词很早就出现了，在过去，有ABM（Agent-Based Model）。随着LLM出现，最近的AI Agent爆火。</p>
+<p>ai agents或者说LLM-based agents跟普通的LLM有什么区别？</p>
+<p>吴恩达老师的解释非常清晰：比如你想让LLM帮助写一篇文章的提纲</p>
+<ul>
+<li>非智能体模式，输入一段prompt它给出回答，相当于让一个人在电脑前打字完成一篇提纲同时不能要求有错字。</li>
+<li>智能体模式（agentic workflow），思考是否需要查阅资料，是的话就上网查找，写了一个初稿，反思哪里需要修改，继续修改，重复步骤</li>
+</ul>
+<p>zero-shot prompt零样本提示（只给出一次prompt然后得到结果）的准确率是很低的，同样zero-shot的gpt3.5 acc 48%；gpt4 acc 67%带智能体工作流的gpt3.5会高于zero-shot的gpt4.</p>
+<h2 id="实现模式"><a href="#实现模式" class="headerlink" title="实现模式"></a>实现模式</h2><p>比较早的是ReAct模式——TAO循环，即思考（Thought）&gt;行动（Action）&gt;观察（Observation）</p>
+<ul>
+<li>Thought思考，就是LLM的推理步骤，确定LLM如何解决问题，基于思考采取Action</li>
+<li>Action行动，采取措施执行特定任务，推动问题向解决的方向发展</li>
+<li>Observation观察，行动之后观察结果，检验行动是否有效，是否接近了问题的答案。如果LLM明白它得到了答案就结束问题；否则根据观察再次进行思考产生新的想法，重复TAO直到得到答案。</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://www.itra.co.jp/uploads/media/2019/05/20190528205238_1.jpg&quot;" data-lazy-src="https://pic2.zhimg.com/80/v2-fcff42df2aa7793fd2d4e7130cd08de5_720w.webp" alt="img"></p>
+<p>回到主题上，关于TAO循环，我放上一个实操例子：</p>
+<p>1、准备两个工具，其中一个可以通过API查询给定城市的天气信息（包括温度、体感温度、湿度和风速），输入参数为城市位置（eg.北京）；另外一个可以查询当前的时间，输入参数无。两个工具的输出均是结构化json数据。</p>
+<p>2、用户输入：今天我将从北京飞往三亚，请根据天气情况给我定制穿衣计划。</p>
+<p>TAO循环真实案例如下：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#x27;role&#x27;: &#x27;user&#x27;, &#x27;content&#x27;: &#x27;\nQuestion:今天我将从北京飞往三亚，请根据天气情况给我定制穿衣计划&#x27;&#125;,</span><br><span class="line">&#123;&#x27;role&#x27;: &#x27;assistant&#x27;, &#x27;content&#x27;: &#x27;Thought: 需要获取北京和三亚的实时天气信息。\nAction: get_current_weather\nAction Input: &#123;&quot;city_name&quot;: &quot;北京&quot;&#125;&#x27;&#125;, </span><br><span class="line">&#123;&#x27;role&#x27;: &#x27;user&#x27;, &#x27;content&#x27;: &#x27;\nObservation:&#123;&quot;城市位置&quot;: &quot;北京&quot;, &quot;温度&quot;: &quot;23.94 C°&quot;, &quot;体感温度&quot;: &quot;23.28 C°&quot;, &quot;湿度&quot;: &quot;34%&quot;, &quot;风速&quot;: &quot;2.82 m/s&quot;&#125;&#x27;&#125;, </span><br><span class="line">&#123;&#x27;role&#x27;: &#x27;assistant&#x27;, &#x27;content&#x27;: &#x27;Thought: 需要获取三亚的实时天气信息。\nAction: get_current_weather\nAction Input: &#123;&quot;city_name&quot;: &quot;三亚&quot;&#125;&#x27;&#125;,</span><br><span class="line">&#123;&#x27;role&#x27;: &#x27;user&#x27;, &#x27;content&#x27;: &#x27;\nObservation:&#123;&quot;城市位置&quot;: &quot;三亚&quot;, &quot;温度&quot;: &quot;30.09 C°&quot;, &quot;体感温度&quot;: &quot;36.28 C°&quot;, &quot;湿度&quot;: &quot;74%&quot;, &quot;风速&quot;: &quot;4 m/s&quot;&#125;&#x27;&#125;</span><br><span class="line">&#123;&#x27;role&#x27;: &#x27;assistant&#x27;, &#x27;content&#x27;: &#x27;Thought: Thought: 根据获取到的天气信息，可以为从北京前往三亚的旅程制定穿衣计划。\n北京的天气：温度约为23.94°C，体感温度为23.28°C，湿度为34%，风速为2.82 m/s。建议穿着轻薄衣物，如长袖T恤、短裤或裙子，搭配一件轻便外套以应对温差变化。鞋子可以选择舒适的运动鞋或休闲鞋。\n三亚的天气：温度约为30.09°C，体感温度为36.28°C，湿度为74%，风速为4 m/s。建议穿着透气性好的轻薄衣物，如短袖上衣、短裤或裙子，选择凉鞋或拖鞋，以适应热带气候的高温与高湿环境。\n Final Answer: 从北京飞往三亚的旅行中，建议您在北京时穿着轻薄衣物并携带一件轻便外套以应对温差变化；到达三亚后，应穿着透气性好的轻薄衣物，并选择凉鞋或拖鞋，以适应热带气候的高温与高湿环境。&#x27;&#125;,</span><br></pre></td></tr></table></figure>
+
+<p>可以发现TAO循环的具体实现形式仍然是问答的形式。大模型通过思考了解需要分别调用工具查询北京和三亚的天气，并且最后在Final Answer来提出衣服着装方面的建议。</p>
+<p>这个时候大家就有疑问了，在上述例子第三行中Observation为工具API调用的结果，那么大模型回答问题的时候为什么能够形成TAO循环、大模型是怎样从Thought到选择正确的Action并且识别出工具的Action Input呢？</p>
+<p>这就需要<strong>提示工程以及输出数据结构化</strong>。</p>
+<p>提示工程：构造模板，如对应工具，输入输出格式等</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Answer the following questions as best you can. You have access to the following tools: get_current_weather: Call this tool to interact with the 天气查询 API. What is the 天气查询 API useful for? 基于给定的城市获取天气信息，天气信息包括温度、体感温度、湿度和风速。 Parameters: [&#123;&#x27;name&#x27;: &#x27;city_name&#x27;, &#x27;description&#x27;: &#x27;城市名称&#x27;, &#x27;required&#x27;: True, &#x27;schema&#x27;: &#123;&#x27;type&#x27;: &#x27;string&#x27;&#125;&#125;] Format the arguments as a JSON object. get_current_time: Call this tool to interact with the 获取当前时间 API. What is the 获取当前时间 API useful for? 获取当前的系统时间。 Parameters: [] Format the arguments as a JSON object. Use the following format: Question: the input question you must answer Thought: you should always think about what to do Action: the action to take, should be one of [get_current_weather,get_current_time] Action Input: the input to the action Observation: the result of the action ... (this Thought/Action/Action Input/Observation can be repeated zero or more times) Thought: I now know the final answer Final Answer: [the final answer](https://zhida.zhihu.com/search?content_id=691408049&amp;content_type=Answer&amp;match_order=2&amp;q=the+final+answer&amp;zhida_source=entity) to the original input question Begin!</span><br></pre></td></tr></table></figure>
+
+<p>可以看到在系统提示词中，已经将各个工具以及对应工具的输入输出定义好。此外，也告诉大模型需要按照TAO的模式输出结果。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/654365939/answer/3651352710">(7 封私信) 大模型 AI Agent 是怎么进行 Action 的？ - 知乎 (zhihu.com)</a></p>
+</blockquote>
+<h2 id="智能体系统"><a href="#智能体系统" class="headerlink" title="智能体系统"></a>智能体系统</h2><p>内容综合自OpenAI应用研究主管LilianWeng：<a target="_blank" rel="noopener" href="https://lilianweng.github.io/posts/2023-06-23-agent/">LLM Powered Autonomous Agents</a>，以及吴恩达老师的演讲<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=sal78ACtGTc&amp;t=140s">https://www.youtube.com/watch?v=sal78ACtGTc&amp;t=140s</a></p>
+<p>吴恩达老师列出了四个设计模式，Reflection, Tool use, Planning, Multiagent collaboration </p>
+<p>Agent&#x3D;LLM + memory + planning skills + tool use</p>
+<ul>
+<li><p>Memory记忆：</p>
+<ul>
+<li>所有的上下文学习（参考Prompt Engineering）都可以看成是利用模型的短期记忆来学习。</li>
+<li>长期记忆：长期记忆为代理提供了长期存储和召回（无限）信息的能力，它们通常通过利用外部的向量存储和快速检索来存储和召回（无限）信息。</li>
+</ul>
+</li>
+<li><p>Planning计划</p>
+<ul>
+<li>子目标和分解：代理将大型任务分解为较小，可管理的子目标，从而有效地处理复杂的任务。</li>
+<li>反思和改进：代理可以对过去的行动进行自我批评和自我反思，从错误中学习并改进未来的步骤，从而提高最终结果的质量</li>
+</ul>
+</li>
+<li><p>tool use使用工具</p>
+</li>
+<li><ul>
+<li>代理通过学会调用外部API来获取模型权重（通常在预训练后很难修改）中缺少的额外信息，包括当前信息，代码执行能力，访问专有信息源等。</li>
+</ul>
+</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://www.itra.co.jp/uploads/media/2019/05/20190528205238_1.jpg&quot;" data-lazy-src="https://pic2.zhimg.com/v2-ce0333516ebc7f1d5379545bc7819d05_1440w.jpg" alt="img"></p>
+<h3 id="Planning"><a href="#Planning" class="headerlink" title="Planning"></a>Planning</h3><h4 id="Reflection"><a href="#Reflection" class="headerlink" title="Reflection"></a>Reflection</h4><p>例如让LLM给出一段代码，然后让它修改其中的bug，它会给出版本2，接着跟他说不能通过某个测试单元，它会给出版本3。</p>
+<p>以上这个LLM为编程智能体，同时你可以设置一个评审智能体（跟他说你是评审专家，请审查代码），这就构成了一个简单的多智能体系统</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://www.itra.co.jp/uploads/media/2019/05/20190528205238_1.jpg&quot;" data-lazy-src="https://pic3.zhimg.com/v2-939f34ee6bfc5ae13bc487c3a02bcab0_1440w.jpg" alt="img"></p>
+<h4 id="Chain-of-thoughts思维链"><a href="#Chain-of-thoughts思维链" class="headerlink" title="Chain of thoughts思维链"></a>Chain of thoughts思维链</h4><p><strong>Chain of thoughts</strong>思维链 (CoT; <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2201.11903">Wei et al. 2022</a>) 已成为提高模型在复杂任务上表现的标准提示技术。模型被指示“逐步思考”，以利用更多的测试时计算将困难任务分解为更小、更简单的步骤。链式思维将大任务转化为多个可管理的任务，并对模型的思维过程的解释提供了启示。</p>
+<p>例如你给出一张图片，想让LLM用语言描述一个女孩用图片中小男孩的姿势在读书</p>
+<p>HuggingGPT：</p>
+<p>1.从图片得到位姿势–2.找到处理图像的模型生成女孩–3.image-to-text–4.text-to-voice</p>
+<h4 id="Tree-of-Thoughts思维树"><a href="#Tree-of-Thoughts思维树" class="headerlink" title="Tree of Thoughts思维树"></a>Tree of Thoughts思维树</h4><p>Lil还提到了<strong>Tree of Thoughts</strong> (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2305.10601">Yao et al. 2023</a>) 思维树：通过在每一步探索多种推理可能性来扩展 CoT。它首先将问题拆解成多个思维步骤，并在每一步生成多个想法，形成树状结构。搜索过程可以是 BFS（广度优先搜索）或 DFS（深度优先搜索），每个状态由分类器（通过提示）或多数投票进行评估。</p>
+<h4 id="Tool"><a href="#Tool" class="headerlink" title="Tool"></a>Tool</h4><p>例如数据收集检索，处理等等的工具</p>
+<h1 id="基于LangChain的Agent的代码实现"><a href="#基于LangChain的Agent的代码实现" class="headerlink" title="基于LangChain的Agent的代码实现"></a>基于LangChain的Agent的代码实现</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>代理的核心理念是使用语言模型选择一系列要采取的行动。</p>
+<h3 id="架构Schema"><a href="#架构Schema" class="headerlink" title="架构Schema"></a>架构Schema</h3><h4 id="AgentAction"><a href="#AgentAction" class="headerlink" title="AgentAction"></a>AgentAction</h4><p>表示agent要执行的动作，有两个属性<code>tool</code>（即应该被调用的工具的名称）和一个属性<code>tool_input</code>（该工具的输入）</p>
+<h4 id="AgentFinish"><a href="#AgentFinish" class="headerlink" title="AgentFinish"></a>AgentFinish</h4><p>agent准备返回给用户的完成结果。它包括一个键值对（key-value）的mapping，<code>return_values</code>。还有agent响应的字符串<code>output</code></p>
+<h4 id="Intermediate-Steps中间步骤"><a href="#Intermediate-Steps中间步骤" class="headerlink" title="Intermediate Steps中间步骤"></a>Intermediate Steps中间步骤</h4><p>这些代表了当前代理运行中之前的代理操作及其相应的输出。这些对于传递给未来的迭代至关重要，以便代理知道它已经完成了哪些工作。这被输入为一个 <code>List[Tuple[AgentAction, Any]]</code>。请注意，观察目前被留作类型，以保持最大的灵活性。在实际操作中，这通常是一个字符串。</p>
+<h3 id="Agent-1"><a href="#Agent-1" class="headerlink" title="Agent"></a>Agent</h3><p>This is usually powered by a language model, a prompt, and an output parser.</p>
+<h4 id="Agent输入"><a href="#Agent输入" class="headerlink" title="Agent输入"></a>Agent输入</h4><p>代理的输入是键值映射。只有一个必需的键：<code>intermediate_steps</code>，如上<strong>中间步骤</strong>所述 </p>
+<p>通常，PromptTemplate负责将这些对转换为可以最佳传递给LLM的格式。</p>
+<h4 id="Agent输出"><a href="#Agent输出" class="headerlink" title="Agent输出"></a>Agent输出</h4><p>输出是要采取的下一个行动或发送给用户的最终响应（AgentAction或AgentFinish）。具体来说，这可以被表述为Union[AgentAction, List[AgentAction], AgentFinish]</p>
+<p>输出解析器（output parser）负责将原始 LLM 输出转换为这三种类型之一。</p>
+<h3 id="AgentExecutor"><a href="#AgentExecutor" class="headerlink" title="AgentExecutor"></a>AgentExecutor</h3><p>代理执行器是代理的运行时。这实际上是调用代理的内容，<strong>执行它选择的操作，将操作输出传递回代理，并重复</strong>。在伪代码中，这大致看起来像：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">next_action = agent.get_action(...)</span><br><span class="line"><span class="keyword">while</span> next_action != AgentFinish:</span><br><span class="line">    observation = run(next_action)</span><br><span class="line">    next_action = agent.get_action(..., next_action, observation)</span><br><span class="line"><span class="keyword">return</span> next_action</span><br></pre></td></tr></table></figure>
+
+<h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><p>工具是代理可以调用的功能。工具抽象由两个部分组成：</p>
+<ol>
+<li><p>工具的输入模式。这告诉 LLM 调用工具所需的参数。没有这个，它将不知道正确的输入是什么。这些参数应该有合理的名称和描述。</p>
+</li>
+<li><p>要运行的函数。这通常只是被调用的 Python 函数。</p>
+</li>
+</ol>
+<h4 id="考虑事项"><a href="#考虑事项" class="headerlink" title="考虑事项"></a>考虑事项</h4><p>关于工具，有两个重要的设计考虑：</p>
+<ol>
+<li>给予代理访问合适工具的权限</li>
+<li>以最有助于代理的方式描述工具</li>
+</ol>
+<p>如果不考虑这两点，您将无法构建一个有效的代理。如果您不给代理访问正确工具集的权限，它将永远无法实现您赋予的目标。如果您没有很好地描述工具，代理将不知道如何正确使用它们。</p>
+<p>LangChain 提供了一套广泛的内置工具，同时也使您能够轻松定义自己的工具（包括自定义描述）。有关内置工具的完整列表，请参阅工具集成部分。</p>
+<h2 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h2><p>构建一个自定义Agent，一般有五步：定义LLM推理引擎—定义tool—定义prompt—封装—添加记忆</p>
+<p>可以用<a target="_blank" rel="noopener" href="https://python.langchain.com/docs/how_to/agent_executor/#retriever">Retriever</a>实现RAG检索自己预设的外部数据，例如某网站的文档内容等。</p>
+<h1 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h1><h2 id="instruction-tuned-and-fine-tuned-model"><a href="#instruction-tuned-and-fine-tuned-model" class="headerlink" title="instruction-tuned  and fine-tuned model"></a>instruction-tuned  and fine-tuned model</h2><h3 id="instruction-tuned-指令调优"><a href="#instruction-tuned-指令调优" class="headerlink" title="instruction-tuned 指令调优"></a>instruction-tuned 指令调优</h3><p>instruction-tuned model（指令调优模型）是一种通过特定的训练方法，优化模型在执行指令或任务时的表现的机器学习模型。简单来说，这种模型在训练过程中会特别关注“听从指令”的能力，以便在实际应用中更好地理解和执行用户的命令。</p>
+<p>以下是instruction-tuned model的一些关键特点和训练方式：</p>
+<ol>
+<li><p><strong>训练数据类型</strong>：与普通的监督学习不同，instruction-tuned模型的训练数据通常包含大量指令或任务描述以及相应的答案。这些数据可能涵盖从回答问题到解释概念、生成文本等多种任务类型。</p>
+</li>
+<li><p><strong>强化学习</strong>：instruction-tuned模型有时会使用强化学习（如强化学习自反馈，RLHF），以便在与人类反馈交互中不断改进。人类反馈可以帮助模型优化回答的质量和相关性。</p>
+</li>
+<li><p><strong>广泛应用</strong>：这种模型通常被应用于生成式AI，比如智能对话、自动问答、代码生成、写作协助等场景。通过指令调优，模型可以更好地理解用户意图，并且在执行任务时更具一致性和准确性。</p>
+</li>
+</ol>
+<p>例如，OpenAI的GPT-3.5和GPT-4等模型就是通过instruction-tuning的方式来提升其在多种任务场景中的表现。</p>
+<h3 id="Fine-tune-微调"><a href="#Fine-tune-微调" class="headerlink" title="Fine-tune 微调"></a>Fine-tune 微调</h3><p>fine-tune model（微调模型）是一种在已有的基础模型上进行进一步训练的技术，目的是让模型适应特定的任务或领域需求。fine-tuning 是对已经经过大量数据训练的预训练模型进行定制化的调整，以便在目标任务上达到更好的性能。 </p>
+<p>fine-tuning 一般包括以下几个步骤：</p>
+<ol>
+<li><p><strong>选择预训练模型</strong>：首先选择一个在大规模数据集上训练过的模型（例如BERT、GPT、ResNet等），这些模型在通用任务上已经具备较好的理解或生成能力。</p>
+</li>
+<li><p><strong>准备领域数据</strong>：根据目标任务（如情感分析、机器翻译、医学诊断等），收集与之相关的数据。通常，这些数据量不需要像训练基础模型时那么庞大，因为预训练模型已经掌握了基本的特征和语言模式。</p>
+</li>
+<li><p><strong>设置特定任务目标</strong>：根据任务需求定义损失函数和评价指标。例如，对于情感分析，目标是预测正面或负面情绪；对于文本生成，目标是生成合适的回复。</p>
+</li>
+<li><p><strong>调整模型参数</strong>：将预训练模型加载进来，通过新数据对模型进行多轮训练，以更新模型的权重参数，使其在该任务上的表现更好。</p>
+</li>
+<li><p><strong>验证和优化</strong>：在验证集上测试微调后的模型，以确保其在目标任务上达到预期效果，并进行必要的优化调整。</p>
+</li>
+</ol>
+<p>优点：</p>
+<ul>
+<li><strong>高效</strong>：无需从零开始训练整个模型，只需在预训练模型上进一步训练，节省了大量计算资源。</li>
+<li><strong>适应性强</strong>：通过微调，可以将通用模型调整为特定领域的专家，从而显著提升特定任务的表现。</li>
+<li><strong>数据需求少</strong>：由于模型已经掌握了通用知识，只需少量的数据就可以让模型学习到目标任务的特定知识。</li>
+</ul>
+<p>例如，GPT-3模型可以通过微调来专门为客服场景或技术支持场景优化，从而更准确地回答用户问题。这种技术在自然语言处理、计算机视觉、语音识别等领域得到了广泛应用。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://www.itra.co.jp/uploads/media/2019/05/20190528205238_1.jpg&quot;" data-lazy-src="https://s2.loli.net/2024/10/25/j7ghABsRQy3HN4m.png" alt="image-20241025152524494"></p>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://www.itra.co.jp/uploads/media/2019/05/20190528205238_1.jpg&quot;" data-lazy-src="/./images/ava.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://www.itra.co.jp/uploads/media/2019/05/20190528205238_1.jpg&quot;" data-lazy-src="/./images/ava.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">JJuprising</div><div class="post-copyright__author_desc">蓝天白云,花草树木</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://jjuprising.github.io/2024/10/25/LLM-and-Agent/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://jjuprising.github.io/2024/10/25/LLM-and-Agent/')">LLM and Agent</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://jjuprising.github.io/2024/10/25/LLM-and-Agent/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=LLM and Agent&amp;url=https://jjuprising.github.io/2024/10/25/LLM-and-Agent/&amp;pic=https://th.bing.com/th/id/OIP.xrX90o6umInaSd-VYdeR7wHaD4?rs=1&amp;pid=ImgDetMainPr" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://JJuprising.github.io" target="_blank">yjchen</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"></div></div></div><div class="post_share"><div class="social-share" data-image="/img/default_cover.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/10/10/Reinforcement-Learning/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://www.itra.co.jp/uploads/media/2019/05/20190528205238_1.jpg&quot;" data-lazy-src="https://img-blog.csdnimg.cn/20210320145602494.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzMzAyMDA0,size_16,color_FFFFFF,t_70" onerror="onerror=null;src='https://www.itra.co.jp/uploads/media/2019/05/20190528205238_1.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Reinforcement Learning</div></div></a></div><div class="next-post pull-right"><a href="/2024/11/13/Energy/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://www.itra.co.jp/uploads/media/2019/05/20190528205238_1.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="onerror=null;src='https://www.itra.co.jp/uploads/media/2019/05/20190528205238_1.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Energy</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://www.itra.co.jp/uploads/media/2019/05/20190528205238_1.jpg&quot;" data-lazy-src="/./images/ava.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://www.itra.co.jp/uploads/media/2019/05/20190528205238_1.jpg&quot;" data-lazy-src="https://bu.dusays.com/2021/01/15/8b962544da5c0.png" alt="status"/></div></div><div class="author-info__description"></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">JJuprising</h1><div class="author-info__desc">蓝天白云,花草树木</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/JJuprising" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://www.xiaohongshu.com/user/profile/62c441a0000000001b02791d" target="_blank" title="小红书"><i class="anzhiyufont anzhiyu-icon-fire"></i></a><a class="social-icon faa-parent animated-hover" href="https://www.zhihu.com/people/bo-yi-shu-qi-49" target="_blank" title="知乎"><i class="anzhiyufont anzhiyu-icon-box-archive"></i></a></div></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://bu.dusays.com/2023/01/13/63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://s2.loli.net/2024/10/10/jSgFzEeKODwGCYQ.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Prompt"><span class="toc-number">1.</span> <span class="toc-text">Prompt</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E7%BB%B4%E9%93%BECot"><span class="toc-number">1.1.</span> <span class="toc-text">思维链Cot</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Agent"><span class="toc-number">2.</span> <span class="toc-text">Agent</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.1.</span> <span class="toc-text">实现模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%99%BA%E8%83%BD%E4%BD%93%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.2.</span> <span class="toc-text">智能体系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Planning"><span class="toc-number">2.2.1.</span> <span class="toc-text">Planning</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Reflection"><span class="toc-number">2.2.1.1.</span> <span class="toc-text">Reflection</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Chain-of-thoughts%E6%80%9D%E7%BB%B4%E9%93%BE"><span class="toc-number">2.2.1.2.</span> <span class="toc-text">Chain of thoughts思维链</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Tree-of-Thoughts%E6%80%9D%E7%BB%B4%E6%A0%91"><span class="toc-number">2.2.1.3.</span> <span class="toc-text">Tree of Thoughts思维树</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Tool"><span class="toc-number">2.2.1.4.</span> <span class="toc-text">Tool</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8ELangChain%E7%9A%84Agent%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">3.</span> <span class="toc-text">基于LangChain的Agent的代码实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">3.1.</span> <span class="toc-text">概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84Schema"><span class="toc-number">3.1.1.</span> <span class="toc-text">架构Schema</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#AgentAction"><span class="toc-number">3.1.1.1.</span> <span class="toc-text">AgentAction</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AgentFinish"><span class="toc-number">3.1.1.2.</span> <span class="toc-text">AgentFinish</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Intermediate-Steps%E4%B8%AD%E9%97%B4%E6%AD%A5%E9%AA%A4"><span class="toc-number">3.1.1.3.</span> <span class="toc-text">Intermediate Steps中间步骤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Agent-1"><span class="toc-number">3.1.2.</span> <span class="toc-text">Agent</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Agent%E8%BE%93%E5%85%A5"><span class="toc-number">3.1.2.1.</span> <span class="toc-text">Agent输入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Agent%E8%BE%93%E5%87%BA"><span class="toc-number">3.1.2.2.</span> <span class="toc-text">Agent输出</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AgentExecutor"><span class="toc-number">3.1.3.</span> <span class="toc-text">AgentExecutor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E5%85%B7"><span class="toc-number">3.1.4.</span> <span class="toc-text">工具</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%80%83%E8%99%91%E4%BA%8B%E9%A1%B9"><span class="toc-number">3.1.4.1.</span> <span class="toc-text">考虑事项</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%84%E5%BB%BA"><span class="toc-number">3.2.</span> <span class="toc-text">构建</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%AF%E8%AF%AD"><span class="toc-number">4.</span> <span class="toc-text">术语</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#instruction-tuned-and-fine-tuned-model"><span class="toc-number">4.1.</span> <span class="toc-text">instruction-tuned  and fine-tuned model</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#instruction-tuned-%E6%8C%87%E4%BB%A4%E8%B0%83%E4%BC%98"><span class="toc-number">4.1.1.</span> <span class="toc-text">instruction-tuned 指令调优</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fine-tune-%E5%BE%AE%E8%B0%83"><span class="toc-number">4.1.2.</span> <span class="toc-text">Fine-tune 微调</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/11/13/Energy/" title="Energy"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://www.itra.co.jp/uploads/media/2019/05/20190528205238_1.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='https://www.itra.co.jp/uploads/media/2019/05/20190528205238_1.jpg'" alt="Energy"/></a><div class="content"><a class="title" href="/2024/11/13/Energy/" title="Energy">Energy</a><time datetime="2024-11-13T09:17:15.000Z" title="发表于 2024-11-13 17:17:15">2024-11-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/10/25/LLM-and-Agent/" title="LLM and Agent"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://www.itra.co.jp/uploads/media/2019/05/20190528205238_1.jpg&quot;" data-lazy-src="https://th.bing.com/th/id/OIP.xrX90o6umInaSd-VYdeR7wHaD4?rs=1&amp;pid=ImgDetMainPr" onerror="this.onerror=null;this.src='https://www.itra.co.jp/uploads/media/2019/05/20190528205238_1.jpg'" alt="LLM and Agent"/></a><div class="content"><a class="title" href="/2024/10/25/LLM-and-Agent/" title="LLM and Agent">LLM and Agent</a><time datetime="2024-10-25T07:16:33.000Z" title="发表于 2024-10-25 15:16:33">2024-10-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/10/10/Reinforcement-Learning/" title="Reinforcement Learning"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://www.itra.co.jp/uploads/media/2019/05/20190528205238_1.jpg&quot;" data-lazy-src="https://img-blog.csdnimg.cn/20210320145602494.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzMzAyMDA0,size_16,color_FFFFFF,t_70" onerror="this.onerror=null;this.src='https://www.itra.co.jp/uploads/media/2019/05/20190528205238_1.jpg'" alt="Reinforcement Learning"/></a><div class="content"><a class="title" href="/2024/10/10/Reinforcement-Learning/" title="Reinforcement Learning">Reinforcement Learning</a><time datetime="2024-10-10T06:50:30.000Z" title="发表于 2024-10-10 14:50:30">2024-10-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/25/Redis-MySQL/" title="SpringCloud+Nginx+Redis+MySQL"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://www.itra.co.jp/uploads/media/2019/05/20190528205238_1.jpg&quot;" data-lazy-src="https://img-blog.csdnimg.cn/img_convert/56cffe7dbf42c200024f3f6d1bb2aab0.png" onerror="this.onerror=null;this.src='https://www.itra.co.jp/uploads/media/2019/05/20190528205238_1.jpg'" alt="SpringCloud+Nginx+Redis+MySQL"/></a><div class="content"><a class="title" href="/2024/06/25/Redis-MySQL/" title="SpringCloud+Nginx+Redis+MySQL">SpringCloud+Nginx+Redis+MySQL</a><time datetime="2024-06-25T01:16:01.000Z" title="发表于 2024-06-25 09:16:01">2024-06-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/23/CVPR-2024-Best-Paper/" title="CVPR 2024 Best Paper"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://www.itra.co.jp/uploads/media/2019/05/20190528205238_1.jpg&quot;" data-lazy-src="https://th.bing.com/th/id/R.57d22888aa8215c9f7c1f0e1e4d3ffc4?rik=uOe4sZz4A3tA4A&amp;riu=http%3a%2f%2fwww.dfad.unimore.it%2fmedia%2fimages%2fuploads%2f2024%2f01%2f21%2f29994fb078-CVPR_LogoSeattle_2024_Primary.jpg&amp;ehk=lBf0F17TAQOOcXi23ChDDJLgkskHjXyKlXjChREBOKY%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0" onerror="this.onerror=null;this.src='https://www.itra.co.jp/uploads/media/2019/05/20190528205238_1.jpg'" alt="CVPR 2024 Best Paper"/></a><div class="content"><a class="title" href="/2024/06/23/CVPR-2024-Best-Paper/" title="CVPR 2024 Best Paper">CVPR 2024 Best Paper</a><time datetime="2024-06-22T16:38:45.000Z" title="发表于 2024-06-23 00:38:45">2024-06-23</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2024 By <a class="footer-bar-link" href="/" title="JJuprising" target="_blank">JJuprising</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">49</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">5</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://jjuprising.github.io/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://www.itra.co.jp/uploads/media/2019/05/20190528205238_1.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://www.itra.co.jp/uploads/media/2019/05/20190528205238_1.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/cv/cyj_CV.pdf"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> CV</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/C/" style="font-size: 0.88rem;">C++<sup>1</sup></a><a href="/tags/DL/" style="font-size: 0.88rem;">DL<sup>1</sup></a><a href="/tags/JavaScript/" style="font-size: 0.88rem;">JavaScript<sup>1</sup></a><a href="/tags/Linux/" style="font-size: 0.88rem;">Linux<sup>2</sup></a><a href="/tags/c/" style="font-size: 0.88rem;">c++<sup>1</sup></a><a href="/tags/html/" style="font-size: 0.88rem;">html<sup>2</sup></a><a href="/tags/javascript/" style="font-size: 0.88rem;">javascript<sup>1</sup></a><a href="/tags/minecraft/" style="font-size: 0.88rem;">minecraft<sup>1</sup></a><a href="/tags/python/" style="font-size: 0.88rem;">python<sup>2</sup></a><a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 0.88rem;">云服务器<sup>1</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 0.88rem;">前端<sup>1</sup></a><a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 0.88rem;">小程序<sup>1</sup></a><a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 0.88rem;">教程<sup>2</sup></a><a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 0.88rem;">数学<sup>2</sup></a><a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 0.88rem;">服务器<sup>1</sup></a><a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 0.88rem;">深度学习<sup>1</sup></a><a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 0.88rem;">笔记<sup>8</sup></a><a href="/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" style="font-size: 0.88rem;">经验分享<sup>1</sup></a><a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 0.88rem;">编程语言<sup>6</sup></a><a href="/tags/%E8%84%91%E7%94%B5/" style="font-size: 0.88rem;">脑电<sup>1</sup></a><a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 0.88rem;">项目<sup>5</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2020 By 安知鱼 V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 JJuprising 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
