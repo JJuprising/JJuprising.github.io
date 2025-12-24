@@ -76,18 +76,28 @@
         }
         .close-btn {
             position: absolute;
-            top: 10px;
-            right: 15px;
+            top: 5px;
+            right: 5px;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background: transparent;
             border: none;
             color: rgba(255, 255, 255, 0.5);
-            font-size: 24px;
+            font-size: 28px;
             cursor: pointer;
-            transition: color 0.3s;
+            transition: color 0.3s, transform 0.2s;
             z-index: 20;
+            border-radius: 50%;
         }
         .close-btn:hover {
             color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .close-btn:active {
+            transform: scale(0.9);
         }
         #reopen-btn {
             position: absolute;
@@ -146,7 +156,7 @@
         <!-- Bottom: The Message Card -->
         <div class="w-full flex justify-center mb-10" id="card-container">
             <div class="glass-panel text-center relative">
-                <button class="close-btn" onclick="toggleCard(false)">×</button>
+                <button class="close-btn" onclick="toggleCard(false)" aria-label="Close">×</button>
                 <h1 class="text-3xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300">
                     Merry Christmas
                 </h1>
@@ -484,11 +494,22 @@
     }
 
     window.addEventListener('click', (e) => {
-        for(let i=0; i<8; i++) hearts.push(new Heart(e.clientX, e.clientY));
-        hearts.push(new Heart(width/2, height/2 - 200)); // Tree top pop
+        // Prevent doubling hearts if touch also fired click
+        // Simple heuristic: if we just touched, ignore click
+        // But for simplicity, we allow both or trust browsers to handle synthetic clicks
+        // The main issue was touchstart preventing default.
+        if (e.target.tagName !== 'BUTTON' && !e.target.closest('button')) {
+             for(let i=0; i<8; i++) hearts.push(new Heart(e.clientX, e.clientY));
+             hearts.push(new Heart(width/2, height/2 - 200)); 
+        }
     });
 
     window.addEventListener('touchstart', (e) => {
+        // 重要修复：如果触摸的是按钮，允许默认行为（点击），否则阻止默认行为以生成爱心
+        if (e.target.tagName === 'BUTTON' || e.target.closest('button')) {
+            return;
+        }
+
         e.preventDefault();
         const touch = e.touches[0];
         for(let i=0; i<8; i++) hearts.push(new Heart(touch.clientX, touch.clientY));
